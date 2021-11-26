@@ -1,0 +1,12 @@
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+
+.header-nav{
+  background-color: rgb(216, 220, 252); 
+  height: 60px; 
+  padding-top: 10px;
+}
+

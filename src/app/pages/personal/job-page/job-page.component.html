@@ -1,0 +1,176 @@
+<app-navbar (sendUser)="checkUser($event)" [puestoForm]="false"></app-navbar>
+
+
+<div class="job-title">
+  <div class="container">
+    <button routerLink="/personal" type="button" class="btn btn-light rounded-pill m-4"><i class="fa fa-arrow-left"
+        aria-hidden="true"></i> Volver al listado</button>
+    <div class="row">
+      <div class="col">
+
+        <h2>{{job?.puesto}}</h2>
+
+        <!-- Skeleton Puesto -->
+        <ngx-skeleton-loader *ngIf="loader" appearance="line" [theme]="{
+          'width':'30%',
+          'height':'25px',
+          'background-color':'rgb(195, 199, 230)'
+     }"></ngx-skeleton-loader>
+
+      </div>
+      <div class="col-4 d-none d-lg-block">
+
+        <div class="card" style="height: 269px;">
+
+
+          <div class="card-body" *ngIf="!loader">
+
+            <div class="row">
+              <div class="col-4">
+                <img src="https://via.placeholder.com/100" alt="" class="rounded-circle">
+
+              </div>
+              <div class="col">
+                <h5 class="card-title">{{job?.titulo}}</h5>
+                <h6 class="text-muted">{{job?.tipo_puesto}}</h6>
+              </div>
+            </div>
+
+            <h6 class="card-subtitle mt-3">{{job?.puesto}}</h6>
+            <p class="card-text">{{job?.lugar}}</p>
+            <div class="text-center">
+
+              <button *ngIf="user" type="button" class="btn btn-success rounded-pill" data-toggle="modal"
+                data-target="#exampleModal" [disabled]="Postulado">
+                {{Postulado ? "Ya estas postulado":"Postularme"}}</button>
+              <button *ngIf="!user" [routerLink]="['/login']" type="button" class="btn btn-success rounded-pill"> Iniciar
+                Sesión para postularme</button>
+              <p *ngIf="!user">No tienes cuenta? <a [routerLink]="['/register']">Registrate</a></p>
+            </div>
+          </div>
+
+
+          <!-- Skeleton Job Card -->
+          <div class="card-body" *ngIf="loader">
+            <div class="row">
+              <div class="col-4">
+                <ngx-skeleton-loader *ngIf="loader" appearance="circle" [theme]="{
+                  'width':'100px',
+                  'height':'100px'
+             }"></ngx-skeleton-loader>
+
+              </div>
+              <div class="col">
+                <ngx-skeleton-loader *ngIf="loader" appearance="line" [theme]="{
+                  'width':'80%',
+                  'margin-top':'5px'
+             }"></ngx-skeleton-loader>
+             <ngx-skeleton-loader *ngIf="loader" appearance="line" [theme]="{
+              'width':'40%'
+          
+         }"></ngx-skeleton-loader>
+              </div>
+            </div>
+
+
+            <ngx-skeleton-loader *ngIf="loader" appearance="line" [theme]="{
+              'width':'50%',
+              'margin-bottom':'2px'
+            }">
+            </ngx-skeleton-loader><br>
+            <ngx-skeleton-loader *ngIf="loader" appearance="line" [theme]="{
+              'width':'60%' 
+            }">
+            </ngx-skeleton-loader>
+            <div class="text-center">
+              <ngx-skeleton-loader *ngIf="loader" appearance="line" [theme]="{
+                'width':'45%' ,
+                'height':'30px',
+                'border-radius': '16px'
+              }">
+              </ngx-skeleton-loader>
+
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div *ngIf="!loader" class="col-lg-8 my-5">
+
+    <p [innerHTML]="job?.descripcion"></p>
+    <div class="text-center">
+      <button *ngIf="user" type="button" class="btn btn-success rounded-pill" data-toggle="modal"
+        data-target="#exampleModal" [disabled]="Postulado"> {{Postulado ? "Ya estas postulado":"Postularme"}}</button>
+      <button *ngIf="!user" [routerLink]="['/login']" type="button" class="btn btn-success rounded-pill"> Iniciar Sesión para
+        postularme</button>
+      <p *ngIf="!user">No tienes cuenta? <a [routerLink]="['/register']">Registrate</a></p>
+    </div>
+  </div>
+
+  <!-- Skeleton Descripcion -->
+  <div *ngIf="loader" class="col-lg-8 my-5">
+
+    <ngx-skeleton-loader *ngIf="loader" count=6 appearance="line"></ngx-skeleton-loader>
+    <ngx-skeleton-loader *ngIf="loader" appearance="line" [theme]="{
+      'width':'40%'
+    }"></ngx-skeleton-loader>
+      <br>
+
+      <ngx-skeleton-loader *ngIf="loader" count=6 appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader *ngIf="loader" appearance="line" [theme]="{
+      'width':'40%'
+    }">
+      </ngx-skeleton-loader>
+      <br>
+
+      <ngx-skeleton-loader *ngIf="loader" count=6 appearance="line"></ngx-skeleton-loader>
+      <ngx-skeleton-loader *ngIf="loader" appearance="line" [theme]="{
+      'width':'40%'
+      }">
+      </ngx-skeleton-loader>
+
+
+
+      <div class="text-center">
+        <ngx-skeleton-loader *ngIf="loader" appearance="line" [theme]="{
+        'width':'20%' ,
+        'height':'30px',
+        'border-radius': '16px'
+      }">
+        </ngx-skeleton-loader>
+      </div>
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Postulación</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ¿Estas seguro que deseas Postularte?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="Postulacion()">Si</button>
+      </div>
+    </div>
+  </div>
+</div>

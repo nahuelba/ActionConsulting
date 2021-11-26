@@ -1,0 +1,21 @@
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background-image: url('/assets/img/home01.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icons {
+  color: #a5c854 !important;
+}
+
+.buttons {
+  background-color: #a5c854;
+  color: white;
+  width: 200px;
+  padding: 15px;
+  font-size: 20px;
+  border-color: transparent;
+}

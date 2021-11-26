@@ -1,0 +1,21 @@
+.valores {
+    background-image: url(/assets/img/valores2.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-color: transparent;
+    min-height: 100%;
+  }
+
+  .text-grey {
+    color: #5c6873;
+    font-size: 17px;
+    font-weight: 300;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+
+  .titles {
+    color: #3f444a;
+    font-size: 30px;
+    font-weight: 600 !important;
+  }

@@ -1,0 +1,45 @@
+.servicios {
+    background-image: url(/assets/img/bg03.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-color: transparent;
+    min-height: 100%;
+
+    
+  }
+
+  .card-servicios {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 70px;
+    color: white;
+    font-size: 40px;
+    font-weight: 600 !important;
+  
+
+
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    /* no underline */
+    
+  }
+
+  .text-services {
+    font-size: 18px;
+    font-weight: 300;
+  }
+
+  .titles {
+    color: #3f444a;
+    font-size: 30px;
+    font-weight: 600 !important;
+  }
+
+@media only screen and (max-width: 600px) {
+  a {
+      font-size: 1.6rem; 
+}
+}

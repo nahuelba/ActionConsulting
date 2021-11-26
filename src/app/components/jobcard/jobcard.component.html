@@ -1,0 +1,39 @@
+
+
+  <div class="card" style="height: 269px;">
+
+
+    <div class="card-body">
+
+      <div class="row">
+        <div class="col-4">
+          <img src="https://via.placeholder.com/100" alt="" class="rounded-circle">
+        </div>
+        <div class="col">
+          <h5 class="card-title">{{job.titulo}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{job.lugar}}</h6>
+        </div>
+      </div>
+
+      <p class="card-text my-3" style="height: 72px;">{{job.puesto}}</p>
+      <div class="row">
+        <div class="col">
+
+          <p class="text-left text-muted" style="font-size: 0.8rem;">{{job.tipo_puesto}}</p>
+        </div>
+        <div class="col">
+          <p class="text-right font-weight-lighter" style="font-size: 0.8rem;">{{job.fecha_publicacion.toDate() | date:'dd/MM/yyyy'}}</p>
+
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+

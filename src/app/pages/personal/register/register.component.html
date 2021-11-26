@@ -1,0 +1,49 @@
+<!-- As a link -->
+<nav class="navbar navbar-dark bg-dark">
+  <a routerLink="/personal"><i class="fa fa-chevron-left fa-lg mx-3 back"  aria-hidden="true"></i></a>
+
+  <a class="navbar-brand mx-auto" href="#">
+    
+    <img class="" src="assets/img/ablanco.png" height="50" alt="">
+  </a>
+</nav>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Registrarse</h5>
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
+              <div class="form-floating mb-3">
+                <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="Email">
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+              </div>
+              <div class="form-floating mb-3">
+                <input type="password" formControlName="password2" class="form-control" id="floatingPassword2" placeholder="Repita la contraseña">
+              </div>
+  
+              <!-- <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                <label class="form-check-label" for="rememberPasswordCheck">
+                  Recordarme
+                </label>
+              </div> -->
+              
+              <div *ngIf="error" class="alert alert-danger" role="alert">
+                {{error}}
+              </div>
+              <div class="d-grid">
+                <button class="btn btn-success btn-login text-uppercase fw-bold" type="submit">Registrarse</button>
+              </div>
+              <p class="my-4">Ya tienes cuenta? <a routerLink="/login">Ingresar</a></p>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

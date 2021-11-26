@@ -1,0 +1,88 @@
+
+<app-navbar [lugares]="lugares"></app-navbar>
+
+<div class="header-nav">
+  <div class="container my-auto">
+
+
+    <div class="row">
+      <div class="col my-auto">
+        <select class="selectpicker" data-width="100%" [(ngModel)]="filters.date" >
+          <option selected>Fecha de Publicación</option>
+          <option >Hoy</option>
+          <option>Ayer</option>
+          <option>Menor a 3 días</option>
+          <option>Menor a 4 días</option>
+          <option>Menor a 5 días</option>
+          <option>Menor a 6 días</option>
+          <option>Menor a 1 semana</option>
+          <option>Menor a 15 días</option>
+          <option>Menor a 1 mes</option>
+        </select>
+
+      </div>
+      <div class="col my-auto d-none d-sm-block">
+        <select class="selectpicker " data-width="100%">
+          <option value="1">Área</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+      </div>
+      <div *ngIf="lugares" class="col my-auto d-none d-md-block">
+
+        
+        <select class="selectpicker"   data-width="100%" [(ngModel)]="filters.provincia">
+          <option value="Provincia">Provincia</option>
+          <option *ngFor="let lugar of lugares" [value]="lugar.id">{{ lugar.id }} <span class="text-muted">{{lugar.count}}</span></option>
+        </select>
+
+      </div>
+      <div class="col my-auto d-none d-lg-block" >
+
+        <select class="selectpicker" data-width="100%" [(ngModel)]="filters.tipoPuesto">
+          <option value="Tipo de Puesto">Tipo de Puesto</option>
+          <option *ngFor="let tipoPuesto of tipoPuestos" [value]="tipoPuesto.id">{{ tipoPuesto.id }} <span class="text-muted">{{tipoPuesto.count}}</span></option>
+        </select>
+
+      </div>
+      <div class="col my-auto">
+
+        <select class="selectpicker"  data-width="100%" title="Más filtros">
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+<div class="container">
+
+  <!-- <app-carrousel-jobcard *ngIf="jobsCarrousel" [jobs]="jobsCarrousel" [loader]="loader"></app-carrousel-jobcard> -->
+
+  <div class="row">
+    <!-- Skeleton -->
+
+    <ng-container *ngIf="loader">
+      <app-jobcard-skeleton  *ngFor="let item of [1,2,3,4,5,6,7,8,9]" class="col-lg-4 my-3"></app-jobcard-skeleton>
+    </ng-container>
+
+    <!-- Card Job -->
+    <app-jobcard routerLink="job/{{job.id}}"  [job]="job" *ngFor="let job of jobs 
+    | filter:filters.provincia 
+    | filterDate:filters.date
+    | filterTipoPuesto:filters.tipoPuesto"
+    class="col-lg-4 my-3">
+  </app-jobcard>
+  
+    
+
+    
+  </div>
+</div>
+ 

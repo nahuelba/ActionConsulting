@@ -1,0 +1,45 @@
+
+.action-human{
+    background-image: url(/assets/img/bg01.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-color: transparent;
+    min-height: 100%;
+  }
+  
+  .card-action-human{
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff;
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 50px;
+      margin: 100px auto 40px auto;
+      padding: 40px;
+      border: 2px solid rgba(255, 255, 255, 0.15);
+      box-sizing: border-box;
+  }
+  
+  
+  .footer{
+    padding: 40px 0;
+  background: #2f353b;
+  }
+
+  
+.icons {
+    color: #a5c854 !important;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    /* no underline */
+  }
+
+  @media only screen and (max-width: 600px) {
+    .block{
+      display: block;
+    }
+  }
+
+  

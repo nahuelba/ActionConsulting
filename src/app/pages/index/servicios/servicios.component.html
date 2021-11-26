@@ -1,0 +1,82 @@
+<section class="py-5">
+
+  <h1 class="text-center titles">{{'servicios' | translate}}</h1>
+</section>
+
+<section class="py-5 servicios">
+  <div class="container">
+
+    <div class="row">
+      <div class="col">
+        <div class="card card-servicios">
+          <div class="card-body">
+
+            <a data-toggle="collapse" href="#busquedaTalentos" role="button" aria-expanded="false"
+              aria-controls="busquedaTalentos">
+              {{'busqueda-de-talentos' | translate}}
+            </a>
+
+            <div class="collapse mt-4" id="busquedaTalentos">
+
+              <p class="text-services">{{'busqueda-de-talentos-text' | translate}}
+              </p>
+              <ul class="text-services" [innerHTML]="'busqueda-de-talentos-list' | translate">
+                
+
+              </ul>
+
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="card card-servicios">
+          <div class="card-body">
+
+            <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+              aria-controls="collapseExample">
+              {{'soluciones' | translate}}
+            </a>
+
+            <div class="collapse mt-4" id="collapseExample">
+
+              <p class="text-services">{{'soluciones-text' | translate}}</p>
+              <ul class="text-services" [innerHTML]="'soluciones-list' | translate">
+              </ul>
+
+            </div>
+
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="card card-servicios">
+          <div class="card-body">
+
+            <a data-toggle="collapse" href="#evaluaciones" role="button" aria-expanded="false"
+              aria-controls="evaluaciones">
+              {{'evaluaciones' | translate}}
+            </a>
+
+            <div class="collapse mt-4" id="evaluaciones">
+
+              <p class="text-services">{{'evaluaciones-text' | translate}}
+
+              </p>
+              <ul class="text-services" [innerHTML]="'evaluaciones-list' | translate">
+               
+
+              </ul>
+
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

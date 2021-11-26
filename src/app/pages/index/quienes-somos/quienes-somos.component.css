@@ -1,0 +1,19 @@
+.titles {
+  color: #3f444a;
+  font-size: 30px;
+  font-weight: 600 !important;
+}
+
+.mouse {
+  background-image: url(/assets/img/mouse.jpg);
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-color: transparent;
+  min-height: 100%;
+  padding: 150px 0;
+}
+
+.icons {
+  color: #a5c854 !important;
+}
