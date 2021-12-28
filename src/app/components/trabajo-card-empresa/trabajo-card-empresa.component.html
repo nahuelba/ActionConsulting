@@ -1,0 +1,41 @@
+<div class="card" style="min-height: 269px">
+  <div class="card-body">
+    <h5 class="card-title">{{job.tipo_empresa}} busca {{ job.puesto }}</h5>
+    <h6 class="card-subtitle my-2 text-muted" style="font-size: 0.9em">
+      {{ job.pais.pais }}<br />
+      {{ job.pais.provincia.provincia }}, {{ job.pais.provincia.ciudad.ciudad }}
+    </h6>
+    <span
+      *ngIf="empresa"
+      class="badge badge-success"
+      [ngClass]="{
+        'badge-success': job.estado == 'Publicado',
+        'badge-secondary': job.estado == 'Finalizado',
+        'badge-warning': job.estado == 'Pendiente'
+      }"
+    >
+      {{ job.estado }}
+    </span>
+
+    <p hidden [innerHTML]="job.descripcion" #descripcion></p>
+
+    <!-- <p class="card-text my-3 text-muted" [innerHTML]="job.descripcion | slice:0:500"></p> -->
+
+    <p class="card-text my-3">{{ getInnerText(descripcion).length > 150 ? (getInnerText(descripcion) | slice:0:100) +'...' : getInnerText(descripcion) }}</p>
+
+
+   
+    <div class="row">
+      <div class="col">
+        <!-- <p class="text-left text-muted" style="font-size: 0.8rem">
+          {{ job }}
+        </p> -->
+      </div>
+      <div class="col">
+        <p class="text-right font-weight-lighter" style="font-size: 0.8rem">
+          {{ job.fecha_publicacion.toDate() | date: "dd/MM/yyyy" }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,14 +7,21 @@ import { job } from '../interfaces/card.interface';
 })
 export class CardService {
 
+
   constructor(private firestore: AngularFirestore) { }
 
+ 
   
-  getCards() {
-    return this.firestore.collection<job>('empresas').valueChanges({ idField: 'id' });
+  getCardsPublicadas() {
+    return this.firestore.collection<job>('trabajos', ref => ref.where('estado', '==', 'Publicado').orderBy('fecha_publicacion', 'desc')).valueChanges({ idField: 'id' });
   }
+
+  getCardsDelUsuario(user:string) {
+    return this.firestore.collection<job>('trabajos', ref => ref.where('empresa_id', '==', user).orderBy('fecha_publicacion', 'desc')).valueChanges({ idField: 'id' });
+  }
+
   getDocumentById(id:string){
-    return this.firestore.collection('empresas').doc(id).ref.get()
+    return this.firestore.collection('trabajos').doc(id).valueChanges({ idField: 'id' })
   }
 
     // Removes duplicates from an array and returns an object
@@ -39,4 +46,12 @@ export class CardService {
     // convert results to the desired object format
     return Object.keys(result).map(function (p){return {id: p, count: result[p]};});
   }
+
+  setTrabajo(trabajo:job){
+    return this.firestore.collection('trabajos').add(trabajo)
+  }
+
+
+
+  
 }

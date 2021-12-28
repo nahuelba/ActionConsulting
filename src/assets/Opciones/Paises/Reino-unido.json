@@ -1,0 +1,3740 @@
+{
+    "pais": "Reino Unido",
+    "provincias": [
+        {
+            "provincia": "London, City of",
+            "ciudades": [
+                "London"
+            ]
+        },
+        {
+            "provincia": "Birmingham",
+            "ciudades": [
+                "Birmingham",
+                "Sutton Coldfield",
+                "Small Heath",
+                "Bournville",
+                "Northfield",
+                "Longbridge",
+                "Kings Norton",
+                "Perry Barr",
+                "Harborne",
+                "Erdington",
+                "Castle Bromwich"
+            ]
+        },
+        {
+            "provincia": "Manchester",
+            "ciudades": [
+                "Manchester",
+                "Wythenshawe",
+                "Northenden",
+                "Baguley",
+                "Moston"
+            ]
+        },
+        {
+            "provincia": "Leeds",
+            "ciudades": [
+                "Leeds",
+                "Morley",
+                "Farnley",
+                "Calverley",
+                "Pudsey",
+                "Guiseley",
+                "Yeadon",
+                "Woodlesford",
+                "Kirkstall",
+                "Rothwell",
+                "Wetherby",
+                "Garforth",
+                "Adel",
+                "Horsforth",
+                "Seacroft",
+                "Otley",
+                "Kippax",
+                "Cross Gates",
+                "Gildersome",
+                "Drighlington",
+                "Boston Spa",
+                "Harewood",
+                "Bramhope",
+                "Swillington",
+                "Collingham"
+            ]
+        },
+        {
+            "provincia": "Newcastle upon Tyne",
+            "ciudades": [
+                "Newcastle",
+                "Gosforth",
+                "Longbenton",
+                "Lemington"
+            ]
+        },
+        {
+            "provincia": "Leicester",
+            "ciudades": [
+                "Birstall",
+                "Leicester",
+                "Belgrave",
+                "Aylestone"
+            ]
+        },
+        {
+            "provincia": "Glasgow City",
+            "ciudades": [
+                "Glasgow",
+                "Rutherglen",
+                "Partick",
+                "Govan"
+            ]
+        },
+        {
+            "provincia": "Liverpool",
+            "ciudades": [
+                "Liverpool",
+                "Fazakerley",
+                "Deysbrook",
+                "West Derby",
+                "Childwall",
+                "Eastham",
+                "Dingle",
+                "Woolton",
+                "Aintree"
+            ]
+        },
+        {
+            "provincia": "Portsmouth",
+            "ciudades": [
+                "Portsmouth",
+                "Cosham",
+                "Hilsea"
+            ]
+        },
+        {
+            "provincia": "Southampton",
+            "ciudades": [
+                "Southampton"
+            ]
+        },
+        {
+            "provincia": "Nottingham",
+            "ciudades": [
+                "Nottingham",
+                "Bulwell",
+                "Clifton",
+                "Basford"
+            ]
+        },
+        {
+            "provincia": "Bristol, City of",
+            "ciudades": [
+                "Bristol",
+                "Brislington",
+                "Avonmouth"
+            ]
+        },
+        {
+            "provincia": "Sheffield",
+            "ciudades": [
+                "Sheffield",
+                "Ecclesfield",
+                "Ecclesall",
+                "Fulwood",
+                "Woodhouse",
+                "Mosbrough",
+                "Stannington",
+                "Chapeltown",
+                "Handsworth",
+                "Stocksbridge",
+                "Wadsley",
+                "Dore",
+                "Grenoside",
+                "Oughtibridge"
+            ]
+        },
+        {
+            "provincia": "Kingston upon Hull, City of",
+            "ciudades": [
+                "Kingston upon Hull",
+                "Cottingham",
+                "Sutton on Hull"
+            ]
+        },
+        {
+            "provincia": "Edinburgh, City of",
+            "ciudades": [
+                "Edinburgh",
+                "Leith",
+                "Queensferry",
+                "Cramond",
+                "Currie",
+                "Balerno",
+                "Kirkliston",
+                "Mid Calder"
+            ]
+        },
+        {
+            "provincia": "Cardiff",
+            "ciudades": [
+                "Caerdydd",
+                "Taff’s Well",
+                "Pentyrch"
+            ]
+        },
+        {
+            "provincia": "Stoke-on-Trent",
+            "ciudades": [
+                "Stoke-on-Trent",
+                "Longton",
+                "Milton",
+                "Fenton",
+                "Burslem"
+            ]
+        },
+        {
+            "provincia": "Coventry",
+            "ciudades": [
+                "Coventry",
+                "Exhall"
+            ]
+        },
+        {
+            "provincia": "Reading",
+            "ciudades": [
+                "Reading",
+                "Caversham",
+                "Tilehurst"
+            ]
+        },
+        {
+            "provincia": "Belfast",
+            "ciudades": [
+                "Belfast"
+            ]
+        },
+        {
+            "provincia": "Derby",
+            "ciudades": [
+                "Derby",
+                "Littleover",
+                "Mickleover",
+                "Mackworth",
+                "Allestree",
+                "Chaddesden",
+                "Spondon"
+            ]
+        },
+        {
+            "provincia": "Plymouth",
+            "ciudades": [
+                "Plymouth",
+                "Plympton",
+                "Plymstock",
+                "Saint Budeaux",
+                "Egg Buckland"
+            ]
+        },
+        {
+            "provincia": "Wolverhampton",
+            "ciudades": [
+                "Wolverhampton",
+                "Bilston",
+                "Wednesfield",
+                "Tettenhall",
+                "Bushbury"
+            ]
+        },
+        {
+            "provincia": "Swansea",
+            "ciudades": [
+                "Abertawe",
+                "Morriston",
+                "The Mumbles",
+                "Gowerton",
+                "Clydach",
+                "Pontardulais",
+                "Landore",
+                "Loughor",
+                "Oystermouth",
+                "Penclawdd",
+                "Bishopston"
+            ]
+        },
+        {
+            "provincia": "Milton Keynes",
+            "ciudades": [
+                "Milton Keynes",
+                "Bletchley",
+                "Shenley Brook End",
+                "Great Linford",
+                "Newport Pagnell",
+                "Shenley Church End",
+                "Wolverton",
+                "Bradwell",
+                "Stony Stratford",
+                "Olney",
+                "Broughton"
+            ]
+        },
+        {
+            "provincia": "Aberdeen City",
+            "ciudades": [
+                "Aberdeen",
+                "Bucksburn",
+                "Peterculter",
+                "Dyce",
+                "Cults",
+                "Milltimber"
+            ]
+        },
+        {
+            "provincia": "Norfolk",
+            "ciudades": [
+                "Norwich",
+                "King’s Lynn",
+                "Great Yarmouth",
+                "Thetford",
+                "East Dereham",
+                "Thorpe Saint Andrew",
+                "Wymondham",
+                "North Walsham",
+                "Costessey",
+                "Hellesdon",
+                "Downham Market",
+                "Caister-on-Sea",
+                "Cromer",
+                "Fakenham",
+                "Diss",
+                "Sheringham",
+                "Swaffham",
+                "Watton",
+                "Hethersett",
+                "Gorleston-on-Sea",
+                "Aylsham",
+                "Drayton",
+                "Harleston",
+                "Heacham",
+                "Dersingham",
+                "Long Stratton",
+                "South Wootton",
+                "Hunstanton",
+                "Horsford",
+                "Terrington Saint Clement",
+                "Brundall",
+                "Ormesby Saint Margaret",
+                "Holt",
+                "Poringland",
+                "Spixworth",
+                "Martham",
+                "Marham",
+                "Mulbarton",
+                "Blofield",
+                "Hemsby",
+                "Stalham",
+                "Little Plumstead",
+                "Hopton on Sea",
+                "Cringleford",
+                "Feltwell",
+                "Acle",
+                "Mundesley",
+                "Upwell",
+                "Lingwood",
+                "Reepham",
+                "Loddon",
+                "Mattishall",
+                "Emneth",
+                "Snettisham"
+            ]
+        },
+        {
+            "provincia": "Luton",
+            "ciudades": [
+                "Luton",
+                "Leagrave",
+                "Stopsley",
+                "Sundon"
+            ]
+        },
+        {
+            "provincia": "Islington",
+            "ciudades": [
+                "Islington",
+                "Highbury"
+            ]
+        },
+        {
+            "provincia": "Swindon",
+            "ciudades": [
+                "Swindon",
+                "Stratton Saint Margaret",
+                "Blunsdon Saint Andrew",
+                "Highworth",
+                "Wroughton",
+                "Chisledon"
+            ]
+        },
+        {
+            "provincia": "Croydon",
+            "ciudades": [
+                "Croydon",
+                "Thornton Heath",
+                "Coulsdon",
+                "Shirley",
+                "Sanderstead"
+            ]
+        },
+        {
+            "provincia": "Essex",
+            "ciudades": [
+                "Basildon",
+                "Colchester",
+                "Chelmsford",
+                "Fyfield",
+                "Clacton-on-Sea",
+                "Brentwood",
+                "Braintree",
+                "Wickford",
+                "Rayleigh",
+                "Loughton",
+                "Billericay",
+                "Witham",
+                "Pitsea",
+                "Waltham Abbey",
+                "Hadleigh",
+                "Harwich",
+                "Thundersley",
+                "Saffron Walden",
+                "Broxbourne",
+                "Great Baddow",
+                "Maldon",
+                "Chigwell",
+                "Halstead",
+                "Buckhurst Hill",
+                "Epping",
+                "Hockley",
+                "Tiptree",
+                "Great Dunmow",
+                "Rochford",
+                "Heybridge",
+                "Brightlingsea",
+                "Wivenhoe",
+                "West Mersea",
+                "Danbury",
+                "Chipping Ongar",
+                "Stansted Mountfitchet",
+                "Great Warley Street",
+                "Great Burstead",
+                "Galleywood",
+                "Lexden",
+                "Shenfield",
+                "Writtle",
+                "Earls Colne",
+                "Kelvedon",
+                "Ingatestone",
+                "Hatfield Peverel",
+                "Lawford",
+                "Saint Osyth",
+                "Southminster",
+                "Nazeing",
+                "Theydon Bois",
+                "Sible Hedingham",
+                "Broomfield",
+                "Coggeshall",
+                "Mayland",
+                "Boreham",
+                "Takeley",
+                "West Bergholt",
+                "Felsted",
+                "Great Totham",
+                "Thaxted",
+                "Sheering",
+                "Mistley",
+                "South Hanningfield",
+                "Tollesbury",
+                "Kelvedon Hatch",
+                "Marks Tey"
+            ]
+        },
+        {
+            "provincia": "Bournemouth",
+            "ciudades": [
+                "Bournemouth",
+                "Boscombe",
+                "Southbourne",
+                "Canford Cliffs"
+            ]
+        },
+        {
+            "provincia": "West Sussex",
+            "ciudades": [
+                "Worthing",
+                "Crawley",
+                "Horsham",
+                "Burgess Hill",
+                "Littlehampton",
+                "Chichester",
+                "East Grinstead",
+                "Bognor Regis",
+                "Haywards Heath",
+                "Shoreham-by-Sea",
+                "Lancing",
+                "Rustington",
+                "Southwick",
+                "Selsey",
+                "Southwater",
+                "Worth",
+                "Felpham",
+                "Broadwater",
+                "Ifield",
+                "Sompting",
+                "Bersted",
+                "Billingshurst",
+                "Goring by Sea",
+                "Hassocks",
+                "Angmering",
+                "Southbourne",
+                "Pagham",
+                "East Preston",
+                "Steyning",
+                "Lindfield",
+                "Middleton-on-Sea",
+                "Henfield",
+                "Midhurst",
+                "Pulborough",
+                "East Wittering",
+                "Ferring",
+                "Upper Beeding",
+                "Yapton",
+                "Arundel",
+                "West Chiltington",
+                "Cuckfield",
+                "Eastergate",
+                "Petworth",
+                "Fernhurst",
+                "West Grinstead",
+                "Bosham",
+                "Rudgwick",
+                "West Wittering",
+                "Tangmere"
+            ]
+        },
+        {
+            "provincia": "Suffolk",
+            "ciudades": [
+                "Ipswich",
+                "Lowestoft",
+                "Bury Saint Edmunds",
+                "Haverhill",
+                "Felixstowe",
+                "Stowmarket",
+                "Newmarket",
+                "Sudbury",
+                "Mildenhall",
+                "Beccles",
+                "Brandon",
+                "Great Cornard",
+                "Carlton Colville",
+                "Hadleigh",
+                "Woodbridge",
+                "Pakefield",
+                "Leiston",
+                "Martlesham",
+                "Bungay",
+                "Halesworth",
+                "Lakenheath",
+                "Kessingland",
+                "Elmswell",
+                "Long Melford",
+                "Worlingham",
+                "Melton",
+                "Saxmundham",
+                "Glemsford",
+                "Framlingham",
+                "Thurston",
+                "Eriswell",
+                "Rendlesham",
+                "Capel Saint Mary",
+                "East Bergholt",
+                "Reydon",
+                "Stanton"
+            ]
+        },
+        {
+            "provincia": "Redcar and Cleveland",
+            "ciudades": [
+                "Middlesbrough",
+                "Redcar",
+                "Guisborough",
+                "Skelton",
+                "Loftus",
+                "Kirkleatham",
+                "Eston",
+                "Saltburn-by-the-Sea",
+                "Brotton",
+                "Grangetown",
+                "Great Ayton"
+            ]
+        },
+        {
+            "provincia": "Sunderland",
+            "ciudades": [
+                "Sunderland",
+                "Washington",
+                "Houghton le Spring",
+                "Hetton le Hole",
+                "Southwick",
+                "Ryhope",
+                "Usworth"
+            ]
+        },
+        {
+            "provincia": "Redbridge",
+            "ciudades": [
+                "Ilford",
+                "Goodmayes",
+                "Snaresbrook",
+                "Wanstead"
+            ]
+        },
+        {
+            "provincia": "Warrington",
+            "ciudades": [
+                "Warrington",
+                "Great Sankey",
+                "Culcheth",
+                "Burtonwood",
+                "Appleton",
+                "Latchford",
+                "Winwick",
+                "Croft"
+            ]
+        },
+        {
+            "provincia": "Slough",
+            "ciudades": [
+                "Slough",
+                "Colnbrook"
+            ]
+        },
+        {
+            "provincia": "Kirklees",
+            "ciudades": [
+                "Huddersfield",
+                "Dewsbury",
+                "Batley",
+                "Mirfield",
+                "Liversedge",
+                "Almondbury",
+                "Golcar",
+                "Heckmondwike",
+                "Cleckheaton",
+                "Denby Dale",
+                "Birstall",
+                "Meltham",
+                "Thornhill",
+                "Honley",
+                "Holmfirth",
+                "Skelmanthorpe",
+                "Kirkburton",
+                "Linthwaite",
+                "Marsden"
+            ]
+        },
+        {
+            "provincia": "Oxfordshire",
+            "ciudades": [
+                "Oxford",
+                "Banbury",
+                "Abingdon",
+                "Bicester",
+                "Witney",
+                "Didcot",
+                "Cowley",
+                "Carterton",
+                "Kidlington",
+                "Henley on Thames",
+                "Wallingford",
+                "Thame",
+                "Wantage",
+                "Grove",
+                "Faringdon",
+                "Chipping Norton",
+                "Chinnor",
+                "Cumnor",
+                "Littlemore",
+                "Benson",
+                "Eynsham",
+                "North Hinksey",
+                "Wheatley",
+                "Cholsey",
+                "Marston",
+                "Bloxham",
+                "Woodstock",
+                "Charlbury",
+                "Chalgrove",
+                "Adderbury",
+                "Radley",
+                "Watlington",
+                "Wootton",
+                "Bampton",
+                "Yarnton"
+            ]
+        },
+        {
+            "provincia": "York",
+            "ciudades": [
+                "York",
+                "Acomb",
+                "Clifton",
+                "Huntington",
+                "Haxby",
+                "Strensall",
+                "Heslington",
+                "Copmanthorpe",
+                "Wigginton",
+                "Bishopthorpe",
+                "Fulford",
+                "New Earswick"
+            ]
+        },
+        {
+            "provincia": "Poole",
+            "ciudades": [
+                "Poole",
+                "Hamworthy",
+                "Parkstone",
+                "Broadstone"
+            ]
+        },
+        {
+            "provincia": "Harrow",
+            "ciudades": [
+                "Harrow",
+                "Pinner",
+                "Stanmore",
+                "Harrow on the Hill",
+                "Harrow Weald",
+                "Hatch End"
+            ]
+        },
+        {
+            "provincia": "Dundee City",
+            "ciudades": [
+                "Dundee",
+                "Broughty Ferry"
+            ]
+        },
+        {
+            "provincia": "Hertfordshire",
+            "ciudades": [
+                "Saint Albans",
+                "Hemel Hempstead",
+                "Watford",
+                "Welwyn Garden City",
+                "Cheshunt",
+                "Bishops Stortford",
+                "Hatfield",
+                "Hitchin",
+                "Letchworth",
+                "Borehamwood",
+                "Harpenden",
+                "Hertford",
+                "Bushey",
+                "Rickmansworth",
+                "Northwood",
+                "Potters Bar",
+                "Hoddesdon",
+                "Abbots Langley",
+                "Ware",
+                "Berkhampstead",
+                "Royston",
+                "Croxley Green",
+                "Tring",
+                "Sandridge",
+                "Chorleywood",
+                "Aldenham",
+                "Baldock",
+                "London Colney",
+                "Bovingdon",
+                "Sawbridgeworth",
+                "Welwyn",
+                "Goffs Oak",
+                "Radlett",
+                "Waltham Cross",
+                "Park Street",
+                "Wheathampstead",
+                "Stotfold",
+                "Colney Heath",
+                "Leavesden Green",
+                "Redbourn",
+                "Elstree",
+                "Kings Langley",
+                "Buntingford",
+                "Knebworth",
+                "Shenley",
+                "Cuffley",
+                "Standon",
+                "Codicote",
+                "Markyate",
+                "Much Hadham",
+                "Northchurch"
+            ]
+        },
+        {
+            "provincia": "Telford and Wrekin",
+            "ciudades": [
+                "Telford",
+                "Wellington",
+                "Madeley",
+                "Newport",
+                "Oakengates",
+                "Muxton",
+                "Horsehay",
+                "Wrockwardine",
+                "Ironbridge"
+            ]
+        },
+        {
+            "provincia": "Blackpool",
+            "ciudades": [
+                "Blackpool",
+                "Bispham"
+            ]
+        },
+        {
+            "provincia": "Brighton and Hove",
+            "ciudades": [
+                "Brighton",
+                "Hove",
+                "Patcham",
+                "Rottingdean"
+            ]
+        },
+        {
+            "provincia": "Trafford",
+            "ciudades": [
+                "Sale",
+                "Altrincham",
+                "Stretford",
+                "Urmston",
+                "Davyhulme",
+                "Timperley",
+                "Flixton",
+                "Bowdon",
+                "Partington"
+            ]
+        },
+        {
+            "provincia": "Enfield",
+            "ciudades": [
+                "Enfield",
+                "Edmonton",
+                "Enfield Lock",
+                "Palmers Green",
+                "Southgate"
+            ]
+        },
+        {
+            "provincia": "Haringey",
+            "ciudades": [
+                "Tottenham",
+                "Wood Green",
+                "Hornsey"
+            ]
+        },
+        {
+            "provincia": "Bolton",
+            "ciudades": [
+                "Bolton",
+                "Farnworth",
+                "Westhoughton",
+                "Horwich",
+                "Kearsley",
+                "Little Lever",
+                "Blackrod"
+            ]
+        },
+        {
+            "provincia": "Newport",
+            "ciudades": [
+                "Newport",
+                "Rogerstone",
+                "Caerleon",
+                "Marshfield",
+                "Llanwern"
+            ]
+        },
+        {
+            "provincia": "Buckinghamshire",
+            "ciudades": [
+                "High Wycombe",
+                "Aylesbury",
+                "Chesham",
+                "Amersham",
+                "Marlow",
+                "Buckingham",
+                "Chalfont Saint Peter",
+                "Beaconsfield",
+                "Iver",
+                "Wooburn",
+                "Great Missenden",
+                "Hughenden",
+                "Princes Risborough",
+                "Wendover",
+                "Denham",
+                "Farnham Royal",
+                "Chalfont Saint Giles",
+                "Stoke Mandeville",
+                "Bourne End",
+                "Stokenchurch",
+                "Stoke Poges",
+                "Haddenham",
+                "Loudwater",
+                "Penn",
+                "Aston Clinton",
+                "Weston Turville",
+                "Pitstone",
+                "Wing",
+                "Stone"
+            ]
+        },
+        {
+            "provincia": "Devon",
+            "ciudades": [
+                "Exeter",
+                "Paignton",
+                "Exmouth",
+                "Newton Abbot",
+                "Barnstaple",
+                "Tiverton",
+                "Bideford",
+                "Brixham",
+                "Dawlish",
+                "Teignmouth",
+                "Sidmouth",
+                "Ivybridge",
+                "Honiton",
+                "Ilfracombe",
+                "Tavistock",
+                "Kingsteignton",
+                "Cullompton",
+                "Seaton",
+                "Totnes",
+                "Crediton",
+                "Northam",
+                "Braunton",
+                "Budleigh Salterton",
+                "Pinhoe",
+                "Calstock",
+                "Kingsbridge",
+                "Okehampton",
+                "Axminster",
+                "South Molton",
+                "Dartmouth",
+                "Ottery Saint Mary",
+                "Bovey Tracey",
+                "Fremington",
+                "Ashburton",
+                "Chudleigh",
+                "Topsham",
+                "Yelverton",
+                "Buckfastleigh",
+                "Kenton",
+                "South Brent",
+                "Appledore",
+                "Wembury",
+                "Combe Martin",
+                "Holsworthy"
+            ]
+        },
+        {
+            "provincia": "Solihull",
+            "ciudades": [
+                "Solihull",
+                "Sheldon",
+                "Bickenhill",
+                "Olton",
+                "Dorridge",
+                "Knowle",
+                "Marston Green",
+                "Berkswell",
+                "Meriden"
+            ]
+        },
+        {
+            "provincia": "Havering",
+            "ciudades": [
+                "Romford",
+                "Hornchurch",
+                "Upminster"
+            ]
+        },
+        {
+            "provincia": "Lancashire",
+            "ciudades": [
+                "Preston",
+                "Burnley",
+                "Morecambe",
+                "Lancaster",
+                "Skelmersdale",
+                "Leyland",
+                "Accrington",
+                "Chorley",
+                "Nelson",
+                "Ormskirk",
+                "Fleetwood",
+                "Penwortham",
+                "Rawtenstall",
+                "Appley Bridge",
+                "Poulton le Fylde",
+                "Colne",
+                "Heysham",
+                "Haslingden",
+                "Clitheroe",
+                "Bacup",
+                "Bamber Bridge",
+                "Oswaldtwistle",
+                "Great Harwood",
+                "Barnoldswick",
+                "Padiham",
+                "Euxton",
+                "Burscough",
+                "Clayton le Moors",
+                "Aughton",
+                "Brierfield",
+                "Coppull",
+                "Longridge",
+                "Whitworth",
+                "Upholland",
+                "Kirkham",
+                "Torrisholme",
+                "Farington",
+                "Rishton",
+                "Barrowford",
+                "Freckleton",
+                "Adlington",
+                "Lea Town",
+                "Helmshore",
+                "Preesall",
+                "Tarleton",
+                "Carnforth",
+                "Longton",
+                "Sollom",
+                "Church",
+                "Huncoat",
+                "Garstang",
+                "Eccleston",
+                "Bolton le Sands",
+                "Bare",
+                "Baxenden",
+                "Hesketh Bank",
+                "Walton le Dale",
+                "Banks",
+                "Whalley",
+                "Shawforth",
+                "Scarisbrick",
+                "Withnell",
+                "Croston",
+                "Hambleton",
+                "Grimsargh",
+                "Wilpshire",
+                "Parbold"
+            ]
+        },
+        {
+            "provincia": "Gateshead",
+            "ciudades": [
+                "Gateshead",
+                "Whickham",
+                "Blaydon",
+                "Newburn",
+                "Felling",
+                "Birtley",
+                "Rowlands Gill",
+                "Sheriff Hill",
+                "Lamesley",
+                "Swalwell"
+            ]
+        },
+        {
+            "provincia": "Blackburn with Darwen",
+            "ciudades": [
+                "Blackburn",
+                "Darwen"
+            ]
+        },
+        {
+            "provincia": "Gloucestershire",
+            "ciudades": [
+                "Cheltenham",
+                "Stroud",
+                "Tewkesbury",
+                "Cirencester",
+                "Quedgeley",
+                "Churchdown",
+                "Bishops Cleeve",
+                "Charlton Kings",
+                "Hucclecote",
+                "Lydney",
+                "Cinderford",
+                "Coleford",
+                "Cam",
+                "Stonehouse",
+                "Brockworth",
+                "Dursley",
+                "Chalford",
+                "Nailsworth",
+                "Wotton-under-Edge",
+                "Tidenham",
+                "Tetbury",
+                "Newent",
+                "Winchcomb",
+                "Hardwicke",
+                "Moreton in Marsh",
+                "South Cerney",
+                "Bourton on the Water",
+                "Fairford",
+                "Bream",
+                "Drybrook",
+                "Painswick",
+                "Minchinhampton",
+                "Lechlade",
+                "Mitcheldean"
+            ]
+        },
+        {
+            "provincia": "Hampshire",
+            "ciudades": [
+                "Basingstoke",
+                "Gosport",
+                "Farnborough",
+                "Waterlooville",
+                "Havant",
+                "Winchester",
+                "Fareham",
+                "Andover",
+                "Fleet",
+                "Aldershot",
+                "New Milton",
+                "Eastleigh",
+                "Chandlers Ford",
+                "Sandhurst",
+                "Hythe",
+                "Romsey",
+                "Alton",
+                "Portchester",
+                "Lymington",
+                "Petersfield",
+                "Ringwood",
+                "Horndean",
+                "Tadley",
+                "Bishopstoke",
+                "Emsworth",
+                "Liphook",
+                "Hook",
+                "Titchfield",
+                "Basing",
+                "Whitchurch",
+                "Warsash",
+                "Bishops Waltham",
+                "Cove",
+                "Liss",
+                "Bursledon",
+                "Fordingbridge",
+                "Bramley",
+                "Hordle",
+                "Headley",
+                "Marchwood",
+                "Barton on Sea",
+                "New Alresford",
+                "Nursling",
+                "Botley",
+                "Oakley",
+                "Wickham",
+                "Four Marks",
+                "Milford on Sea",
+                "Clanfield",
+                "Ludgershall",
+                "Odiham",
+                "Bransgore",
+                "Overton",
+                "Kings Worthy",
+                "Shedfield",
+                "Brockenhurst",
+                "Sway",
+                "West Wellow",
+                "Kingsclere",
+                "Lyndhurst",
+                "East Woodhay",
+                "Swanmore",
+                "Rowlands Castle",
+                "Sherborne Saint John"
+            ]
+        },
+        {
+            "provincia": "Kent",
+            "ciudades": [
+                "Maidstone",
+                "Ashford",
+                "Gravesend",
+                "Sittingbourne",
+                "Margate",
+                "Royal Tunbridge Wells",
+                "Canterbury",
+                "Folkestone",
+                "Ramsgate",
+                "Tonbridge",
+                "Herne Bay",
+                "Whitstable",
+                "Dover",
+                "Deal",
+                "Sevenoaks",
+                "Northfleet",
+                "Broadstairs",
+                "Faversham",
+                "Minster",
+                "Hythe",
+                "Cliftonville",
+                "Sheerness",
+                "Kingsnorth",
+                "Crayford",
+                "Southborough",
+                "Aylesford",
+                "Snodland",
+                "Birchington",
+                "Boxley",
+                "Paddock Wood",
+                "Walmer",
+                "Bearsted",
+                "Hawkinge",
+                "Seasalter",
+                "Edenbridge",
+                "Willesborough",
+                "Tenterden",
+                "Greenhill",
+                "Herne",
+                "Wilmington",
+                "Allington",
+                "Saint Peters",
+                "Westgate on Sea",
+                "New Romney",
+                "Sturry",
+                "Great Chart",
+                "Meopham",
+                "Cranbrook",
+                "Lydd",
+                "Swanscombe",
+                "Pembury",
+                "Stonewood",
+                "Staplehurst",
+                "Blean",
+                "Hartley",
+                "Murston",
+                "Sandwich",
+                "Speldhurst",
+                "Hildenborough",
+                "Longfield",
+                "Hawkhurst",
+                "Darenth",
+                "Garlinge",
+                "Milton Regis",
+                "Greenhithe",
+                "Sandgate",
+                "Borough Green",
+                "Westerham",
+                "Chartham",
+                "Kemsing",
+                "Hadlow",
+                "Higham",
+                "River",
+                "Dymchurch",
+                "Marden",
+                "Otford",
+                "Queenborough",
+                "Lenham",
+                "Boughton Monchelsea",
+                "East Peckham",
+                "Headcorn",
+                "Chestfield",
+                "Goudhurst",
+                "Iwade",
+                "Eastchurch",
+                "Teynham",
+                "Halling",
+                "Charing",
+                "Lyminge",
+                "Brenchley",
+                "Harbledown",
+                "Eythorne",
+                "West Malling",
+                "Biddenden",
+                "Newington",
+                "Saint Margaret’s at Cliffe"
+            ]
+        },
+        {
+            "provincia": "Doncaster",
+            "ciudades": [
+                "Doncaster",
+                "Hatfield",
+                "Adwick le Street",
+                "Mexborough",
+                "Armthorpe",
+                "Conisbrough",
+                "Rossington",
+                "Harlington",
+                "Stainforth",
+                "Askern",
+                "Tickhill",
+                "Norton",
+                "Carcroft",
+                "Skellow",
+                "Warmsworth",
+                "Auckley",
+                "Brodsworth",
+                "Cantley"
+            ]
+        },
+        {
+            "provincia": "Rotherham",
+            "ciudades": [
+                "Rotherham",
+                "Rawmarsh",
+                "Maltby",
+                "Swinton",
+                "Swallownest",
+                "Wath upon Dearne",
+                "Dinnington",
+                "Bramley",
+                "Wickersley",
+                "Whiston",
+                "Thrybergh",
+                "Treeton",
+                "West Melton",
+                "Kilnhurst",
+                "Elsecar"
+            ]
+        },
+        {
+            "provincia": "Waltham Forest",
+            "ciudades": [
+                "Walthamstow",
+                "Chingford",
+                "Leyton"
+            ]
+        },
+        {
+            "provincia": "Rochdale",
+            "ciudades": [
+                "Rochdale",
+                "Middleton",
+                "Heywood",
+                "Milnrow",
+                "Castleton",
+                "Littleborough",
+                "Wardle"
+            ]
+        },
+        {
+            "provincia": "Bedford",
+            "ciudades": [
+                "Bedford",
+                "Kempston",
+                "Bromham",
+                "Wootton",
+                "Clapham",
+                "Wilstead",
+                "Elstow",
+                "Biddenham"
+            ]
+        },
+        {
+            "provincia": "Nottinghamshire",
+            "ciudades": [
+                "Mansfield",
+                "Sutton in Ashfield",
+                "West Bridgford",
+                "Worksop",
+                "Arnold",
+                "Beeston",
+                "East Retford",
+                "Kirkby in Ashfield",
+                "Eastwood",
+                "Stapleford",
+                "Chilwell",
+                "Selston",
+                "Warsop",
+                "Ollerton",
+                "Balderton",
+                "Bingham",
+                "Sandiacre",
+                "Radcliffe on Trent",
+                "Harworth",
+                "Rainworth",
+                "Hucknall under Huthwaite",
+                "Southwell",
+                "Bramcote",
+                "Ruddington",
+                "Cotgrave",
+                "Calverton",
+                "Carlton",
+                "Gedling",
+                "Kimberley",
+                "East Leake",
+                "Edwinstowe",
+                "Blidworth",
+                "Wilford",
+                "Edwalton",
+                "Bawtry",
+                "Clipstone",
+                "Burton Joyce",
+                "Bilsthorpe",
+                "Lowdham",
+                "North Collingham",
+                "Farnsfield",
+                "Tuxford"
+            ]
+        },
+        {
+            "provincia": "Barking and Dagenham",
+            "ciudades": [
+                "Dagenham",
+                "Barking"
+            ]
+        },
+        {
+            "provincia": "Stockport",
+            "ciudades": [
+                "Stockport",
+                "Reddish",
+                "Cheadle Hulme",
+                "Marple",
+                "Bramhall",
+                "Hazel Grove",
+                "Bredbury",
+                "Cheadle",
+                "Disley"
+            ]
+        },
+        {
+            "provincia": "Darlington",
+            "ciudades": [
+                "Darlington"
+            ]
+        },
+        {
+            "provincia": "Medway",
+            "ciudades": [
+                "Gillingham",
+                "Chatham",
+                "Rochester",
+                "Strood",
+                "Rainham",
+                "Cuxton"
+            ]
+        },
+        {
+            "provincia": "Salford",
+            "ciudades": [
+                "Salford",
+                "Eccles",
+                "Walkden",
+                "Swinton",
+                "Irlam",
+                "Little Hulton",
+                "Pendlebury",
+                "Barton upon Irwell",
+                "Worsley"
+            ]
+        },
+        {
+            "provincia": "East Sussex",
+            "ciudades": [
+                "Eastbourne",
+                "Hastings",
+                "Bexhill",
+                "Seaford",
+                "Crowborough",
+                "Hailsham",
+                "Lewes",
+                "Uckfield",
+                "Newhaven",
+                "Rye",
+                "Polegate",
+                "Battle",
+                "Hollington",
+                "Sidley",
+                "Ore",
+                "Forest Row",
+                "Wadhurst",
+                "Ringmer",
+                "Ticehurst",
+                "Maresfield",
+                "Buxted",
+                "Rotherfield",
+                "Pevensey",
+                "Chailey",
+                "Icklesham",
+                "Burwash",
+                "Withyham",
+                "Horam",
+                "Robertsbridge",
+                "Herstmonceux",
+                "Westfield"
+            ]
+        },
+        {
+            "provincia": "Wigan",
+            "ciudades": [
+                "Wigan",
+                "Leigh",
+                "Hindley",
+                "Golborne",
+                "Ashton in Makerfield",
+                "Atherton",
+                "Tyldesley",
+                "Ince-in-Makerfield",
+                "Lowton",
+                "Pemberton",
+                "Standish",
+                "Bryn",
+                "Astley",
+                "Shevington",
+                "Abram"
+            ]
+        },
+        {
+            "provincia": "Hounslow",
+            "ciudades": [
+                "Hounslow",
+                "Feltham"
+            ]
+        },
+        {
+            "provincia": "Brent",
+            "ciudades": [
+                "Wembley",
+                "Kenton",
+                "Dollis Hill",
+                "Wealdstone"
+            ]
+        },
+        {
+            "provincia": "St. Helens",
+            "ciudades": [
+                "Saint Helens",
+                "Newton in Makerfield",
+                "Thatto Heath",
+                "Haydock",
+                "Rainhill",
+                "Earlestown",
+                "Eccleston",
+                "Rainford",
+                "Billinge",
+                "Garswood"
+            ]
+        },
+        {
+            "provincia": "Worcestershire",
+            "ciudades": [
+                "Worcester",
+                "Redditch",
+                "Kidderminster",
+                "Bromsgrove",
+                "Droitwich",
+                "Evesham",
+                "Torton",
+                "Bewdley",
+                "Pershore",
+                "Alvechurch",
+                "Malvern Link",
+                "Stoke Prior",
+                "Hagley",
+                "Tenbury",
+                "Malvern Wells",
+                "Tardebigge",
+                "Upton upon Severn",
+                "Lickey End",
+                "Badsey",
+                "Kempsey",
+                "Clent",
+                "Hartlebury",
+                "Bredon",
+                "Broadway"
+            ]
+        },
+        {
+            "provincia": "Wakefield",
+            "ciudades": [
+                "Wakefield",
+                "Castleford",
+                "Pontefract",
+                "Ossett",
+                "Normanton",
+                "Hemsworth",
+                "Stanley",
+                "Featherstone",
+                "Knottingley",
+                "Horbury",
+                "Crigglestone",
+                "High Ackworth",
+                "South Elmsall",
+                "Altofts",
+                "Crofton",
+                "North Elmsall",
+                "Upton",
+                "Ryhill"
+            ]
+        },
+        {
+            "provincia": "Lincolnshire",
+            "ciudades": [
+                "Lincoln",
+                "Grantham",
+                "Boston",
+                "Spalding",
+                "Gainsborough",
+                "Stamford",
+                "Skegness",
+                "Sleaford",
+                "Louth",
+                "Bourne",
+                "North Hykeham",
+                "Mablethorpe",
+                "Holbeach",
+                "Boultham",
+                "Quarrington",
+                "Deeping Saint James",
+                "Fishtoft",
+                "Horncastle",
+                "Waddington",
+                "Market Deeping",
+                "Kirton",
+                "Ruskington",
+                "Pinchbeck",
+                "Long Sutton",
+                "Sutton Bridge",
+                "Welton",
+                "Crowland",
+                "Branston",
+                "Woodhall Spa",
+                "Saxilby",
+                "Market Rasen",
+                "Coningsby",
+                "Wyberton",
+                "Holton le Clay",
+                "Metheringham",
+                "Whaplode",
+                "Moulton",
+                "Moulton Chapel",
+                "Skellingthorpe",
+                "Alford",
+                "Nettleham",
+                "Chapel Saint Leonards",
+                "Washingborough",
+                "Heckington",
+                "Leverington",
+                "Scotter",
+                "Spilsby",
+                "Gosberton",
+                "Heighington",
+                "Tattershall",
+                "Cranwell",
+                "Donington",
+                "Caistor"
+            ]
+        },
+        {
+            "provincia": "Oldham",
+            "ciudades": [
+                "Oldham",
+                "Royton",
+                "Failsworth",
+                "Hollinwood",
+                "Lees"
+            ]
+        },
+        {
+            "provincia": "Northamptonshire",
+            "ciudades": [
+                "Kettering",
+                "Corby",
+                "Wellingborough",
+                "Rushden",
+                "Daventry",
+                "Brackley",
+                "Wootton",
+                "Desborough",
+                "Towcester",
+                "Irthlingborough",
+                "Raunds",
+                "Great Billing",
+                "Rothwell",
+                "Burton Latimer",
+                "Higham Ferrers",
+                "Thrapston",
+                "Oundle",
+                "Earls Barton",
+                "Brixworth",
+                "Irchester",
+                "Kingsthorpe",
+                "Finedon",
+                "Long Buckby",
+                "Deanshanger",
+                "Wollaston",
+                "Moulton",
+                "Bugbrooke",
+                "Weedon Beck"
+            ]
+        },
+        {
+            "provincia": "Hartlepool",
+            "ciudades": [
+                "Hartlepool",
+                "Seaton Carew"
+            ]
+        },
+        {
+            "provincia": "Barnsley",
+            "ciudades": [
+                "Barnsley",
+                "Penistone",
+                "Darton",
+                "Wombwell",
+                "Hoyland Nether",
+                "Cudworth",
+                "Royston",
+                "Darfield",
+                "Dodworth",
+                "Worsborough",
+                "Bolton upon Dearne",
+                "Silkstone"
+            ]
+        },
+        {
+            "provincia": "Sefton",
+            "ciudades": [
+                "Southport",
+                "Bootle",
+                "Crosby",
+                "Formby",
+                "Litherland",
+                "Maghull",
+                "Ainsdale",
+                "Blundellsands",
+                "Lydiate",
+                "Melling"
+            ]
+        },
+        {
+            "provincia": "Bath and North East Somerset",
+            "ciudades": [
+                "Bath",
+                "Keynsham",
+                "Midsomer Norton",
+                "Whitchurch",
+                "Peasedown Saint John",
+                "Radstock",
+                "Paulton",
+                "Saltford",
+                "Batheaston",
+                "Timsbury"
+            ]
+        },
+        {
+            "provincia": "Wirral",
+            "ciudades": [
+                "Birkenhead",
+                "Wallasey",
+                "Moreton",
+                "Upton",
+                "Bebington",
+                "Seacombe",
+                "Bidston",
+                "New Brighton",
+                "Bromborough",
+                "Rock Ferry",
+                "Heswall",
+                "Woodchurch",
+                "Hoylake",
+                "Great Meols"
+            ]
+        },
+        {
+            "provincia": "North East Lincolnshire",
+            "ciudades": [
+                "Grimsby",
+                "Cleethorpes",
+                "Scartho",
+                "Immingham",
+                "Waltham",
+                "Humberston",
+                "Laceby",
+                "Healing"
+            ]
+        },
+        {
+            "provincia": "Calderdale",
+            "ciudades": [
+                "Halifax",
+                "Brighouse",
+                "Queensbury",
+                "Todmorden",
+                "Ovenden",
+                "Sowerby Bridge",
+                "Elland",
+                "Greetland",
+                "Stainland",
+                "Hipperholme",
+                "Ripponden",
+                "Mytholmroyd",
+                "Luddenden Foot"
+            ]
+        },
+        {
+            "provincia": "Bromley",
+            "ciudades": [
+                "Bromley",
+                "Beckenham",
+                "Hayes",
+                "Chislehurst",
+                "Farnborough",
+                "Chelsfield",
+                "West Wickham",
+                "Bickley"
+            ]
+        },
+        {
+            "provincia": "Hammersmith and Fulham",
+            "ciudades": [
+                "Fulham"
+            ]
+        },
+        {
+            "provincia": "Warwickshire",
+            "ciudades": [
+                "Nuneaton",
+                "Rugby",
+                "Royal Leamington Spa",
+                "Warwick",
+                "Bedworth",
+                "Stratford-upon-Avon",
+                "Kenilworth",
+                "Whitnash",
+                "Atherstone",
+                "Polesworth",
+                "Kingsbury",
+                "Southam",
+                "Coleshill",
+                "Alcester",
+                "Bilton",
+                "Bulkington",
+                "Studley",
+                "Wellesbourne Hastings",
+                "Bidford-on-Avon",
+                "Shipston on Stour",
+                "Stoneleigh",
+                "Water Orton",
+                "Long Lawford",
+                "Dunchurch",
+                "Wolston"
+            ]
+        },
+        {
+            "provincia": "Derry and Strabane",
+            "ciudades": [
+                "Derry",
+                "New Buildings"
+            ]
+        },
+        {
+            "provincia": "Ealing",
+            "ciudades": [
+                "Ealing",
+                "Southall",
+                "Acton",
+                "Greenford",
+                "Northolt",
+                "Hanwell",
+                "Perivale",
+                "Sudbury"
+            ]
+        },
+        {
+            "provincia": "Stockton-on-Tees",
+            "ciudades": [
+                "Stockton-on-Tees",
+                "Billingham",
+                "Thornaby on Tees",
+                "Yarm"
+            ]
+        },
+        {
+            "provincia": "Greenwich",
+            "ciudades": [
+                "Woolwich",
+                "Eltham",
+                "Plumstead",
+                "Kidbrooke"
+            ]
+        },
+        {
+            "provincia": "Bracknell Forest",
+            "ciudades": [
+                "Bracknell",
+                "Winkfield",
+                "Warfield",
+                "Binfield",
+                "Crowthorne"
+            ]
+        },
+        {
+            "provincia": "Hillingdon",
+            "ciudades": [
+                "Hayes",
+                "Uxbridge",
+                "Ruislip",
+                "West Drayton",
+                "Yiewsley",
+                "Ickenham",
+                "Cowley",
+                "Harefield"
+            ]
+        },
+        {
+            "provincia": "North Lincolnshire",
+            "ciudades": [
+                "Scunthorpe",
+                "Barton upon Humber",
+                "Bottesford",
+                "Broughton",
+                "Brigg",
+                "Winterton",
+                "Crowle",
+                "Haxey",
+                "Epworth",
+                "Messingham",
+                "Barrow upon Humber",
+                "Belton",
+                "Burton upon Stather",
+                "Kirton in Lindsey"
+            ]
+        },
+        {
+            "provincia": "Cheshire West and Chester",
+            "ciudades": [
+                "Chester",
+                "Ellesmere Port",
+                "Winsford",
+                "Northwich",
+                "Neston",
+                "Frodsham",
+                "Weaverham",
+                "Hartford",
+                "Cuddington",
+                "Helsby",
+                "Willaston",
+                "Parkgate",
+                "Elton",
+                "Saughall",
+                "Sealand",
+                "Davenham",
+                "Tarvin",
+                "Tarporley",
+                "Kelsall"
+            ]
+        },
+        {
+            "provincia": "Dudley",
+            "ciudades": [
+                "Dudley",
+                "Stourbridge",
+                "Halesowen",
+                "Tipton",
+                "Netherton",
+                "Brierley Hill",
+                "Amblecote",
+                "Wollaston",
+                "Gornalwood",
+                "Wordsley",
+                "Coseley",
+                "Lye",
+                "Sedgley"
+            ]
+        },
+        {
+            "provincia": "Bury",
+            "ciudades": [
+                "Bury",
+                "Prestwich",
+                "Radcliffe",
+                "Whitefield",
+                "Ramsbottom",
+                "Tottington"
+            ]
+        },
+        {
+            "provincia": "Lambeth",
+            "ciudades": [
+                "Brixton",
+                "Streatham",
+                "Lambeth"
+            ]
+        },
+        {
+            "provincia": "Sandwell",
+            "ciudades": [
+                "West Bromwich",
+                "Rowley Regis",
+                "Oldbury",
+                "Smethwick"
+            ]
+        },
+        {
+            "provincia": "Renfrewshire",
+            "ciudades": [
+                "Paisley",
+                "Renfrew",
+                "Johnstone",
+                "Houston",
+                "Elderslie",
+                "Bowling",
+                "Bishopton",
+                "Bridge of Weir",
+                "Kilbarchan",
+                "Lochwinnoch"
+            ]
+        },
+        {
+            "provincia": "Surrey",
+            "ciudades": [
+                "Guildford",
+                "Woking",
+                "Farnham",
+                "Camberley",
+                "Ewell",
+                "Epsom",
+                "Ashford",
+                "Walton upon Thames",
+                "Horley",
+                "Reigate",
+                "Godalming",
+                "Caterham",
+                "Molesey",
+                "Staines-upon-Thames",
+                "Redhill",
+                "Sunbury",
+                "Haslemere",
+                "Windlesham",
+                "Banstead",
+                "Chertsey",
+                "Addlestone",
+                "Weybridge",
+                "Ashtead",
+                "Hersham",
+                "Leatherhead",
+                "Oxted",
+                "Stanwell",
+                "Cranleigh",
+                "Dorking",
+                "Englefield Green",
+                "Shepperton",
+                "Cobham",
+                "Tadworth",
+                "Horsell",
+                "Worplesdon",
+                "Witley",
+                "Merstham",
+                "Warlingham",
+                "Merrow",
+                "Byfleet",
+                "Chobham",
+                "Claygate",
+                "Kingswood",
+                "Esher",
+                "Downside",
+                "Egham",
+                "Long Ditton",
+                "Thames Ditton",
+                "Frimley",
+                "Godstone",
+                "Ash Vale",
+                "West Byfleet",
+                "Great Bookham",
+                "Bagshot",
+                "Thorpe",
+                "Earlswood",
+                "Pyrford",
+                "Oxshott",
+                "Laleham",
+                "Mytchett",
+                "Lingfield",
+                "Burstow",
+                "East Horsley",
+                "Send",
+                "Milford",
+                "Shalford",
+                "Bisley",
+                "Whyteleafe",
+                "Hindhead",
+                "Capel",
+                "Pirbright",
+                "Limpsfield",
+                "Bramley",
+                "Wonersh",
+                "Chipstead",
+                "Wrecclesham",
+                "Normandy",
+                "Bletchingley",
+                "Chiddingfold",
+                "Bookham",
+                "Ottershaw",
+                "West Horsley",
+                "Effingham",
+                "Nutfield",
+                "Brookwood",
+                "Elstead",
+                "Lower Kingswood"
+            ]
+        },
+        {
+            "provincia": "Barnet",
+            "ciudades": [
+                "Edgware",
+                "Finchley",
+                "Hendon",
+                "Barnet",
+                "Mill Hill",
+                "Friern Barnet",
+                "East Barnet",
+                "East Finchley",
+                "Totteridge"
+            ]
+        },
+        {
+            "provincia": "Newham",
+            "ciudades": [
+                "East Ham",
+                "Stratford",
+                "West Ham"
+            ]
+        },
+        {
+            "provincia": "North Somerset",
+            "ciudades": [
+                "Weston-super-Mare",
+                "Portishead",
+                "Clevedon",
+                "Nailsea",
+                "Felton",
+                "Yatton",
+                "Long Ashton",
+                "Easton-in-Gordano",
+                "Congresbury",
+                "Banwell",
+                "Locking",
+                "Wrington",
+                "Hutton"
+            ]
+        },
+        {
+            "provincia": "South Lanarkshire",
+            "ciudades": [
+                "East Kilbride",
+                "Hamilton",
+                "Cambuslang",
+                "High Blantyre",
+                "Larkhall",
+                "Carluke",
+                "Lanark",
+                "Stonehouse",
+                "Strathaven",
+                "Uddingston",
+                "Bothwell",
+                "Lesmahagow",
+                "Law"
+            ]
+        },
+        {
+            "provincia": "South Tyneside",
+            "ciudades": [
+                "South Shields",
+                "Jarrow",
+                "Hebburn",
+                "West Boldon",
+                "Harton"
+            ]
+        },
+        {
+            "provincia": "Cumbria",
+            "ciudades": [
+                "Carlisle",
+                "Barrow in Furness",
+                "Kendal",
+                "Workington",
+                "Whitehaven",
+                "Penrith",
+                "Ulverston",
+                "Maryport",
+                "Cockermouth",
+                "Windermere",
+                "Egremont",
+                "Dalton in Furness",
+                "Millom",
+                "Cleator Moor",
+                "Wigton",
+                "Keswick",
+                "Roose",
+                "Brampton",
+                "Wetheral",
+                "Bowness-on-Windermere",
+                "Frizington",
+                "Harrington",
+                "Longtown",
+                "Silloth",
+                "Aspatria",
+                "Sedbergh",
+                "Ambleside",
+                "Dalston"
+            ]
+        },
+        {
+            "provincia": "Staffordshire",
+            "ciudades": [
+                "Newcastle under Lyme",
+                "Burton upon Trent",
+                "Stafford",
+                "Lichfield",
+                "Cannock",
+                "Burntwood",
+                "Kingswinford",
+                "Rugeley",
+                "Kidsgrove",
+                "Leek",
+                "Biddulph",
+                "Hednesford",
+                "Stone",
+                "Wombourn",
+                "Uttoxeter",
+                "Cheadle",
+                "Trentham",
+                "Market Drayton",
+                "Great Wyrley",
+                "Wilnecote",
+                "Penkridge",
+                "Audley",
+                "Glascote",
+                "Codsall",
+                "Norton Canes",
+                "Shenstone",
+                "Brewood",
+                "Kinvere",
+                "Branston",
+                "Cheddleton",
+                "Blythebridge",
+                "Silverdale",
+                "Gnosall",
+                "Eccleshall",
+                "Huntington",
+                "Colwich",
+                "Swynnerton",
+                "Fazeley",
+                "Barton under Needwood",
+                "Madeley",
+                "Keele",
+                "Chasetown",
+                "Endon",
+                "Tutbury",
+                "Barlaston",
+                "Alrewas",
+                "Whittington"
+            ]
+        },
+        {
+            "provincia": "North Yorkshire",
+            "ciudades": [
+                "Harrogate",
+                "Scarborough",
+                "Northallerton",
+                "Ripon",
+                "Knaresborough",
+                "Selby",
+                "Skipton",
+                "Whitby",
+                "Richmond",
+                "Filey",
+                "Pickering",
+                "Sherburn in Elmet",
+                "Tadcaster",
+                "Pannal",
+                "Bilton",
+                "Brayton",
+                "Thirsk",
+                "Malton",
+                "Stokesley",
+                "Easingwold",
+                "Earby",
+                "Seamer",
+                "Sutton-in-Craven",
+                "Boroughbridge",
+                "Bedale",
+                "Catterick",
+                "Hunmanby",
+                "Kirkby Moorside",
+                "High Bentham",
+                "Settle"
+            ]
+        },
+        {
+            "provincia": "Cheshire East",
+            "ciudades": [
+                "Crewe",
+                "Macclesfield",
+                "Congleton",
+                "Wilmslow",
+                "Sandbach",
+                "Nantwich",
+                "Poynton",
+                "Middlewich",
+                "Knutsford",
+                "Lymm",
+                "Alsager",
+                "Wistaston",
+                "Bollington",
+                "Handforth",
+                "Holmes Chapel",
+                "Alderley Edge",
+                "Prestbury",
+                "Willaston",
+                "Mobberley",
+                "Rainow"
+            ]
+        },
+        {
+            "provincia": "Shropshire",
+            "ciudades": [
+                "Shrewsbury",
+                "Oswestry",
+                "Bridgnorth",
+                "Ludlow",
+                "Whitchurch",
+                "Shifnal",
+                "Wem",
+                "Baystonhill",
+                "Harlescott",
+                "Broseley",
+                "Church Stretton",
+                "Albrighton",
+                "Ellesmere",
+                "Highley",
+                "Gobowen",
+                "Pontesbury",
+                "Knighton",
+                "Cleobury Mortimer",
+                "Prees",
+                "Much Wenlock",
+                "Shawbury",
+                "Whittington",
+                "Baschurch"
+            ]
+        },
+        {
+            "provincia": "Lisburn and Castlereagh",
+            "ciudades": [
+                "Lisburn"
+            ]
+        },
+        {
+            "provincia": "Highland",
+            "ciudades": [
+                "Inverness",
+                "Fort William",
+                "Nairn",
+                "Thurso",
+                "Wick",
+                "Dingwall",
+                "Alness",
+                "Portree",
+                "Invergordon",
+                "Aviemore",
+                "Tain",
+                "Muir of Ord",
+                "Dornoch"
+            ]
+        },
+        {
+            "provincia": "Bradford",
+            "ciudades": [
+                "Keighley",
+                "Thornton",
+                "Clayton",
+                "Bingley",
+                "Shipley",
+                "Baildon",
+                "Wyke",
+                "Ilkley",
+                "Wibsey",
+                "Silsden",
+                "Burley in Wharfedale",
+                "Haworth",
+                "Utley",
+                "Wilsden",
+                "Menston",
+                "Steeton",
+                "Addingham",
+                "Denholme",
+                "Cullingworth",
+                "Oxenhope"
+            ]
+        },
+        {
+            "provincia": "Windsor and Maidenhead",
+            "ciudades": [
+                "Maidenhead",
+                "Windsor",
+                "Ascot",
+                "Sunninghill",
+                "Datchet",
+                "Sunningdale",
+                "Old Windsor",
+                "Bray",
+                "Wraysbury",
+                "White Waltham"
+            ]
+        },
+        {
+            "provincia": "Merton",
+            "ciudades": [
+                "Wimbledon",
+                "Mitcham",
+                "Morden",
+                "Raynes Park"
+            ]
+        },
+        {
+            "provincia": "Walsall",
+            "ciudades": [
+                "Walsall",
+                "Aldridge",
+                "Willenhall",
+                "Darlaston",
+                "Bloxwich",
+                "Streetly",
+                "Walsall Wood",
+                "Brownhills",
+                "Rushall",
+                "Pelsall"
+            ]
+        },
+        {
+            "provincia": "North Tyneside",
+            "ciudades": [
+                "Tynemouth",
+                "Wallsend",
+                "Whitley Bay",
+                "North Shields",
+                "Killingworth",
+                "Monkseaton",
+                "Cullercoats",
+                "Shiremoor"
+            ]
+        },
+        {
+            "provincia": "Leicestershire",
+            "ciudades": [
+                "Loughborough",
+                "Hinckley",
+                "Wigston Magna",
+                "Melton Mowbray",
+                "Oadby",
+                "Market Harborough",
+                "Glen Parva",
+                "Braunstone",
+                "Burbage",
+                "Shepshed",
+                "Syston",
+                "Ashby de la Zouch",
+                "Broughton Astley",
+                "Evington",
+                "Glenfield",
+                "Barwell",
+                "Whitwick",
+                "Narborough",
+                "Mountsorrel",
+                "Sileby",
+                "Sawley",
+                "Whetstone",
+                "Anstey",
+                "Castle Donnington",
+                "Countesthorpe",
+                "Enderby",
+                "Blaby",
+                "Barrow upon Soar",
+                "Ibstock",
+                "Markfield",
+                "Measham",
+                "Quorndon",
+                "Woodville",
+                "Kirby Muxloe",
+                "Coalville",
+                "Thringstone",
+                "Hugglescote",
+                "Rothley",
+                "Stoney Stanton",
+                "Desford",
+                "Kegworth",
+                "Bottesford",
+                "Cosby",
+                "Ashfordby",
+                "Newbold Verdon"
+            ]
+        },
+        {
+            "provincia": "Wrexham",
+            "ciudades": [
+                "Wrecsam",
+                "Rhosllanerchrugog",
+                "Gresford",
+                "Brymbo",
+                "Coedpoeth",
+                "Chirk",
+                "Ruabon",
+                "Pen-y-cae",
+                "Rossett"
+            ]
+        },
+        {
+            "provincia": "Torbay",
+            "ciudades": [
+                "Torquay"
+            ]
+        },
+        {
+            "provincia": "Kensington and Chelsea",
+            "ciudades": [
+                "Kensington"
+            ]
+        },
+        {
+            "provincia": "Rhondda Cynon Taff",
+            "ciudades": [
+                "Rhondda",
+                "Aberdare",
+                "Pontypridd",
+                "Llantrisant",
+                "Tonyrefail",
+                "Aberaman",
+                "Treorchy",
+                "Mountain Ash",
+                "Abercynon",
+                "Llantwit Fardre",
+                "Porth",
+                "Treherbert",
+                "Cwmbach",
+                "Treforest",
+                "Hirwaun",
+                "Ferndale",
+                "Beddau",
+                "Brynna",
+                "Tonypandy",
+                "Llanharry",
+                "Llanharan",
+                "Gilfach Goch",
+                "Maerdy",
+                "Clydach Vale"
+            ]
+        },
+        {
+            "provincia": "Richmond upon Thames",
+            "ciudades": [
+                "Twickenham",
+                "Richmond",
+                "Hampton",
+                "Kew Green"
+            ]
+        },
+        {
+            "provincia": "Halton",
+            "ciudades": [
+                "Runcorn",
+                "Widnes",
+                "Weston"
+            ]
+        },
+        {
+            "provincia": "Wandsworth",
+            "ciudades": [
+                "Wandsworth",
+                "Balham"
+            ]
+        },
+        {
+            "provincia": "Ards and North Down",
+            "ciudades": [
+                "Bangor",
+                "Holywood"
+            ]
+        },
+        {
+            "provincia": "Somerset",
+            "ciudades": [
+                "Taunton",
+                "Yeovil",
+                "Bridgwater",
+                "Frome",
+                "Burnham-on-Sea",
+                "Wellington",
+                "Chard",
+                "Wells",
+                "Minehead",
+                "Street",
+                "Shepton Mallet",
+                "Glastonbury",
+                "Crewkerne",
+                "North Petherton",
+                "Highbridge",
+                "Ilminster",
+                "Cheddar",
+                "Wincanton",
+                "Martock",
+                "Somerton",
+                "Watchet",
+                "Wembdon",
+                "South Petherton",
+                "Wedmore",
+                "Norton Fitzwarren",
+                "Bruton",
+                "Wiveliscombe",
+                "Bishops Lydeard",
+                "West Coker",
+                "Milborne Port",
+                "West Monkton",
+                "Williton"
+            ]
+        },
+        {
+            "provincia": "West Lothian",
+            "ciudades": [
+                "Livingston",
+                "Bathgate",
+                "Linlithgow",
+                "Broxburn",
+                "Whitburn",
+                "Armadale",
+                "East Calder",
+                "Blackburn",
+                "Fauldhouse",
+                "West Calder"
+            ]
+        },
+        {
+            "provincia": "Herefordshire",
+            "ciudades": [
+                "Hereford",
+                "Leominster",
+                "Ross on Wye",
+                "Ledbury",
+                "Bromyard",
+                "Burghill",
+                "Presteign",
+                "Kington"
+            ]
+        },
+        {
+            "provincia": "Fife",
+            "ciudades": [
+                "Dunfermline",
+                "Kirkcaldy",
+                "Glenrothes",
+                "Saint Andrews",
+                "Buckhaven",
+                "Cowdenbeath",
+                "Rosyth",
+                "Methil",
+                "Cupar",
+                "Leven",
+                "Newport-On-Tay",
+                "Lochgelly",
+                "Kelty",
+                "Burntisland",
+                "Ballingry",
+                "Cardenden",
+                "Inverkeithing",
+                "Kennoway",
+                "Tayport",
+                "Anstruther",
+                "Leslie",
+                "Kincardine",
+                "Kinghorn"
+            ]
+        },
+        {
+            "provincia": "Dorset",
+            "ciudades": [
+                "Weymouth",
+                "Christchurch",
+                "Fern Down",
+                "Dorchester",
+                "Wimborne Minster",
+                "Verwood",
+                "Bridport",
+                "Gillingham",
+                "Blandford Forum",
+                "Corfe Mullen",
+                "Swanage",
+                "Sherborne",
+                "Shaftesbury",
+                "Chickerell",
+                "Wareham",
+                "Wyke Regis",
+                "Wool",
+                "Sturminster Newton",
+                "Highcliffe",
+                "Lyme Regis",
+                "West Parley",
+                "Lytchett Matravers",
+                "Alderholt",
+                "Beaminster",
+                "Charminster",
+                "Stalbridge"
+            ]
+        },
+        {
+            "provincia": "Vale of Glamorgan, The",
+            "ciudades": [
+                "Barri",
+                "Penarth",
+                "Llantwit Major",
+                "Dinas Powys",
+                "Rhoose",
+                "Sully",
+                "Saint Athan",
+                "Cowbridge",
+                "Llandow"
+            ]
+        },
+        {
+            "provincia": "North Lanarkshire",
+            "ciudades": [
+                "Cumbernauld",
+                "Coatbridge",
+                "Airdrie",
+                "Motherwell",
+                "Wishaw",
+                "Bellshill",
+                "Kilsyth",
+                "Kirk of Shotts",
+                "Stepps",
+                "Chapelhall",
+                "Newarthill",
+                "Newmains",
+                "Holytown",
+                "Newhouse",
+                "Carfin",
+                "Harthill",
+                "Cleland",
+                "Chryston",
+                "Glenboig"
+            ]
+        },
+        {
+            "provincia": "Carmarthenshire",
+            "ciudades": [
+                "Llanelli",
+                "Caerfyrddin",
+                "Ammanford",
+                "Llangennech",
+                "Kidwelly",
+                "Hendy",
+                "Llangendeirne",
+                "Saint Clears",
+                "Pontyberem",
+                "Trimsaran"
+            ]
+        },
+        {
+            "provincia": "Bridgend",
+            "ciudades": [
+                "Pen-y-Bont ar Ogwr",
+                "Maesteg",
+                "Porthcawl",
+                "Pencoed",
+                "Pyle",
+                "Newton",
+                "Nottage",
+                "Ogmore Vale",
+                "Llangynwyd",
+                "Pontycymer"
+            ]
+        },
+        {
+            "provincia": "Torfaen",
+            "ciudades": [
+                "Cwmbran",
+                "Pont-y-pŵl",
+                "Abersychan",
+                "Blaenavon",
+                "New Inn",
+                "Griffithstown",
+                "Llantarnam"
+            ]
+        },
+        {
+            "provincia": "Durham",
+            "ciudades": [
+                "Durham",
+                "Shotley Bridge",
+                "Newton Aycliffe",
+                "Bishop Auckland",
+                "Consett",
+                "Chester-le-Street",
+                "Seaham",
+                "Peterlee",
+                "Spennymoor",
+                "Shildon",
+                "Ferryhill",
+                "West Auckland",
+                "Tanfield",
+                "Horden",
+                "Annfield Plain",
+                "Coundon",
+                "Coxhoe",
+                "Barnard Castle",
+                "Sedgefield",
+                "Sacriston",
+                "Burnopfield",
+                "Wingate",
+                "Easington",
+                "Ushaw Moor",
+                "South Hetton",
+                "Trimdon",
+                "Wolsingham",
+                "Fishburn"
+            ]
+        },
+        {
+            "provincia": "Perth and Kinross",
+            "ciudades": [
+                "Perth",
+                "Blairgowrie",
+                "Crieff",
+                "Kinross",
+                "New Scone",
+                "Auchterarder",
+                "Alyth",
+                "Pitlochry"
+            ]
+        },
+        {
+            "provincia": "Wokingham",
+            "ciudades": [
+                "Wokingham",
+                "Woodley",
+                "Earley",
+                "Shinfield",
+                "Twyford",
+                "Barkham"
+            ]
+        },
+        {
+            "provincia": "South Ayrshire",
+            "ciudades": [
+                "Ayr",
+                "Prestwick",
+                "Troon",
+                "Girvan",
+                "Maybole",
+                "Dundonald"
+            ]
+        },
+        {
+            "provincia": "East Ayrshire",
+            "ciudades": [
+                "Kilmarnock",
+                "Cumnock",
+                "Stewarton",
+                "Galston",
+                "Hurlford",
+                "Mauchline",
+                "Auchinleck",
+                "Darvel",
+                "New Cumnock",
+                "Newmilns",
+                "Crosshouse",
+                "Kilmaurs"
+            ]
+        },
+        {
+            "provincia": "Wiltshire",
+            "ciudades": [
+                "Chippenham",
+                "Salisbury",
+                "Trowbridge",
+                "Warminster",
+                "Calne",
+                "Westbury",
+                "Melksham",
+                "Corsham",
+                "Devizes",
+                "Royal Wootton Bassett",
+                "Amesbury",
+                "North Tidworth",
+                "Bradford-on-Avon",
+                "Marlborough",
+                "Durrington",
+                "Malmesbury",
+                "Roundway",
+                "Hilperton",
+                "Lyneham",
+                "Cricklade",
+                "Bulford",
+                "Purton",
+                "Pewsey",
+                "Wilton",
+                "Box",
+                "Redlynch",
+                "Downton",
+                "Colerne",
+                "Mere"
+            ]
+        },
+        {
+            "provincia": "Bexley",
+            "ciudades": [
+                "Erith",
+                "Sidcup",
+                "Welling",
+                "Bexleyheath"
+            ]
+        },
+        {
+            "provincia": "Tameside",
+            "ciudades": [
+                "Ashton",
+                "Denton",
+                "Hyde",
+                "Stalybridge",
+                "Droylsden",
+                "Dukinfield",
+                "Mossley"
+            ]
+        },
+        {
+            "provincia": "Kingston upon Thames",
+            "ciudades": [
+                "Surbiton",
+                "Kingston upon Thames"
+            ]
+        },
+        {
+            "provincia": "Lewisham",
+            "ciudades": [
+                "Catford"
+            ]
+        },
+        {
+            "provincia": "Merthyr Tydfil",
+            "ciudades": [
+                "Merthyr Tudful",
+                "Dowlais",
+                "Treharris"
+            ]
+        },
+        {
+            "provincia": "Inverclyde",
+            "ciudades": [
+                "Greenock",
+                "Port Glasgow",
+                "Gourock",
+                "Kilmacolm",
+                "Inverkip"
+            ]
+        },
+        {
+            "provincia": "Sutton",
+            "ciudades": [
+                "Sutton",
+                "Carshalton",
+                "Wallington",
+                "Worcester Park",
+                "Cheam"
+            ]
+        },
+        {
+            "provincia": "Caerphilly",
+            "ciudades": [
+                "Caerphilly",
+                "Ystrad Mynach",
+                "Bargoed",
+                "Risca",
+                "Aberbargoed",
+                "Rhymney",
+                "Bedwas",
+                "Blackwood",
+                "Newbridge",
+                "Crumlin",
+                "Hengoed",
+                "Abercarn",
+                "New Tredegar",
+                "Llanbradach",
+                "Nelson",
+                "Ynysddu",
+                "Pengam",
+                "Crosskeys"
+            ]
+        },
+        {
+            "provincia": "West Berkshire",
+            "ciudades": [
+                "Newbury",
+                "Thatcham",
+                "Burghfield",
+                "Hungerford",
+                "Lambourn",
+                "Cold Ash",
+                "Stratfield Mortimer",
+                "Pangbourne",
+                "Chieveley",
+                "Theale",
+                "Speen",
+                "Kintbury"
+            ]
+        },
+        {
+            "provincia": "South Gloucestershire",
+            "ciudades": [
+                "Kingswood",
+                "Yate",
+                "Stoke Gifford",
+                "Thornbury",
+                "Frampton Cotterell",
+                "Chipping Sodbury",
+                "Almondsbury",
+                "Siston",
+                "Pilning",
+                "Bitton",
+                "Westerleigh",
+                "Alveston",
+                "Pucklechurch",
+                "Charfield"
+            ]
+        },
+        {
+            "provincia": "Knowsley",
+            "ciudades": [
+                "Kirkby",
+                "Huyton",
+                "Halewood",
+                "Knowsley",
+                "Prescot",
+                "Roby"
+            ]
+        },
+        {
+            "provincia": "Derbyshire",
+            "ciudades": [
+                "Ilkeston",
+                "Long Eaton",
+                "Glossop",
+                "Swadlincote",
+                "Alfreton",
+                "Buxton",
+                "Belper",
+                "Dronfield",
+                "Ripley",
+                "Staveley",
+                "Heanor",
+                "Chellaston",
+                "Shirebrook",
+                "New Mills",
+                "Bolsover",
+                "Eckington",
+                "Matlock",
+                "Killamarsh",
+                "South Normanton",
+                "Clay Cross",
+                "Brimington",
+                "Chapel en le Frith",
+                "Toton",
+                "Newbold",
+                "Clowne",
+                "Ashbourne",
+                "Church Gresley",
+                "Wingerworth",
+                "Whaley Bridge",
+                "Hadfield",
+                "Pinxton",
+                "Swanwick",
+                "Duffield",
+                "Wirksworth",
+                "Heage",
+                "Melbourne",
+                "West Hallam",
+                "Shirland",
+                "Blackwell",
+                "Whittington",
+                "Bakewell",
+                "Whitwell",
+                "Hartshorne",
+                "Tibshelf",
+                "Old Brampton",
+                "Kilburn",
+                "Pilsley",
+                "Barlborough",
+                "Draycott",
+                "Heath",
+                "Holmewood",
+                "Etwall",
+                "Crich",
+                "Chinley",
+                "Smalley",
+                "Hayfield",
+                "Repton",
+                "Willington"
+            ]
+        },
+        {
+            "provincia": "Stirling",
+            "ciudades": [
+                "Stirling",
+                "Dunblane",
+                "Bannockburn",
+                "Bridge of Allan",
+                "Cambusbarron",
+                "Callander",
+                "Cowie"
+            ]
+        },
+        {
+            "provincia": "Northumberland",
+            "ciudades": [
+                "Blyth",
+                "Cramlington",
+                "Ashington",
+                "Bedlington",
+                "Morpeth",
+                "Berwick-Upon-Tweed",
+                "Hexham",
+                "Prudhoe",
+                "Ponteland",
+                "Choppington",
+                "Alnwick",
+                "Newbiggin-by-the-Sea",
+                "Amble",
+                "Cowpen",
+                "Seaton Delaval",
+                "Haltwhistle",
+                "Corbridge",
+                "Pegswood",
+                "Ellington",
+                "Stocksfield"
+            ]
+        },
+        {
+            "provincia": "Neath Port Talbot",
+            "ciudades": [
+                "Port Talbot",
+                "Neath",
+                "Skewen",
+                "Pontardawe",
+                "Cwmafan",
+                "Briton Ferry",
+                "Glyncorrwg",
+                "Taibach",
+                "Cilybebyll",
+                "Glynneath",
+                "Ystalyfera",
+                "Margam",
+                "Cymmer",
+                "Brynamman"
+            ]
+        },
+        {
+            "provincia": "Central Bedfordshire",
+            "ciudades": [
+                "Leighton Buzzard",
+                "Dunstable",
+                "Linslade",
+                "Houghton Regis",
+                "Biggleswade",
+                "Ampthill",
+                "Flitwick",
+                "Sandy",
+                "Arlesey",
+                "Barton-le-Clay",
+                "Shefford",
+                "Cranfield",
+                "Potton",
+                "Toddington",
+                "Marston Moretaine",
+                "Caddington",
+                "Maulden",
+                "Langford",
+                "Clifton"
+            ]
+        },
+        {
+            "provincia": "Thurrock",
+            "ciudades": [
+                "Grays",
+                "Stanford le Hope",
+                "South Ockendon",
+                "Tilbury",
+                "Aveley",
+                "West Thurrock",
+                "Orsett"
+            ]
+        },
+        {
+            "provincia": "East Riding of Yorkshire",
+            "ciudades": [
+                "Bridlington",
+                "Beverley",
+                "Goole",
+                "Hessle",
+                "Great Driffield",
+                "Hornsea",
+                "Pocklington",
+                "Willerby",
+                "Hedon",
+                "Market Weighton",
+                "Withernsea",
+                "South Cave",
+                "Howden",
+                "North Ferriby",
+                "Swanland",
+                "Stamford Bridge",
+                "Gilberdike",
+                "Thorngumbald",
+                "Preston",
+                "Holme upon Spalding Moor"
+            ]
+        },
+        {
+            "provincia": "Falkirk",
+            "ciudades": [
+                "Falkirk",
+                "Grangemouth",
+                "Bo’ness",
+                "Larbert",
+                "Denny",
+                "Bonnybridge",
+                "Polmont",
+                "Carron"
+            ]
+        },
+        {
+            "provincia": "Conwy",
+            "ciudades": [
+                "Colwyn Bay",
+                "Llandudno",
+                "Conwy",
+                "Abergele",
+                "Old Colwyn",
+                "Rhôs-on-Sea",
+                "Llandudno Junction",
+                "Penmaenmawr",
+                "Deganwy",
+                "Llanfairfechan",
+                "Llanrwst",
+                "Llysfaen"
+            ]
+        },
+        {
+            "provincia": "North Ayrshire",
+            "ciudades": [
+                "Irvine",
+                "Kilwinning",
+                "Kilbirnie",
+                "Saltcoats",
+                "Largs",
+                "Ardrossan",
+                "Stevenston",
+                "Beith",
+                "Dalry",
+                "West Kilbride",
+                "Dreghorn"
+            ]
+        },
+        {
+            "provincia": "Cambridgeshire",
+            "ciudades": [
+                "Wisbech",
+                "Saint Neots",
+                "Huntingdon",
+                "March",
+                "Ely",
+                "Saint Ives",
+                "Whittlesey",
+                "Soham",
+                "Chatteris",
+                "Yaxley",
+                "Eaton Socon",
+                "Cherry Hinton",
+                "Littleport",
+                "Ramsey",
+                "Trumpington",
+                "Sawston",
+                "Godmanchester",
+                "Sawtry",
+                "Burwell",
+                "Cottenham",
+                "Waterbeach",
+                "Brampton",
+                "Milton",
+                "Fulbourn",
+                "Girton",
+                "Linton",
+                "Melbourn",
+                "Shelford",
+                "Bar Hill",
+                "Willingham",
+                "Warboys",
+                "Elm",
+                "Somersham",
+                "Wisbech Saint Mary",
+                "Haddenham",
+                "Gamlingay",
+                "Little Paxton",
+                "Papworth Everard",
+                "Fen Stanton",
+                "Over",
+                "Buckden",
+                "Fordham",
+                "Hardwick",
+                "Teversham",
+                "Long Stanton",
+                "Hemingford Grey",
+                "Holywell"
+            ]
+        },
+        {
+            "provincia": "Dumfries and Galloway",
+            "ciudades": [
+                "Dumfries",
+                "Stranraer",
+                "Annan",
+                "Locharbriggs",
+                "Dalbeattie",
+                "Castle Douglas",
+                "Newton Stewart",
+                "Lockerbie",
+                "Kirkcudbright",
+                "Gretna",
+                "Moffat"
+            ]
+        },
+        {
+            "provincia": "Isle of Wight",
+            "ciudades": [
+                "Ryde",
+                "Newport",
+                "Sandown",
+                "Cowes",
+                "Shanklin",
+                "East Cowes",
+                "Ventnor",
+                "Freshwater",
+                "Bembridge",
+                "Haven Street",
+                "Carisbrooke",
+                "Wootton",
+                "Totland"
+            ]
+        },
+        {
+            "provincia": "East Dunbartonshire",
+            "ciudades": [
+                "Bearsden",
+                "Bishopbriggs",
+                "Kirkintilloch",
+                "Milngavie",
+                "Lennoxtown"
+            ]
+        },
+        {
+            "provincia": "East Renfrewshire",
+            "ciudades": [
+                "Newton Mearns",
+                "Barrhead",
+                "Giffnock",
+                "Neilston",
+                "Eaglesham"
+            ]
+        },
+        {
+            "provincia": "West Dunbartonshire",
+            "ciudades": [
+                "Clydebank",
+                "Dumbarton",
+                "Alexandria",
+                "Bonhill",
+                "Duntocher",
+                "Balloch",
+                "Old Kilpatrick"
+            ]
+        },
+        {
+            "provincia": "Denbighshire",
+            "ciudades": [
+                "Rhyl",
+                "Prestatyn",
+                "Kinmel",
+                "Rhuthun",
+                "Rhuddlan",
+                "Llangollen",
+                "Saint Asaph"
+            ]
+        },
+        {
+            "provincia": "Moray",
+            "ciudades": [
+                "Elgin",
+                "Forres",
+                "Buckie",
+                "Lossiemouth",
+                "Keith"
+            ]
+        },
+        {
+            "provincia": "Angus",
+            "ciudades": [
+                "Arbroath",
+                "Forfar",
+                "Montrose",
+                "Carnoustie",
+                "Monifieth",
+                "Brechin",
+                "Kirriemuir"
+            ]
+        },
+        {
+            "provincia": "Southend-on-Sea",
+            "ciudades": [
+                "Leigh-on-Sea",
+                "Shoeburyness",
+                "Great Wakering"
+            ]
+        },
+        {
+            "provincia": "East Lothian",
+            "ciudades": [
+                "Musselburgh",
+                "Tranent",
+                "Prestonpans",
+                "Haddington",
+                "Dunbar",
+                "North Berwick",
+                "Cockenzie",
+                "Gullane"
+            ]
+        },
+        {
+            "provincia": "Cornwall",
+            "ciudades": [
+                "Falmouth",
+                "Camborne",
+                "Penzance",
+                "Newquay",
+                "Saint Austell",
+                "Truro",
+                "Saltash",
+                "Bodmin",
+                "Redruth",
+                "Saint Ives",
+                "Helston",
+                "Bude",
+                "Launceston",
+                "Hayle",
+                "Torpoint",
+                "Wadebridge",
+                "Saint Agnes",
+                "Penryn",
+                "Saint Blazey",
+                "Callington",
+                "Perranzabuloe",
+                "Illogan",
+                "Looe",
+                "Saint Columb Major",
+                "Newlyn",
+                "Bugle",
+                "Altarnun",
+                "Feock",
+                "Dobwalls",
+                "Perranporth",
+                "Porthleven",
+                "Gwithian",
+                "Breage",
+                "Padstow",
+                "Camelford",
+                "Lostwithiel",
+                "Saint Dennis",
+                "Wendron",
+                "Crowan",
+                "Delabole"
+            ]
+        },
+        {
+            "provincia": "Fermanagh and Omagh",
+            "ciudades": [
+                "Omagh"
+            ]
+        },
+        {
+            "provincia": "Clackmannanshire",
+            "ciudades": [
+                "Alloa",
+                "Sauchie",
+                "Tillicoultry",
+                "Alva",
+                "Clackmannan",
+                "Dollar"
+            ]
+        },
+        {
+            "provincia": "Antrim and Newtownabbey",
+            "ciudades": [
+                "Antrim"
+            ]
+        },
+        {
+            "provincia": "Blaenau Gwent",
+            "ciudades": [
+                "Ebbw Vale",
+                "Tredegar",
+                "Abertillery",
+                "Brynmawr",
+                "Blaina",
+                "Nantyglo",
+                "Cwm",
+                "Beaufort"
+            ]
+        },
+        {
+            "provincia": "Aberdeenshire",
+            "ciudades": [
+                "Peterhead",
+                "Fraserburgh",
+                "Stonehaven",
+                "Inverurie",
+                "Ellon",
+                "Portlethen",
+                "Banchory",
+                "Turriff",
+                "Kintore",
+                "Huntly",
+                "Banff",
+                "Kemnay",
+                "Belhelvie",
+                "Macduff",
+                "Newtonhill",
+                "Laurencekirk",
+                "Mintlaw",
+                "Newmacher"
+            ]
+        },
+        {
+            "provincia": "Ceredigion",
+            "ciudades": [
+                "Aberystwyth",
+                "Cardigan",
+                "Llanbadarn-fawr",
+                "Lampeter"
+            ]
+        },
+        {
+            "provincia": "Flintshire",
+            "ciudades": [
+                "Connahs Quay",
+                "Buckley",
+                "Flint",
+                "Mold",
+                "Holywell",
+                "Sandycroft",
+                "Broughton",
+                "Llanasa",
+                "Hope",
+                "Bagillt",
+                "Northop",
+                "Halkyn",
+                "Greenfield"
+            ]
+        },
+        {
+            "provincia": "Isle of Anglesey",
+            "ciudades": [
+                "Bangor",
+                "Holyhead",
+                "Llangefni",
+                "Amlwch",
+                "Benllech",
+                "Llanfairpwllgwyngyll"
+            ]
+        },
+        {
+            "provincia": "Tower Hamlets",
+            "ciudades": [
+                "Stepney",
+                "Spitalfields"
+            ]
+        },
+        {
+            "provincia": "Midlothian",
+            "ciudades": [
+                "Penicuik",
+                "Bonnyrigg",
+                "Dalkeith",
+                "Loanhead",
+                "Gorebridge",
+                "Newton Grange"
+            ]
+        },
+        {
+            "provincia": "Argyll and Bute",
+            "ciudades": [
+                "Helensburgh",
+                "Oban",
+                "Hunters Quay",
+                "Campbeltown",
+                "Rothesay",
+                "Dunoon",
+                "Garelochhead"
+            ]
+        },
+        {
+            "provincia": "Armagh, Banbridge and Craigavon",
+            "ciudades": [
+                "Banbridge"
+            ]
+        },
+        {
+            "provincia": "Scottish Borders, The",
+            "ciudades": [
+                "Hawick",
+                "Galashiels",
+                "Peebles",
+                "Selkirk",
+                "Kelso",
+                "Jedburgh",
+                "Duns",
+                "Eyemouth",
+                "Innerleithen"
+            ]
+        },
+        {
+            "provincia": "Pembrokeshire",
+            "ciudades": [
+                "Milford Haven",
+                "Hwlffordd",
+                "Pembroke Dock",
+                "Pembroke",
+                "Fishguard",
+                "Neyland",
+                "Saundersfoot",
+                "Steynton"
+            ]
+        },
+        {
+            "provincia": "Camden",
+            "ciudades": [
+                "Holborn",
+                "Highgate"
+            ]
+        },
+        {
+            "provincia": "Monmouthshire",
+            "ciudades": [
+                "Abergavenny",
+                "Chepstow",
+                "Caldicot",
+                "Monmouth",
+                "Magor",
+                "Usk"
+            ]
+        },
+        {
+            "provincia": "Hackney",
+            "ciudades": [
+                "Hackney"
+            ]
+        },
+        {
+            "provincia": "Powys",
+            "ciudades": [
+                "Newtown",
+                "Brecon",
+                "Ystradgynlais",
+                "Welshpool",
+                "Llanidloes",
+                "Builth Wells"
+            ]
+        },
+        {
+            "provincia": "Rutland",
+            "ciudades": [
+                "Oakham",
+                "Uppingham"
+            ]
+        },
+        {
+            "provincia": "Mid Ulster",
+            "ciudades": [
+                "Cookstown"
+            ]
+        },
+        {
+            "provincia": "Middlesbrough",
+            "ciudades": [
+                "Marton",
+                "Ormesby",
+                "Nunthorpe",
+                "Stainton"
+            ]
+        },
+        {
+            "provincia": "Gwynedd",
+            "ciudades": [
+                "Caernarfon",
+                "Ffestiniog",
+                "Bethesda",
+                "Porthmadog",
+                "Llanllyfni",
+                "Pwllheli",
+                "Blaenau-Ffestiniog",
+                "Menai Bridge",
+                "Towyn",
+                "Llanrug",
+                "Dolgellau",
+                "Nefyn",
+                "Llandwrog",
+                "Barmouth"
+            ]
+        },
+        {
+            "provincia": "Orkney Islands",
+            "ciudades": [
+                "Kirkwall"
+            ]
+        },
+        {
+            "provincia": "Eilean Siar",
+            "ciudades": [
+                "Stornoway"
+            ]
+        },
+        {
+            "provincia": "Newry, Mourne and Down",
+            "ciudades": [
+                "Warrenpoint"
+            ]
+        },
+        {
+            "provincia": "Shetland Islands",
+            "ciudades": [
+                "Lerwick"
+            ]
+        }
+    ]
+  }

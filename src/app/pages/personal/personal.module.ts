@@ -9,8 +9,6 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { PersonalRoutingModule } from './personal-routing.module';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { JobPageComponent } from './job-page/job-page.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
 import { PersonalComponent } from './personal.component';
 import { RouterModule } from '@angular/router';
@@ -23,8 +21,6 @@ import { PostulacionesComponent } from './postulaciones/postulaciones.component'
   declarations: [
     PersonalComponent,
     JobPageComponent,
-    LoginComponent,
-    RegisterComponent,
     SearchComponent,
     PostulacionesComponent
 
@@ -34,7 +30,6 @@ import { PostulacionesComponent } from './postulaciones/postulaciones.component'
     CommonModule,
     PersonalRoutingModule,
     ComponentsModule,
-    ReactiveFormsModule,
     NgxSkeletonLoaderModule,
     FormsModule,
     PipesModule

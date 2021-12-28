@@ -8,7 +8,7 @@
         <app-jobcard-skeleton  *ngFor="let item of [1,2,3,4,5,6,7,8,9]" class="col-lg-4 my-3"></app-jobcard-skeleton>
       </ng-container>
       
-      <app-jobcard routerLink="/job/{{job.id}}"  [job]="job" *ngFor="let job of jobs" class="col-lg-4 my-3"></app-jobcard>
+      <app-trabajo-card-empresa routerLink="/job/{{job.id}}"  [job]="job" *ngFor="let job of jobs" class="col-lg-4 my-3"></app-trabajo-card-empresa>
     
       
   

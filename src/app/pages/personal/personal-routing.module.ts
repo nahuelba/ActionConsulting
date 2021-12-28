@@ -1,38 +1,39 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 import { JobPageComponent } from './job-page/job-page.component';
-import { LoginComponent } from './login/login.component';
 import { PersonalComponent } from './personal.component';
 import { PostulacionesComponent } from './postulaciones/postulaciones.component';
-import { RegisterComponent } from './register/register.component';
 import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
     path: '',
-    component:PersonalComponent,
-
+    children: [
+      {
+        path:'',
+        component:PersonalComponent
+      },
+      {
+        path:':id',
+        component: JobPageComponent,
+      },
+      {
+        path:'search/:puesto/:lugar',
+        component: SearchComponent
+      },
+      {
+        path: 'postulaciones',
+        component: PostulacionesComponent
+      }
+    ]
   },
- {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path:'register',
-    component: RegisterComponent
-  },
-  {
-    path:'job/:id',
-    component: JobPageComponent,
-  },
-  {
-    path:'search/:puesto/:lugar',
-    component: SearchComponent
-  },
-  {
-    path: 'postulaciones',
-    component: PostulacionesComponent
-  }
+  // {
+  //   path:'auth',
+  //   canActivate: [AuthGuard],
+  //   loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+  // }
+ 
 ];
 
 @NgModule({

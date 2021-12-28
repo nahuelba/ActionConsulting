@@ -1,0 +1,34 @@
+.side-bar{
+    background-color: #313A46;
+    width:260px;
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    
+}
+.list-item{
+    color: #8391a2;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+.navbar{
+    min-height: 70px; 
+    box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
+    width: calc(100% - 260px);
+    display: contents;
+}
+
+.active{
+    color: white;
+    border-color: darkblue;
+}
+
+button:focus {
+    outline: none;
+}

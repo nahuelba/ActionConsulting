@@ -1,0 +1,251 @@
+ 
+  {
+    "pais": "Brasil",
+    "provincias": [
+        {
+            "provincia": "São Paulo",
+            "ciudades": [
+                "São Paulo",
+                "Guarulhos",
+                "Campinas",
+                "São Bernardo do Campo",
+                "Santo André",
+                "Osasco",
+                "São José dos Campos",
+                "Ribeirão Prêto",
+                "Sorocaba",
+                "Americana",
+                "Mauá",
+                "São José do Rio Prêto",
+                "Santos",
+                "Mogi das Cruzes",
+                "Diadema",
+                "Jundiaí",
+                "Carapicuíba",
+                "Bauru",
+                "São Vicente",
+                "Itaquaquecetuba",
+                "Piracicaba",
+                "Franca",
+                "Guarujá",
+                "Taubaté",
+                "Praia Grande",
+                "Limeira",
+                "Suzano",
+                "Taboão da Serra",
+                "Sumaré",
+                "Barueri"
+            ]
+        },
+        {
+            "provincia": "Rio de Janeiro",
+            "ciudades": [
+                "Rio de Janeiro",
+                "São Gonçalo",
+                "Iguaçu",
+                "Niterói",
+                "Campos",
+                "Petrópolis",
+                "Volta Redonda"
+            ]
+        },
+        {
+            "provincia": "Minas Gerais",
+            "ciudades": [
+                "Belo Horizonte",
+                "Abaeté",
+                "Uberlândia",
+                "Contagem",
+                "Juiz de Fora",
+                "Betim",
+                "Montes Claros",
+                "Uberaba",
+                "Ribeirão das Neves",
+                "Governador Valadares",
+                "Ipatinga"
+            ]
+        },
+        {
+            "provincia": "Distrito Federal",
+            "ciudades": [
+                "Brasília"
+            ]
+        },
+        {
+            "provincia": "Bahia",
+            "ciudades": [
+                "Salvador",
+                "Feira de Santana",
+                "Vitória da Conquista",
+                "Camaçari"
+            ]
+        },
+        {
+            "provincia": "Ceará",
+            "ciudades": [
+                "Fortaleza",
+                "Caucaia",
+                "Juazeiro do Norte",
+                "Crato"
+            ]
+        },
+        {
+            "provincia": "Paraná",
+            "ciudades": [
+                "Curitiba",
+                "Londrina",
+                "Maringá",
+                "Ponta Grossa",
+                "São José dos Pinhais",
+                "Foz do Iguaçu",
+                "Cascavel"
+            ]
+        },
+        {
+            "provincia": "Amazonas",
+            "ciudades": [
+                "Manaus",
+                "Natal",
+                "Crato"
+            ]
+        },
+        {
+            "provincia": "Pernambuco",
+            "ciudades": [
+                "Recife",
+                "Jaboatão",
+                "Olinda",
+                "Caruaru",
+                "Petrolina",
+                "Paulista"
+            ]
+        },
+        {
+            "provincia": "Pará",
+            "ciudades": [
+                "Belém",
+                "Ananindeua",
+                "Marabá"
+            ]
+        },
+        {
+            "provincia": "Rio Grande do Sul",
+            "ciudades": [
+                "Porto Alegre",
+                "Caxias do Sul",
+                "Canoas",
+                "Pelotas",
+                "Santa Maria",
+                "Viamão",
+                "Gravataí"
+            ]
+        },
+        {
+            "provincia": "Goiás",
+            "ciudades": [
+                "Goiânia",
+                "Anápolis"
+            ]
+        },
+        {
+            "provincia": "Amapá",
+            "ciudades": [
+                "Vila Velha",
+                "Macapá"
+            ]
+        },
+        {
+            "provincia": "Maranhão",
+            "ciudades": [
+                "São Luís",
+                "Imperatriz"
+            ]
+        },
+        {
+            "provincia": "Alagoas",
+            "ciudades": [
+                "Maceió"
+            ]
+        },
+        {
+            "provincia": "Mato Grosso do Sul",
+            "ciudades": [
+                "Campo Grande"
+            ]
+        },
+        {
+            "provincia": "Rio Grande do Norte",
+            "ciudades": [
+                "Natal",
+                "Mossoró",
+                "Parnamirim"
+            ]
+        },
+        {
+            "provincia": "Piauí",
+            "ciudades": [
+                "Teresina"
+            ]
+        },
+        {
+            "provincia": "Paraíba",
+            "ciudades": [
+                "João Pessoa",
+                "Campina Grande"
+            ]
+        },
+        {
+            "provincia": "Sergipe",
+            "ciudades": [
+                "Aracaju"
+            ]
+        },
+        {
+            "provincia": "Mato Grosso",
+            "ciudades": [
+                "Cuiabá"
+            ]
+        },
+        {
+            "provincia": "Santa Catarina",
+            "ciudades": [
+                "Joinvile",
+                "Florianópolis",
+                "Blumenau"
+            ]
+        },
+        {
+            "provincia": "Espírito Santo",
+            "ciudades": [
+                "Serra",
+                "Vila Velha",
+                "Cariacica",
+                "Vitória"
+            ]
+        },
+        {
+            "provincia": "Rondônia",
+            "ciudades": [
+                "Porto Velho"
+            ]
+        },
+        {
+            "provincia": "Acre",
+            "ciudades": [
+                "Rio Branco"
+            ]
+        },
+        {
+            "provincia": "Roraima",
+            "ciudades": [
+                "Boa Vista"
+            ]
+        },
+        {
+            "provincia": "Tocantins",
+            "ciudades": [
+                "Palmas"
+            ]
+        }
+    ]
+  }

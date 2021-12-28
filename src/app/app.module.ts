@@ -8,6 +8,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 
+
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import * as $ from 'jquery';
@@ -32,8 +33,7 @@ export function createTranslateLoader(http: HttpClient) {
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     PagesModule,
-    ComponentsModule,
-    PipesModule
+
     
 
   ],

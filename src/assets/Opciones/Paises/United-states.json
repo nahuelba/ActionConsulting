@@ -1,0 +1,511 @@
+{
+    "pais": "Estados Unidos",
+    "provincias": [
+        {
+            "provincia": "New York",
+            "ciudades": [
+                "New York",
+                "Brooklyn",
+                "Queens",
+                "Manhattan",
+                "Bronx",
+                "Buffalo"
+            ]
+        },
+        {
+            "provincia": "California",
+            "ciudades": [
+                "Los Angeles",
+                "San Francisco",
+                "San Diego",
+                "Riverside",
+                "Sacramento",
+                "San Jose"
+            ]
+        },
+        {
+            "provincia": "Illinois",
+            "ciudades": [
+                "Chicago"
+            ]
+        },
+        {
+            "provincia": "Florida",
+            "ciudades": [
+                "Miami",
+                "Tampa",
+                "Orlando",
+                "Jacksonville"
+            ]
+        },
+        {
+            "provincia": "Texas",
+            "ciudades": [
+                "Dallas",
+                "Houston",
+                "San Antonio",
+                "Austin",
+                "Fort Worth",
+                "El Paso",
+                "McAllen"
+            ]
+        },
+        {
+            "provincia": "Pennsylvania",
+            "ciudades": [
+                "Philadelphia",
+                "Pittsburgh"
+            ]
+        },
+        {
+            "provincia": "Texas",
+            "ciudades": [
+                "Dallas",
+                "Houston",
+                "San Antonio",
+                "Austin",
+                "Fort Worth",
+                "El Paso",
+                "McAllen"
+            ]
+        },
+        {
+            "provincia": "Georgia",
+            "ciudades": [
+                "Atlanta"
+            ]
+        },
+        {
+            "provincia": "District of Columbia",
+            "ciudades": [
+                "Washington"
+            ]
+        },
+        {
+            "provincia": "Massachusetts",
+            "ciudades": [
+                "Boston"
+            ]
+        },
+        {
+            "provincia": "Arizona",
+            "ciudades": [
+                "Phoenix",
+                "Tucson"
+            ]
+        },
+        {
+            "provincia": "Washington",
+            "ciudades": [
+                "Seattle"
+            ]
+        },
+        {
+            "provincia": "California",
+            "ciudades": [
+                "Los Angeles",
+                "San Francisco",
+                "San Diego",
+                "Riverside",
+                "Sacramento",
+                "San Jose"
+            ]
+        },
+        {
+            "provincia": "Michigan",
+            "ciudades": [
+                "Detroit"
+            ]
+        },
+        {
+            "provincia": "California",
+            "ciudades": [
+                "Los Angeles",
+                "San Francisco",
+                "San Diego",
+                "Riverside",
+                "Sacramento",
+                "San Jose"
+            ]
+        },
+        {
+            "provincia": "Minnesota",
+            "ciudades": [
+                "Minneapolis"
+            ]
+        },
+        {
+            "provincia": "Florida",
+            "ciudades": [
+                "Miami",
+                "Tampa",
+                "Orlando",
+                "Jacksonville"
+            ]
+        },
+        {
+            "provincia": "Colorado",
+            "ciudades": [
+                "Denver"
+            ]
+        },
+        {
+            "provincia": "New York",
+            "ciudades": [
+                "New York",
+                "Brooklyn",
+                "Queens",
+                "Manhattan",
+                "Bronx",
+                "Buffalo"
+            ]
+        },
+        {
+            "provincia": "New York",
+            "ciudades": [
+                "New York",
+                "Brooklyn",
+                "Queens",
+                "Manhattan",
+                "Bronx",
+                "Buffalo"
+            ]
+        },
+        {
+            "provincia": "California",
+            "ciudades": [
+                "Los Angeles",
+                "San Francisco",
+                "San Diego",
+                "Riverside",
+                "Sacramento",
+                "San Jose"
+            ]
+        },
+        {
+            "provincia": "Maryland",
+            "ciudades": [
+                "Baltimore"
+            ]
+        },
+        {
+            "provincia": "Nevada",
+            "ciudades": [
+                "Las Vegas"
+            ]
+        },
+        {
+            "provincia": "Oregon",
+            "ciudades": [
+                "Portland"
+            ]
+        },
+        {
+            "provincia": "Texas",
+            "ciudades": [
+                "Dallas",
+                "Houston",
+                "San Antonio",
+                "Austin",
+                "Fort Worth",
+                "El Paso",
+                "McAllen"
+            ]
+        },
+        {
+            "provincia": "Missouri",
+            "ciudades": [
+                "St. Louis",
+                "Kansas City"
+            ]
+        },
+        {
+            "provincia": "California",
+            "ciudades": [
+                "Los Angeles",
+                "San Francisco",
+                "San Diego",
+                "Riverside",
+                "Sacramento",
+                "San Jose"
+            ]
+        },
+        {
+            "provincia": "Florida",
+            "ciudades": [
+                "Miami",
+                "Tampa",
+                "Orlando",
+                "Jacksonville"
+            ]
+        },
+        {
+            "provincia": "California",
+            "ciudades": [
+                "Los Angeles",
+                "San Francisco",
+                "San Diego",
+                "Riverside",
+                "Sacramento",
+                "San Jose"
+            ]
+        },
+        {
+            "provincia": "Ohio",
+            "ciudades": [
+                "Cleveland",
+                "Cincinnati",
+                "Columbus"
+            ]
+        },
+        {
+            "provincia": "Pennsylvania",
+            "ciudades": [
+                "Philadelphia",
+                "Pittsburgh"
+            ]
+        },
+        {
+            "provincia": "Texas",
+            "ciudades": [
+                "Dallas",
+                "Houston",
+                "San Antonio",
+                "Austin",
+                "Fort Worth",
+                "El Paso",
+                "McAllen"
+            ]
+        },
+        {
+            "provincia": "Ohio",
+            "ciudades": [
+                "Cleveland",
+                "Cincinnati",
+                "Columbus"
+            ]
+        },
+        {
+            "provincia": "Missouri",
+            "ciudades": [
+                "St. Louis",
+                "Kansas City"
+            ]
+        },
+        {
+            "provincia": "New York",
+            "ciudades": [
+                "New York",
+                "Brooklyn",
+                "Queens",
+                "Manhattan",
+                "Bronx",
+                "Buffalo"
+            ]
+        },
+        {
+            "provincia": "Indiana",
+            "ciudades": [
+                "Indianapolis"
+            ]
+        },
+        {
+            "provincia": "Ohio",
+            "ciudades": [
+                "Cleveland",
+                "Cincinnati",
+                "Columbus"
+            ]
+        },
+        {
+            "provincia": "North Carolina",
+            "ciudades": [
+                "Charlotte",
+                "Raleigh"
+            ]
+        },
+        {
+            "provincia": "Virginia",
+            "ciudades": [
+                "Virginia Beach",
+                "Richmond"
+            ]
+        },
+        {
+            "provincia": "New York",
+            "ciudades": [
+                "New York",
+                "Brooklyn",
+                "Queens",
+                "Manhattan",
+                "Bronx",
+                "Buffalo"
+            ]
+        },
+        {
+            "provincia": "Wisconsin",
+            "ciudades": [
+                "Milwaukee"
+            ]
+        },
+        {
+            "provincia": "Rhode Island",
+            "ciudades": [
+                "Providence"
+            ]
+        },
+        {
+            "provincia": "Florida",
+            "ciudades": [
+                "Miami",
+                "Tampa",
+                "Orlando",
+                "Jacksonville"
+            ]
+        },
+        {
+            "provincia": "Utah",
+            "ciudades": [
+                "Salt Lake City"
+            ]
+        },
+        {
+            "provincia": "Tennessee",
+            "ciudades": [
+                "Nashville",
+                "Memphis"
+            ]
+        },
+        {
+            "provincia": "Virginia",
+            "ciudades": [
+                "Virginia Beach",
+                "Richmond"
+            ]
+        },
+        {
+            "provincia": "Tennessee",
+            "ciudades": [
+                "Nashville",
+                "Memphis"
+            ]
+        },
+        {
+            "provincia": "North Carolina",
+            "ciudades": [
+                "Charlotte",
+                "Raleigh"
+            ]
+        },
+        {
+            "provincia": "Louisiana",
+            "ciudades": [
+                "New Orleans"
+            ]
+        },
+        {
+            "provincia": "Kentucky",
+            "ciudades": [
+                "Louisville"
+            ]
+        },
+        {
+            "provincia": "Oklahoma",
+            "ciudades": [
+                "Oklahoma City"
+            ]
+        },
+        {
+            "provincia": "Connecticut",
+            "ciudades": [
+                "Bridgeport",
+                "Hartford"
+            ]
+        },
+        {
+            "provincia": "New York",
+            "ciudades": [
+                "New York",
+                "Brooklyn",
+                "Queens",
+                "Manhattan",
+                "Bronx",
+                "Buffalo"
+            ]
+        },
+        {
+            "provincia": "Texas",
+            "ciudades": [
+                "Dallas",
+                "Houston",
+                "San Antonio",
+                "Austin",
+                "Fort Worth",
+                "El Paso",
+                "McAllen"
+            ]
+        },
+        {
+            "provincia": "Connecticut",
+            "ciudades": [
+                "Bridgeport",
+                "Hartford"
+            ]
+        },
+        {
+            "provincia": "Arizona",
+            "ciudades": [
+                "Phoenix",
+                "Tucson"
+            ]
+        },
+        {
+            "provincia": "Nebraska",
+            "ciudades": [
+                "Omaha"
+            ]
+        },
+        {
+            "provincia": "Texas",
+            "ciudades": [
+                "Dallas",
+                "Houston",
+                "San Antonio",
+                "Austin",
+                "Fort Worth",
+                "El Paso",
+                "McAllen"
+            ]
+        },
+        {
+            "provincia": "Hawaii",
+            "ciudades": [
+                "Honolulu"
+            ]
+        },
+        {
+            "provincia": "Texas",
+            "ciudades": [
+                "Dallas",
+                "Houston",
+                "San Antonio",
+                "Austin",
+                "Fort Worth",
+                "El Paso",
+                "McAllen"
+            ]
+        },
+        {
+            "provincia": "New Mexico",
+            "ciudades": [
+                "Albuquerque"
+            ]
+        },
+        {
+            "provincia": "Alabama",
+            "ciudades": [
+                "Birmingham"
+            ]
+        }
+    ]
+  }

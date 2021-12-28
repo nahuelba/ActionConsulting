@@ -11,14 +11,11 @@ moment.locale('es')
 export class FilterDatePipe implements PipeTransform {
 
   transform(jobs: job[], date:string): job[] {
-
-    console.log(jobs, date)
-
     
 
     if(jobs){
 
-        if( date!=="Fecha de Publicación"){
+        if( date!==""){
           var jobsFiltered= jobs
           switch(date){
             
@@ -48,7 +45,7 @@ export class FilterDatePipe implements PipeTransform {
                 let diff = now.getTime() - ts.getTime(); //sacamos la diferencia de las fechas en milisegundos
 
                 return diff < milisegundos //calculamos si la fecha es menor a xx dias (en milisegundos)
-              } )
+              })
 
               
 

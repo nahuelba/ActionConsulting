@@ -4,10 +4,12 @@ import { RouterModule } from '@angular/router';
 
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
-import { JobcardComponent } from './jobcard/jobcard.component';
 import { JobcardSkeletonComponent } from './jobcard-skeleton/jobcard-skeleton.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NavbarEmpresaComponent } from './navbar-empresa/navbar-empresa.component';
+import { TrabajoCardEmpresaComponent } from './trabajo-card-empresa/trabajo-card-empresa.component';
+import { TrabajoDetalleCardComponent } from './trabajo-detalle-card/trabajo-detalle-card.component';
 
 
 
@@ -15,15 +17,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    JobcardComponent,
     JobcardSkeletonComponent,
     NavbarComponent,
+    NavbarEmpresaComponent,
+    TrabajoCardEmpresaComponent,
+    TrabajoDetalleCardComponent,
 
   ],
   exports:[
-    JobcardComponent,
     JobcardSkeletonComponent,
-    NavbarComponent
+    NavbarComponent,
+    NavbarEmpresaComponent,
+    TrabajoCardEmpresaComponent,
+    TrabajoDetalleCardComponent
   ],
   imports: [
     CommonModule,

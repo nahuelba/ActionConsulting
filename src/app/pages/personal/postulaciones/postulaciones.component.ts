@@ -28,16 +28,16 @@ export class PostulacionesComponent implements OnInit {
 
 
   getJobs(){
-    this.CardService.getCards()
-    .subscribe(
-      data=>{
-        let arrayLugares:any = []
-        data.forEach(e => {arrayLugares.push(e.lugar) })
+    // this.CardService.getCards()
+    // .subscribe(
+    //   data=>{
+    //     let arrayLugares:any = []
+    //     // data.forEach(e => {arrayLugares.push(e.provincia) })
 
-        this.lugares = this.CardService.removeDuplicates(arrayLugares)
-      },
-      err=>console.log(err)
-    )
+    //     this.lugares = this.CardService.removeDuplicates(arrayLugares)
+    //   },
+    //   err=>console.log(err)
+    // )
   }
 
 
@@ -47,28 +47,28 @@ export class PostulacionesComponent implements OnInit {
     this.user=user;
 
     //verificar si esta postulado
-    this.PostulacionService.getPostulaciones()
-    .subscribe(
-      data=>{
-        var dataPostulaciones:any = data.filter((post:any) =>post['email']==this.user)
+    // this.PostulacionService.getPostulaciones()
+    // .subscribe(
+    //   data=>{
+    //     var dataPostulaciones:any = data.filter((post:any) =>post['email']==this.user)
 
-        this.CardService.getCards()
-        .subscribe(data =>{ 
+    //     this.CardService.getCards()
+    //     .subscribe(data =>{ 
 
-          data.forEach(e => {
-            dataPostulaciones.forEach((postulacion:any) => {
-              if(e.id==postulacion.trabajo){
-                this.postulaciones.push({...e, ...postulacion})
-              }
-            })
-          })
-        })
+    //       data.forEach(e => {
+    //         dataPostulaciones.forEach((postulacion:any) => {
+    //           if(e.id==postulacion.trabajo){
+    //             this.postulaciones.push({...e, ...postulacion})
+    //           }
+    //         })
+    //       })
+    //     })
 
-        this.loader=false;
+    //     this.loader=false;
      
-      },
-      err=>console.log(err)
-    )
+    //   },
+    //   err=>console.log(err)
+    // )
   }
 
 }

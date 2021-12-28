@@ -1,0 +1,116 @@
+{
+    "pais": "Uruguay",
+    "provincias": [
+        {
+            "provincia": "Montevideo",
+            "ciudades": [
+                "Montevideo"
+            ]
+        },
+        {
+            "provincia": "Salto",
+            "ciudades": [
+                "Salto"
+            ]
+        },
+        {
+            "provincia": "Canelones",
+            "ciudades": [
+                "Ciudad de la Costa",
+                "Las Piedras",
+                "Barros Blancos",
+                "Canelones"
+            ]
+        },
+        {
+            "provincia": "Rivera",
+            "ciudades": [
+                "Rivera"
+            ]
+        },
+        {
+            "provincia": "Paysandú",
+            "ciudades": [
+                "Paysandú"
+            ]
+        },
+        {
+            "provincia": "Cerro Largo",
+            "ciudades": [
+                "Melo"
+            ]
+        },
+        {
+            "provincia": "Maldonado",
+            "ciudades": [
+                "Maldonado"
+            ]
+        },
+        {
+            "provincia": "Tacuarembó",
+            "ciudades": [
+                "Tacuarembó"
+            ]
+        },
+        {
+            "provincia": "Soriano",
+            "ciudades": [
+                "Mercedes"
+            ]
+        },
+        {
+            "provincia": "Artigas",
+            "ciudades": [
+                "Artigas"
+            ]
+        },
+        {
+            "provincia": "Lavalleja",
+            "ciudades": [
+                "Minas"
+            ]
+        },
+        {
+            "provincia": "San José",
+            "ciudades": [
+                "San José"
+            ]
+        },
+        {
+            "provincia": "Durazno",
+            "ciudades": [
+                "Durazno"
+            ]
+        },
+        {
+            "provincia": "Florida",
+            "ciudades": [
+                "Florida"
+            ]
+        },
+        {
+            "provincia": "Colonia",
+            "ciudades": [
+                "Colonia del Sacramento"
+            ]
+        },
+        {
+            "provincia": "Treinta y Tres",
+            "ciudades": [
+                "Treinta y Tres"
+            ]
+        },
+        {
+            "provincia": "Rocha",
+            "ciudades": [
+                "Rocha"
+            ]
+        },
+        {
+            "provincia": "Río Negro",
+            "ciudades": [
+                "Fray Bentos"
+            ]
+        }
+    ]
+  }

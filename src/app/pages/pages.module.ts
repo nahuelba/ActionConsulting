@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IndexModule } from './index/index.module';
 import { EmpresaModule } from './empresa/empresa.module';
 import { PersonalModule } from './personal/personal.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PersonalModule } from './personal/personal.module';
     CommonModule,
     IndexModule,
     EmpresaModule,
-    PersonalModule
+    PersonalModule,
+    AuthModule
   ]
 })
 export class PagesModule { }

@@ -46,28 +46,28 @@ export class SearchComponent implements OnInit {
   }
 
   getJobs(){
-    this.cardService.getCards()
-    .subscribe(
-      data=>{
+    // this.cardService.getCards()
+    // .subscribe(
+    //   data=>{
 
-        this.jobs=data.filter(job => job.puesto.toLowerCase().includes(this.puesto!))
-        this.loader=false;
-        if(this.lugar!="todo el país"){
+    //     this.jobs=data.filter(job => job.puesto.toLowerCase().includes(this.puesto!))
+    //     this.loader=false;
+    //     if(this.lugar!="todo el país"){
 
-          this.jobs=this.jobs.filter(job => job.lugar.toLowerCase().includes(this.lugar!))
-        }
-        //Extraer lugares
-        let arrayLugares:any = []
-        this.jobs.forEach(e => {arrayLugares.push(e.lugar) })
+    //       this.jobs=this.jobs.filter(job => job.pais.provincia.provincia.toLowerCase().includes(this.lugar!))
+    //     }
+    //     //Extraer lugares
+    //     let arrayLugares:any = []
+    //     this.jobs.forEach(e => {arrayLugares.push(e.pais.provincia.provincia) })
 
-        this.lugares = this.cardService.removeDuplicates(arrayLugares)
+    //     this.lugares = this.cardService.removeDuplicates(arrayLugares)
 
-      },
-      err=>console.log(err),
+    //   },
+    //   err=>console.log(err),
 
       
      
-    )
+    // )
   }
 
 

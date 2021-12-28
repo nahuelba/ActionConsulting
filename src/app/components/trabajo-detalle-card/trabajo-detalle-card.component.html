@@ -1,0 +1,49 @@
+<div class="card" style="width: 100%">
+  <div class="card-body">
+    <div *ngIf="empresa" style="float: right">
+      <button
+        type="button"
+        class="btn dropdown-toggle-split"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+      </button>
+      <div class="dropdown-menu dropdown-menu-right">
+        <button class="dropdown-item" type="button">Action</button>
+        <button class="dropdown-item" type="button">Another action</button>
+        <button class="dropdown-item" type="button">Something else here</button>
+      </div>
+    </div>
+    <div><span class="h4 mr-2">{{job?.tipo_empresa}} busca {{ job?.puesto }}</span>
+
+      <span
+      *ngIf="empresa"
+      class="badge"
+      [ngClass]="{
+        'badge-success': job?.estado == 'Publicado',
+        'badge-secondary': job?.estado == 'Finalizado',
+        'badge-warning': job?.estado == 'Pendiente'
+      }"
+    >
+      {{ job?.estado }}
+    </span>
+
+
+  </div>
+    <p class="font-weight-lighter" style="font-size: 0.8rem">
+      {{ job?.fecha_publicacion.toDate() | date: "dd/MM/yyyy" }}
+    </p>
+    
+
+
+    <p [innerHtml]="job?.descripcion"></p>
+
+
+    
+
+
+    
+  </div>
+</div>

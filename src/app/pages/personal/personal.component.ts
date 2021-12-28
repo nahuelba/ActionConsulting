@@ -1,28 +1,29 @@
 import { DatePipe, formatDate } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { job } from 'src/app/interfaces/card.interface';
 import { Filters } from 'src/app/interfaces/filters.interface';
 import { FilterDatePipe } from 'src/app/pipes/filter-date.pipe';
-import { FilterTipoPuestoPipe } from 'src/app/pipes/filter-tipo-puesto.pipe';
 import { FilterPipe } from 'src/app/pipes/filter.pipe';
 import { CardService } from 'src/app/services/card.service';
+import { FiltrosService } from 'src/app/services/filtros.service';
 
-
-declare var $:any;
 
 @Component({
   selector: 'app-personal',
   templateUrl: './personal.component.html',
   styleUrls: ['./personal.component.css'],
-  providers:[DatePipe, FilterPipe, FilterDatePipe, FilterTipoPuestoPipe]
+  providers:[DatePipe, FilterPipe, FilterDatePipe]
 })
 export class PersonalComponent implements OnInit {
+
   
   filters:Filters = {
-    provincia :"Provincia",
-    date:"Fecha de Publicación",
-    tipoPuesto: "Tipo de Puesto"
+    provincia :"",
+    date:"",
+    tipoPuesto: "",
+    pais: "",
+    ciudad:""
 
   }
   
@@ -31,8 +32,10 @@ export class PersonalComponent implements OnInit {
 
   today = formatDate(new Date(), 'dd/MM/yyyy', 'en');
 
-  lugares:any[] = []
+  provincias:any[] = []
   tipoPuestos:any[] = []
+  paises:any[] = []
+  ciudades:any[] = []
 
   loader=true;
 
@@ -40,7 +43,9 @@ export class PersonalComponent implements OnInit {
 
   constructor(
     private CardService:CardService,
-    private router: Router
+    public FiltrosService:FiltrosService,
+    private router: Router,
+    private cdRef:ChangeDetectorRef
     ) { }
 
   ngOnInit(): void {
@@ -50,36 +55,29 @@ export class PersonalComponent implements OnInit {
    
   }
 
+  ngAfterViewChecked(){
 
-
-  
+  this.cdRef.detectChanges();
+}
 
   getJobs(){
-    this.CardService.getCards()
+    this.CardService.getCardsPublicadas()
     .subscribe(
       data=>{
         this.jobs=data
+        console.log(this.jobs)
 
 
         this.loader=false;
 
-        //Error Ngfor y Selectpicker
-        setTimeout(function () {
-          $('.selectpicker').selectpicker('refresh');   // refresh the selectpicker with fetched courses
-         }, 50);
-
-        //Extraer lugares
-        let arrayLugares:any = []
-        this.jobs.forEach(e => {arrayLugares.push(e.lugar) })
-
-        this.lugares = this.CardService.removeDuplicates(arrayLugares)
+        //extraer paises
+        let arrayPaises:any = []
+        this.jobs.forEach(e => arrayPaises.push(e.pais.pais))
+        this.paises = this.CardService.removeDuplicates(arrayPaises)
 
 
-        //extraer tipo de puesto
-        let arraytipoPuesto:any = []
-        this.jobs.forEach(e => arraytipoPuesto.push(e.tipo_puesto))
+       this.FiltrosService.extraer(this.jobs, '')
 
-        this.tipoPuestos = this.CardService.removeDuplicates(arraytipoPuesto)
 
       },
       err=>console.log(err),
@@ -89,11 +87,68 @@ export class PersonalComponent implements OnInit {
     )
   }
 
+  filtro(filtro: string, texto:string){
+
+    switch(filtro){
+      case 'pais':
+        this.filters.provincia = ""
+        this.filters.ciudad = ""
+        this.filters.pais=texto
+    
+        //   Extraer provincias
+        let arrayProvincias:string[] = []
+        this.jobs.forEach((e:job) => {
+          if(e.pais.pais==texto){
+            arrayProvincias.push(e.pais.provincia.provincia) 
+          }
+        })
+        this.provincias = this.CardService.removeDuplicates(arrayProvincias)
 
 
+        break;
+      case 'provincia':
+        this.filters.ciudad = ""
+        this.filters.provincia= texto
+
+
+        //   Extraer Ciudades
+        let arrayCiudades:string[] = []
+        this.jobs.forEach((e:job) => {
+          if(e.pais.provincia.provincia==texto){
+            arrayCiudades.push(e.pais.provincia.ciudad.ciudad) 
+          }
+        })
+        this.ciudades = this.CardService.removeDuplicates(arrayCiudades)
+        break;
+
+      case 'ciudad':
+        this.filters.ciudad=texto
+        break;
+
+      case 'tipo_puesto':
+        this.filters.tipoPuesto=texto
+        break;
+      
+      case 'fecha':
+        this.filters.date =texto
+
+
+    }
+
+  }
+
+
+  limpiarFiltros(){
+    this.filters = {
+      provincia :"",
+      date:"",
+      tipoPuesto: "",
+      pais: "",
+      ciudad:""
   
+    }
 
-
-
+    this.FiltrosService.extraer(this.jobs, '')
+  }
 
 }

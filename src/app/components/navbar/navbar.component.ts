@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   @Output()  sendUser = new EventEmitter<string>();
   
 
-  user: string | null = "";
+  user: any;
 
   search= new FormGroup({
     puesto: new FormControl(""),
@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
       res=> {
         console.log(res)
         if(res!==null){
-          this.user= res?.email
+          this.user= res
 
         }else{
           this.user=null

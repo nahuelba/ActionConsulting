@@ -1,0 +1,22 @@
+
+.main {
+    margin-left: 260px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+    background-color: #FAFBFE
+  }
+
+.card-footer{
+  background-color: transparent !important;
+}
+
+.bd-example-modal-lg .modal-dialog{
+  display: table;
+  position: relative;
+  margin: 0 auto;
+  top: calc(50% - 24px);
+}
+
+.bd-example-modal-lg .modal-dialog .modal-content{
+  background-color: transparent;
+  border: none;
+}

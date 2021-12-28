@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './guards/auth.guard';
+import { EmpresaGuard } from './guards/empresa.guard';
 
 
 
@@ -14,8 +16,14 @@ const routes: Routes = [
   },
   {
     path: 'empresa',
-    loadChildren: () => import('./pages/empresa/empresa.module').then(m => m.EmpresaModule)
+    loadChildren: () => import('./pages/empresa/empresa.module').then(m => m.EmpresaModule),
+    canActivate: [EmpresaGuard]
   },
+  {
+    path:'auth',
+    loadChildren: () => import('./pages/auth/auth.module').then(m=> m.AuthModule),
+    canActivate: [AuthGuard]
+  }
   // {
   //   path: 'login',
   //   component: LoginComponent

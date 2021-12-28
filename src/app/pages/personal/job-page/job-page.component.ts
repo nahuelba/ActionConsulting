@@ -21,11 +21,14 @@ export class JobPageComponent implements OnInit {
 
   loader=true;
 
+  cvCargado = false;
+
 
   postulacion:Postulacion={
     email:"",
     fecha:new Date(),
-    trabajo:""
+    trabajo:"",
+    cv: ""
   };
 
   constructor(
@@ -41,20 +44,18 @@ export class JobPageComponent implements OnInit {
 
     this.id=id
 
+    
+
 
     //Consult Firebase with id
     this.CardService.getDocumentById(id)
-    .then( (doc) => {
-      if (doc.exists) {
-        this.job=doc.data();
+    .subscribe( (job) => {
+    
+        this.job=job;
         console.log(this.job);
         this.loader=false;
-      } else {
-        console.log("There is no document!");
-      }
-    }).catch(function (error) {
-      console.log("There was an error getting your document:", error);
-    }); 
+ 
+    })
 
   
 
@@ -62,16 +63,17 @@ export class JobPageComponent implements OnInit {
    
   }
 
-  checkUser(user:string){
+  checkUser(user:any){
     console.log(user)
     this.user=user;
-    this.postulacion.email=this.user
+    // debugger
+    this.postulacion.email=user.email
 
     //verificar si esta postulado
     this.PostulacionService.getPostulaciones()
     .subscribe(
       data=>{
-        let VerificarPostulacion = data.filter((post:any) =>post['email']==this.user && post['trabajo']==this.id)
+        let VerificarPostulacion = data.filter((post:any) =>post['email']==user.email && post['trabajo']==this.id)
 
         VerificarPostulacion.length === 0 ? this.Postulado=false:this.Postulado=true;
      
@@ -93,6 +95,22 @@ export class JobPageComponent implements OnInit {
       console.log(e);
     })
     
+  }
+
+  onFileChange(e:any){
+    console.log(e.files.item(0))
+    if(e.files.item(0)){
+      if(e.files.item(0).type == "application/pdf"){
+        this.postulacion.cv = e.files.item(0).name
+        this.cvCargado=true;
+  
+        
+      }else{
+        this.cvCargado=false;
+      }
+    }else{
+      this.cvCargado=false;
+    }
   }
 
 }

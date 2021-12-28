@@ -1,0 +1,113 @@
+{
+    "pais": "Paraguay",
+    "provincias": [
+        {
+            "provincia": "Asunción",
+            "ciudades": [
+                "Asunción"
+            ]
+        },
+        {
+            "provincia": "Alto Paraná",
+            "ciudades": [
+                "Ciudad del Este"
+            ]
+        },
+        {
+            "provincia": "Itapúa",
+            "ciudades": [
+                "Encarnación"
+            ]
+        },
+        {
+            "provincia": "Amambay",
+            "ciudades": [
+                "Pedro Juan Caballero"
+            ]
+        },
+        {
+            "provincia": "Caaguazú",
+            "ciudades": [
+                "Coronel Oviedo"
+            ]
+        },
+        {
+            "provincia": "Concepción",
+            "ciudades": [
+                "Concepción"
+            ]
+        },
+        {
+            "provincia": "Central",
+            "ciudades": [
+                "Areguá"
+            ]
+        },
+        {
+            "provincia": "Guairá",
+            "ciudades": [
+                "Villarrica"
+            ]
+        },
+        {
+            "provincia": "Canindeyú",
+            "ciudades": [
+                "Salto del Guairá"
+            ]
+        },
+        {
+            "provincia": "San Pedro",
+            "ciudades": [
+                "San Pedro de Ycuamandiyú"
+            ]
+        },
+        {
+            "provincia": "Ñeembucú",
+            "ciudades": [
+                "Pilar"
+            ]
+        },
+        {
+            "provincia": "Cordillera",
+            "ciudades": [
+                "Caacupé"
+            ]
+        },
+        {
+            "provincia": "Paraguarí",
+            "ciudades": [
+                "Paraguarí"
+            ]
+        },
+        {
+            "provincia": "Boquerón",
+            "ciudades": [
+                "Filadelfia"
+            ]
+        },
+        {
+            "provincia": "Presidente Hayes",
+            "ciudades": [
+                "Villa Hayes"
+            ]
+        },
+        {
+            "provincia": "Misiones",
+            "ciudades": [
+                "San Juan Bautista"
+            ]
+        },
+        {
+            "provincia": "Caazapá",
+            "ciudades": [
+                "Caazapá"
+            ]
+        },
+        {
+            "provincia": "Alto Paraguay",
+            "ciudades": [
+                "Fuerte Olimpo"
+            ]
+        }
+    ]
+  }

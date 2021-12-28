@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FilterPipe } from './filter.pipe';
 import { FilterDatePipe } from './filter-date.pipe';
-import { FilterTipoPuestoPipe } from './filter-tipo-puesto.pipe';
+import { FilterPaisPipe } from './filter-pais.pipe';
+import { FilterCiudadPipe } from './filter-ciudad.pipe';
+import { FilterEstadoPipe } from './empresa/filter-estado.pipe';
 
 
 
@@ -10,12 +12,16 @@ import { FilterTipoPuestoPipe } from './filter-tipo-puesto.pipe';
   declarations: [
     FilterPipe,
     FilterDatePipe,
-    FilterTipoPuestoPipe
+    FilterPaisPipe,
+    FilterCiudadPipe,
+    FilterEstadoPipe
   ],
   exports:[
     FilterPipe,
     FilterDatePipe,
-    FilterTipoPuestoPipe
+    FilterPaisPipe,
+    FilterCiudadPipe,
+    FilterEstadoPipe
   ],
   imports: [
     CommonModule

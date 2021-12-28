@@ -8,13 +8,12 @@ export class FilterPipe implements PipeTransform {
 
   transform(jobs: job[], provincia:string): job[] {
 
-    console.log(jobs, provincia)
 
     if(jobs){
 
-        if( provincia!=="Provincia"){
+        if( provincia!==""){
 
-          let jobsFiltered = jobs.filter(job => job.lugar==provincia)
+          let jobsFiltered = jobs.filter(job => job.pais.provincia.provincia==provincia)
           return jobsFiltered;
         }
 

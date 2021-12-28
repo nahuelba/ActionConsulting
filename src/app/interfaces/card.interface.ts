@@ -1,10 +1,25 @@
+
 export interface job {
-    busqueda_rapida :boolean,
-    titulo: string,
+    tipo_empresa: string,
     descripcion:string,
     fecha_publicacion:any,
-    lugar:string,
-    id:string,
+    id?:string,
     puesto:string,
-    tipo_puesto:string
+    pais:pais,
+    estado:string,
+    empresa_id:string
+}
+
+export interface pais {
+    pais: string,
+    provincia: provincia
+}
+
+export interface provincia {
+    provincia: string,
+    ciudad: ciudad
+}
+
+export interface ciudad {
+    ciudad: string
 }

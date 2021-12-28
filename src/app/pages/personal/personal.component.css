@@ -6,7 +6,21 @@
 
 .header-nav{
   background-color: rgb(216, 220, 252); 
-  height: 60px; 
+  /* height: 60px;  */
   padding-top: 10px;
 }
 
+li{
+  list-style: none;
+}
+.listFilter{
+  font-size: 14px;
+  font-weight: 300;
+  /* margin: 0 0 6px; */
+  cursor: pointer;
+  
+}
+
+ul{
+  padding-left: 0;
+}

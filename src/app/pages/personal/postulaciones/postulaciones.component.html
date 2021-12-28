@@ -17,7 +17,7 @@
     <tbody *ngIf="!loader">
       <tr *ngFor="let postulacion of postulaciones">
         <td> <a routerLink="/job/{{postulacion.trabajo}}">{{postulacion.puesto}}</a></td>
-        <td>{{postulacion.titulo}}</td>
+        <td>{{postulacion.empresa}}</td>
         <td>{{postulacion.tipo_puesto}}</td>
         <td>{{postulacion.fecha.toDate() | date:'dd/MM/yyyy'}}</td>
       </tr>

@@ -18,4 +18,9 @@ export class PostulacionService {
   getPostulaciones() {
     return this.firestore.collection<Postulacion[]>('postulacion').valueChanges({ idField: 'id' });
   }
+
+
+  getPostulacion(id:string){
+    return this.firestore.collection('postulacion', ref => ref.where("trabajo", '==', id)).valueChanges({ idField: 'id' })
+  }
 }
