@@ -1,0 +1,48 @@
+
+<div class="container" id="main">
+  <div class="row">
+    <div class="col-md-7 col-lg-8 mx-auto">
+      <div class="card border-0 shadow rounded-3 my-5">
+        <div class="card-body p-4 p-sm-5">
+          <div class="row">
+            <div class="col">
+              <h5 class="card-title text-center mb-5 fw-light fs-5">
+                Ingresar
+              </h5>
+              <a
+                class="btn btn-google rounded-pill btn-block"
+                role="button"
+                (click)="googleSignIn()"
+              >
+              <img src="https://img.icons8.com/material-sharp/24/ffffff/google-logo.png" class="mr-2" style="margin-bottom: 3px;"/>
+
+                INGRESAR CON GOOGLE
+              </a>
+
+          
+              <!-- <a
+              class="btn btn-facebook rounded-pill btn-block mt-4"
+              role="button"
+              (click)="facebookSignIn()"
+            >
+            <img src="https://img.icons8.com/ios-glyphs/30/ffffff/facebook.png"  class="mr-2" style="margin-bottom: 3px;"/>
+
+              INGRESAR CON FACEBOOK
+            </a> -->
+              <hr class="my-4" />
+
+              <a
+              class="btn btn-outline-success rounded-pill btn-block"
+              role="button"
+              [routerLink]="[tipo + '/auth/login-email']"
+            >
+
+              INGRESAR CON EMAIL
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

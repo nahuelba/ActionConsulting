@@ -1,0 +1,37 @@
+<div class="border-bottom pb-3">
+  <span class="h4"> Datos de Empresa </span>
+</div>
+<form class="my-3">
+<div class="form-group">
+  <label for="Puesto">Nombre de la empresa * </label>
+  <input type="text" class="form-control" formControlName="nombre" />
+  <!-- <small *ngIf="error.puesto" id="passwordHelp" class="text-danger">
+      Rellene este campo
+    </small> -->
+</div>
+<!-- <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      type="text"
+      class="form-control"
+    />
+   <small
+      *ngIf="error.tipo_empresa"
+      id="passwordHelp"
+      class="text-danger"
+    >
+      Rellene este campo
+    </small> 
+  </div> -->
+
+<div class="form-group mt-3">
+  <label for="Foto_perfil">Adjunte nueva foto de perfil (opcional)</label>
+  <input type="file" id="Foto_perfil" class="form-control-file" />
+  <!-- <small *ngIf="!errorArchivo" class="form-text text-muted">
+          Formatos admitidos: .jpg .png .jpeg 
+        </small>
+        <small *ngIf="errorArchivo" class="form-text text-danger">
+          El archivo subido no se admite.<br> Formatos admitidos: .jpg .png .jpeg 
+        </small> -->
+</div>
+</form>

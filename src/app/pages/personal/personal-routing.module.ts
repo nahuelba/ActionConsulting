@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'src/app/guards/auth.guard';
+import { PersonalUserGuard } from 'src/app/guards/personal-user.guard';
 import { JobPageComponent } from './job-page/job-page.component';
 import { PersonalComponent } from './personal.component';
 import { PostulacionesComponent } from './postulaciones/postulaciones.component';
-import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
@@ -12,27 +12,32 @@ const routes: Routes = [
     children: [
       {
         path:'',
-        component:PersonalComponent
+        component:PersonalComponent,
+        data:{animation:''}
+      },
+      {
+        path: 'postulaciones',
+        component: PostulacionesComponent,
+        canActivate:[PersonalUserGuard],
+        data:{animation:'postulaciones'}
+      },
+      {
+        path:'mi-perfil',
+        loadChildren: () => import('./mi-perfil/mi-perfil.module').then(m => m.MiPerfilModule),
+        canActivate:[PersonalUserGuard]
       },
       {
         path:':id',
         component: JobPageComponent,
+        data:{animation:':id'}
       },
       {
-        path:'search/:puesto/:lugar',
-        component: SearchComponent
-      },
-      {
-        path: 'postulaciones',
-        component: PostulacionesComponent
+        path:'auth',
+        canActivate: [AuthGuard],
+        loadChildren: () => import('src/app/shared/pages/auth/auth.module').then(m => m.AuthModule),
       }
     ]
   },
-  // {
-  //   path:'auth',
-  //   canActivate: [AuthGuard],
-  //   loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
-  // }
  
 ];
 

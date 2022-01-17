@@ -1,12 +1,18 @@
 <app-navbar [lugares]="provincias"></app-navbar>
 
-<div class="container">
+<div class="container" id="main">
+
   <div class="row">
     <div class="col-3 mt-3 header-nav">
-      <h4>{{ jobs?.length }} Resultados</h4>
+      <h4>{{ FiltrosService.cantidad_trabajos }} Resultados</h4>
+
 
       <!-- Limpiar Filtros -->
       <p class="listFilter" (click)="limpiarFiltros()">Limpiar Filtros</p>
+      <h6>Buscar</h6>
+      <div class="input-group my-2" >
+        <input type="text" class="form-control rounded-pill" placeholder="Buscar" [(ngModel)]="filters.busqueda">
+      </div>
 
       <h6>Fecha de Publicación</h6>
       <ul>
@@ -16,7 +22,7 @@
          [ngClass]="{ 'text-primary': filters.date == fecha.id }"
          >
           {{fecha.id}} 
-          <!-- <span class="text-muted"> ({{fecha.count}})</span> -->
+          <span class="text-muted"> ({{fecha.count}})</span>
         </li>
       </ul>
 
@@ -30,7 +36,7 @@
           [ngClass]="{ 'text-primary': filters.pais == pais.id }"
         >
           {{ pais.id }} 
-          <!-- <span class="text-muted"> ({{ pais.count }})</span> -->
+          <span class="text-muted"> ({{ pais.count }})</span>
         </li>
       </ul>
 
@@ -40,12 +46,12 @@
         <ul>
           <li
             class="listFilter"
-            *ngFor="let provincia of provincias"
+            *ngFor="let provincia of FiltrosService.provincias"
             (click)="filtro('provincia', provincia.id)"
             [ngClass]="{ 'text-primary': filters.provincia == provincia.id }"
           >
             {{ provincia.id }}
-            <!-- <span class="text-muted"> ({{ provincia.count }})</span> -->
+            <span class="text-muted"> ({{ provincia.count }})</span>
           </li>
         </ul>
       </div>
@@ -55,47 +61,34 @@
         <ul>
           <li
             class="listFilter"
-            *ngFor="let ciudad of ciudades"
+            *ngFor="let ciudad of FiltrosService.ciudades"
             (click)="filtro('ciudad', ciudad.id)"
             [ngClass]="{ 'text-primary': filters.ciudad == ciudad.id }"
           >
             {{ ciudad.id }}
-            <!-- <span class="text-muted"> ({{ ciudad.count }})</span> -->
+            <span class="text-muted"> ({{ ciudad.count }})</span>
           </li>
         </ul>
       </div>
 
-      <!-- tipo de puesto
-      <h6>Tipo de Puesto</h6>
+      <!-- Puesto ----->
+      <h6>Puesto</h6>
       <ul>
         <li
           class="listFilter"
-          *ngFor="let tipo_puesto of FiltrosService.tipoPuestos"
-          (click)="filtro('tipo_puesto', tipo_puesto.id)"
-          [ngClass]="{'text-primary': filters.tipoPuesto==tipo_puesto.id}"
+          *ngFor="let puesto of FiltrosService.puestos"
+          (click)="filtro('puesto', puesto.id)"
+          [ngClass]="{'text-primary': filters.puesto==puesto.id}"
         >
-          {{ tipo_puesto.id }}
-         <span class="text-muted"> ({{ tipo_puesto.count }})</span>
+          {{ puesto.id }}
+         <span class="text-muted"> ({{ puesto.count }})</span>
         </li>
-      </ul> -->
+      </ul>
 
-
-      <!-- Modalidad
-      <h6>Modalidad</h6>
-      <ul>
-        <li
-          class="listFilter"
-          *ngFor="let tipo_puesto of FiltrosService.tipoPuestos"
-          (click)="filtro('tipo_puesto', tipo_puesto.id)"
-          [ngClass]="{'text-primary': filters.tipoPuesto==tipo_puesto.id}"
-        >
-          {{ tipo_puesto.id }}
-           <span class="text-muted"> ({{ tipo_puesto.count }})</span> 
-        </li>
-      </ul> -->
     </div>
     <!-- <app-carrousel-jobcard *ngIf="jobsCarrousel" [jobs]="jobsCarrousel" [loader]="loader"></app-carrousel-jobcard> -->
     <div class="col">
+     
       <div class="row" style="height:100%">
         <!-- Skeleton -->
 
@@ -114,6 +107,8 @@
         | filterDate: filters.date
         | filterPais: filters.pais
         | filterCiudad: filters.ciudad
+        | filterPuesto: filters.puesto
+        | filterBusqueda: filters.busqueda
         "
         >
 
@@ -125,16 +120,20 @@
         [empresa]="false"
       >
       </app-trabajo-card-empresa>
+      
 
       </ng-container>
       
-    
+      <ng-container *ngIf="!loader">
         <div 
         *ngIf="!(jobs 
         | filter: filters.provincia
         | filterDate: filters.date
         | filterPais: filters.pais
-        | filterCiudad: filters.ciudad)?.length"
+        | filterCiudad: filters.ciudad
+        | filterPuesto: filters.puesto
+        | filterBusqueda: filters.busqueda
+        )?.length"
         class="text-center"
           style="    
           width: 100%;
@@ -142,12 +141,16 @@
          >
    
             
-              <h4>No hay trabajos con estos filtros.</h4><h5> Pruebe <a style="cursor: pointer; " class="text-primary" (click)="limpiarFiltros()">limpiar filtros</a> y volver a filtrar </h5>
+              <h4>No hay Avisos con estos filtros.</h4><h5> Pruebe <a style="cursor: pointer; " class="text-primary" (click)="limpiarFiltros()">limpiar filtros</a> y volver a filtrar </h5>
                
 
         </div>
+      </ng-container>
      
     </div>
     </div>
   </div>
 </div>
+
+
+<app-footer *ngIf="!loader"></app-footer>

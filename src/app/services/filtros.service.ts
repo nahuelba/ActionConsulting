@@ -8,19 +8,17 @@ import { formatDate } from '@angular/common';
 })
 export class FiltrosService {
 
-  tipoPuestos:any = []
+  puestos:any = []
   provincias:any = []
   paises: any = []
   fechas:any = []
+  ciudades:any = []
+
+  cantidad_trabajos:number = 0
 
   constructor(private CardService:CardService) { }
 
-  extraer(jobs:job[], tipo:string){
-
-    //extraer tipo de puesto
-    let arraytipoPuesto:any = []
-    jobs.forEach((job:job) => arraytipoPuesto.push(job))
-    this.tipoPuestos = this.CardService.removeDuplicates(arraytipoPuesto)
+  extraer(jobs:job[]){
   
     //extraer pais
     let ArrayPais:any = []
@@ -29,6 +27,10 @@ export class FiltrosService {
   
     //Extraer fechas
     let arrayFechas:any = []
+
+  
+
+  
             
     //Hoy
     var today = formatDate(new Date(), 'dd/MM/yyyy', 'en');
@@ -94,15 +96,44 @@ export class FiltrosService {
       }
     })
   
-  
-
     this.fechas = this.CardService.removeDuplicates(arrayFechas)
   
-       
+
+  
+      //extraer puesto
+      let ArrayPuesto:any = []
+      jobs.forEach((job:job) => ArrayPuesto.push(job.puesto))
+      this.puestos = this.CardService.removeDuplicates(ArrayPuesto)
+
+    //   Extraer provincias
+    let arrayProvincias:string[] = []
+    jobs.forEach((e:job) => {
+      if(e.pais.pais){
+        arrayProvincias.push(e.pais.provincia.provincia) 
+      }
+    })
+    this.provincias = this.CardService.removeDuplicates(arrayProvincias)
+
+      //   Extraer Ciudades
+      let arrayCiudades:string[] = []
+      jobs.forEach((e:job) => {
+        if(e.pais.provincia.provincia){
+          arrayCiudades.push(e.pais.provincia.ciudad.ciudad) 
+        }
+      })
+      this.ciudades = this.CardService.removeDuplicates(arrayCiudades)
     
+  
+       
+      this.contar_trabajos(jobs)
 
     
 
      
+  }
+
+
+  contar_trabajos(jobs:job[]){
+    this.cantidad_trabajos = jobs.length
   }
 }

@@ -10,15 +10,18 @@ const routes: Routes = [
     children:[
       {
         path:'',
-        component: TrabajosComponent
+        component: TrabajosComponent,
+        data:{animation:''}
       },
       {
         path:'nuevo',
-        component: NuevoTrabajoComponent
+        component: NuevoTrabajoComponent,
+        data:{animation:'nuevo'}
       },
       {
         path:':id',
-        component:TrabajoDetalleComponent
+        component:TrabajoDetalleComponent,
+        data:{animation:':id'}
       }
     ]
   }

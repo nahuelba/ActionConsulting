@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -17,6 +18,8 @@ export class NavbarComponent implements OnInit {
 
   user: any;
 
+  empresa:boolean = false;
+
   search= new FormGroup({
     puesto: new FormControl(""),
     lugar: new FormControl("Lugar de Trabajo")
@@ -28,20 +31,29 @@ export class NavbarComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router, 
+    private spinner:NgxSpinnerService
   ) {}
 
   ngOnInit(): void {
 
     this.authService.getUserLogged().subscribe(
       res=> {
-        console.log(res)
         if(res!==null){
-          this.user= res
+          this.authService.getUserAfs(res.uid)
+          .subscribe((user:any) => {
+            
+            if(user.tipo=="empresa"){
+              this.empresa= true;
+            }
+            delete user['admin']
+            this.user={ ...res, datos:user}
+            
+            this.sendUser.emit(this.user!);
+          })
 
         }else{
           this.user=null
         }
-        this.sendUser.emit(this.user!);
       }
     )
 
@@ -50,29 +62,16 @@ export class NavbarComponent implements OnInit {
 
 
   logout(){
+    this.spinner.show()
     this.authService.logout()
+    .then(data => {
+      this.spinner.hide()
+      this.router.navigate(['/personal'])
+    })
     this.user=""
-    this.router.navigate(['personal'])
+    
   }
 
-  Buscar(){
-    console.log(this.search)
-
-    let puesto:string =this.search.value.puesto.replaceAll(' ', '-').toLowerCase()
-    if( this.search.value.lugar=="Lugar de Trabajo"){
-      var lugar="todo-el-país"
-    }else{
-      var lugar:string = this.search.value.lugar.replaceAll(' ', '-').toLowerCase()
-    } 
-
-    this.redirectTo(`personal/search/${puesto}/${lugar}`);
-
-  }
-
-  redirectTo(uri:string){
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
-    this.router.navigate([uri]));
-  }
 
  
 

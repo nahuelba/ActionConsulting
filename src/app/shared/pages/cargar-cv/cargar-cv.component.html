@@ -1,0 +1,49 @@
+<div class="form-group mt-3" *ngIf="!user?.cv">
+  <label for="Foto_perfil"
+    >Adjuntar CV.<br />
+    Formatos permitidos: .pdf .doc .docx</label
+  >
+  <input
+    type="file"
+    id="Foto_perfil"
+    class="form-control-file"
+    (change)="onFileChange($event.target)"
+  />
+
+  <small *ngIf="errorCV" class="text-danger">
+    El formato debe ser .pdf .doc .docx
+  </small>
+</div>
+
+<div class="row border mx-2 py-2 my-4" *ngIf="user?.cv" style="width: 80%">
+  <div class="col-9">
+    <h5>
+     {{user?.cv.nombre}}
+      <span class="badge badge-danger" *ngIf="user?.cv.tipo=='.pdf'">PDF</span>
+      <span class="badge badge-primary" *ngIf="user?.cv.tipo=='.doc'">DOC</span>
+      <span class="badge badge-primary" *ngIf="user?.cv.tipo=='.docx'">DOCX</span>
+    </h5>
+    <p class="text-muted">Subido el dia: {{user?.cv.fecha.toDate() | date: "dd/MM/yyyy"}}</p>
+  </div>
+  <div class="col-1" >
+      <button
+        class="btn btn-success"
+        (click)="descargarCV()"
+      >
+      <i class="fa fa-download" aria-hidden="true"></i>
+      </button>
+  
+  </div>
+  <div class="col-1">
+   
+      <button
+        class="btn btn-danger"
+        (click)="EliminarCV()"
+      >
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </button>
+ 
+  </div>
+</div>
+
+<button class="btn btn-success rounded-pill mt-4" *ngIf="!user?.cv" (click)="subirCV()">Subir CV</button>

@@ -18,6 +18,10 @@ export class TrabajosComponent implements OnInit {
 
   filter: string = '';
 
+  calcularExpiracion: boolean = false
+
+  user:any
+
   constructor(
     private CardService: CardService,
     private AuthService: AuthService,
@@ -25,49 +29,26 @@ export class TrabajosComponent implements OnInit {
 
   ) {}
 
-  ngOnInit(): void {
-
-    // // console.log(myData)
-    // const provincias:any =[]
-    // const lista:any = []
-    // myData.forEach((data:any) => {
-
-    //   if(provincias.some((provincia:any) => provincia.provincia === data.admin_name)){
-       
-    //   }else{
-    //     provincias.push({
-    //               provincia: data.admin_name,
-    //               ciudades:[
-    //               ]
-    //             })
-    //   }
-      
-    //  })
-
-    //  myData.forEach( data => {
-    //    provincias.forEach((provincia:any) => {
-    //      if(data.admin_name==provincia.provincia){
-    //       provincia['ciudades'].push(data.city)
-    //      }
-    //    })
-    //  })
-    
-    // console.log(provincias)
-    
+  ngOnInit(): void {   
 
     this.AuthService.getUserLogged().subscribe((user: any) => {
-
-    this.CardService.getCardsDelUsuario(user.uid).subscribe((jobs: job[]) => {
+      this.user = user
+    this.CardService.getCardsDelUsuario(user.uid)
+    .subscribe((jobs: job[]) => {
+    
+        
+         
       
         this.jobs = jobs
         // this.jobs.forEach(job => {
         //   this.PostulacionService.getPostulacion(job.id)
         //   .subscribe(postulacion => job['postulaciones'] = postulacion)
         // })
-        console.log(this.jobs)
+        // console.log(this.jobs)
         this.loader = false;
       });
 
     });
   }
+
 }

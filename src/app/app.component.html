@@ -1,4 +1,6 @@
-<div style="height: 100vh;">
+<div style="height: 100vh; position: relative;" [@routeAnimations]="prepareRoute(outlet)">
 
-    <router-outlet></router-outlet>
+    <router-outlet #outlet="outlet"></router-outlet>
+    <ngx-bootstrap-spinner bdColor = "rgba(0, 0, 0, 0.5)" size = "default" color = "#A8CF46" type = "grow" [fullScreen] = "true"></ngx-bootstrap-spinner>
+
 </div>

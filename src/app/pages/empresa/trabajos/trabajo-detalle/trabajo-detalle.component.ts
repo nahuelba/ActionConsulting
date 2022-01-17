@@ -12,6 +12,8 @@ import { job } from 'src/app/interfaces/card.interface';
 export class TrabajoDetalleComponent implements OnInit {
   job!: job;
 
+  loader:boolean = true;
+
   constructor(
     private CardService: CardService,
     private activatedRoute: ActivatedRoute
@@ -24,6 +26,7 @@ export class TrabajoDetalleComponent implements OnInit {
       if(job){
 
         this.job = job
+        this.loader = false;
       }
       console.log(job)
 

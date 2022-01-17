@@ -9,11 +9,11 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { PersonalRoutingModule } from './personal-routing.module';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { JobPageComponent } from './job-page/job-page.component';
-import { SearchComponent } from './search/search.component';
 import { PersonalComponent } from './personal.component';
 import { RouterModule } from '@angular/router';
 import { PipesModule } from 'src/app/pipes/pipes.module';
 import { PostulacionesComponent } from './postulaciones/postulaciones.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -21,7 +21,6 @@ import { PostulacionesComponent } from './postulaciones/postulaciones.component'
   declarations: [
     PersonalComponent,
     JobPageComponent,
-    SearchComponent,
     PostulacionesComponent
 
   ],
@@ -32,7 +31,9 @@ import { PostulacionesComponent } from './postulaciones/postulaciones.component'
     ComponentsModule,
     NgxSkeletonLoaderModule,
     FormsModule,
-    PipesModule
+    PipesModule,
+    ComponentsModule,
+    SharedModule
   ]
 })
 export class PersonalModule { }

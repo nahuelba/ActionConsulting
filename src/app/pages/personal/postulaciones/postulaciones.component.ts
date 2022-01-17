@@ -11,8 +11,7 @@ export class PostulacionesComponent implements OnInit {
 
   lugares:any[] = []
 
-  user:string="";
-
+  user:any;
   postulaciones:any[] = [];
 
   loader=true;
@@ -23,7 +22,7 @@ export class PostulacionesComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.getJobs()
+    // this.getJobs()
   }
 
 
@@ -45,30 +44,23 @@ export class PostulacionesComponent implements OnInit {
 
   checkUser(user:string){
     this.user=user;
+    console.log(this.user)
+    this.PostulacionService.getPostulacionUser(this.user.uid)
+    .subscribe((postulaciones) => {
+      postulaciones.forEach((postulacion:any) => {
+        this.CardService.getDocumentById(postulacion.trabajo)
+        .subscribe(trabajo => {
+          postulacion['trabajo'] = trabajo
+        })
+      })
+      this.postulaciones= postulaciones
+      
+      this.loader=false
+      console.log(this.postulaciones)
 
-    //verificar si esta postulado
-    // this.PostulacionService.getPostulaciones()
-    // .subscribe(
-    //   data=>{
-    //     var dataPostulaciones:any = data.filter((post:any) =>post['email']==this.user)
-
-    //     this.CardService.getCards()
-    //     .subscribe(data =>{ 
-
-    //       data.forEach(e => {
-    //         dataPostulaciones.forEach((postulacion:any) => {
-    //           if(e.id==postulacion.trabajo){
-    //             this.postulaciones.push({...e, ...postulacion})
-    //           }
-    //         })
-    //       })
-    //     })
-
-    //     this.loader=false;
-     
-    //   },
-    //   err=>console.log(err)
-    // )
+    })
+   
+    
   }
 
 }

@@ -1,0 +1,89 @@
+<h4 class="pt-4">Avisos</h4>
+<div class="row my-3">
+  <div class="col">
+    <!-- <button
+      type="button"
+      routerLink="nuevo"
+      class="btn btn-success rounded-pill"
+    >
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      Nuevo trabajo
+    </button> -->
+  </div>
+  <div class="col">
+    <div
+      class="btn-toolbar"
+      role="toolbar"
+      aria-label="Toolbar with button groups"
+    >
+      <div class="btn-group mr-2" role="group">
+        <button
+          type="button"
+          class="btn btn-light"
+          [ngClass]="{ active: !filter }"
+          (click)="filter = ''"
+        >
+          Todos
+        </button>
+      </div>
+
+      <div class="btn-group" role="group">
+        <button
+          type="button"
+          class="btn btn-light"
+          [ngClass]="{ active: filter == 'Publicado' }"
+          (click)="filter = 'Publicado'"
+        >
+          Publicado
+        </button>
+        <button
+          type="button"
+          class="btn btn-light"
+          [ngClass]="{ active: filter == 'Pendiente' }"
+          (click)="filter = 'Pendiente'"
+        >
+          Pendiente
+        </button>
+        <button
+          type="button"
+          class="btn btn-light"
+          [ngClass]="{ active: filter == 'Finalizado' }"
+          (click)="filter = 'Finalizado'"
+        >
+          Finalizado
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" style="height: 100%">
+  <!-- Skeleton -->
+
+  <ng-container *ngIf="loader">
+    <app-jobcard-skeleton
+      *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+      class="col-lg-4 col-md-6 my-3"
+    ></app-jobcard-skeleton>
+  </ng-container>
+
+  <!-- Card Job -->
+  <ng-container *ngFor="let job of jobs | filterEstado: filter">
+    <app-trabajo-card-empresa
+      routerLink="{{ job.id }}"
+      [job]="job"
+      [admin]="true"
+      *ngIf="jobs.length > 0"
+      class="col-lg-4 col-md-6 my-3"
+    >
+    </app-trabajo-card-empresa>
+  </ng-container>
+
+  <div
+    *ngIf="!jobs?.length"
+    class="text-center"
+    style="width: 100%; margin: auto"
+  >
+    <h4>No hay Avisos publicados</h4>
+  </div>
+</div>

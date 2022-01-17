@@ -1,0 +1,206 @@
+<div class="card" style="width: 100%">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="descripcions">Rubro *</label>
+          <!-- <input
+            type="text"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': error.tipo_empresa }"
+            id="tipo_empresa"
+            [(ngModel)]="form.rubro"
+          /> -->
+          <select
+            class="selectpicker"
+            [ngClass]="{ 'is-invalid': error.rubro }"
+            data-live-search="true"
+            data-width="100%"
+            title="Elija un Rubro"
+            [(ngModel)]="form.rubro"
+          >
+            <option
+              *ngFor="let rubro of rubros"
+              [value]="rubro"
+            >
+              {{ rubro }}
+            </option>
+          </select>
+          <small
+            *ngIf="error.rubro"
+            class="text-danger"
+          >
+            Rellene este campo
+          </small>  
+        </div>
+        <div class="form-group">
+          <label for="Puesto">Puesto / Posición * </label>
+          <!-- <input
+            type="text"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': error.puesto }"
+            id="Puesto"
+            [(ngModel)]="form.puesto"
+          /> -->
+          <select
+            class="selectpicker"
+            [ngClass]="{ 'is-invalid': error.puesto }"
+            data-live-search="true"
+            data-width="100%"
+            title="Elija una Puesto/Posición"
+            [(ngModel)]="form.puesto"
+          >
+            <option
+              *ngFor="let puesto of puestos"
+              [value]="puesto"
+            >
+              {{ puesto }}
+            </option>
+          </select>
+          
+        
+          <small *ngIf="error.puesto" id="passwordHelp" class="text-danger">
+            Rellene este campo
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="descripcions">Tipo de Trabajo *</label>
+          <!-- <input
+            type="text"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': error.tipo_empresa }"
+            id="tipo_empresa"
+            [(ngModel)]="form.tipo_empresa"
+          /> -->
+          <select
+            class="selectpicker"
+            [ngClass]="{ 'is-invalid': error.tipo_trabajo }"
+            data-width="100%"
+            title="Elija un Tipo de trabajo"
+            [(ngModel)]="form.tipo_trabajo"
+          >
+            <option
+              *ngFor="let tipo_trabajo of tipo_trabajo"
+              [value]="tipo_trabajo"
+            >
+              {{ tipo_trabajo }}
+            </option>
+          </select>
+          <small
+            *ngIf="error.tipo_trabajo"
+            id="passwordHelp"
+            class="text-danger"
+          >
+            Rellene este campo
+          </small>
+        </div>
+
+
+        <!-- <div class="form-group">
+          <label for="descripcions">Tipo de Empresa *</label>
+          <input
+            type="text"
+            class="form-control"
+            [ngClass]="{ 'is-invalid': error.tipo_empresa }"
+            id="tipo_empresa"
+            [(ngModel)]="form.tipo_empresa"
+          />
+          <small
+            *ngIf="error.tipo_empresa"
+            class="text-danger"
+          >
+            Rellene este campo
+          </small>
+        </div> -->
+
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>País *</label>
+          <select
+            class="selectpicker"
+            [ngClass]="{ 'is-invalid': error.pais }"
+            data-width="100%"
+            title="Elija un País"
+            (change)="setProvincias($event)"
+            [(ngModel)]="paisSeleccionado"
+          >
+            <option *ngFor="let pais of paises" [value]="pais">
+              {{ pais }}
+            </option>
+          </select>
+          <div *ngIf="error.pais" class="invalid-feedback">
+            Seleccione un país
+          </div>
+        </div>
+  
+        <div class="form-group" *ngIf="paisSeleccionado">
+          <label>Provincia *</label>
+          <select
+            class="selectpicker"
+            [ngClass]="{ 'is-invalid': error.provincia }"
+            data-live-search="true"
+            data-width="100%"
+            title="Elija una Provincia"
+            (change)="setCiudad()"
+            [(ngModel)]="provinciaSeleccionada"
+          >
+            <option *ngFor="let provincia of provincias" [ngValue]="provincia">
+              {{ provincia.provincia }}
+            </option>
+          </select>
+          <div *ngIf="error.provincia" class="invalid-feedback">
+            Seleccione una provincia
+          </div>
+        </div>
+  
+        <div class="form-group" *ngIf="provinciaSeleccionada">
+          <label>Ciudad *</label>
+          <select
+            class="selectpicker"
+            [ngClass]="{ 'is-invalid': error.ciudad }"
+            data-live-search="true"
+            data-width="100%"
+            title="Elija una Ciudad"
+            [(ngModel)]="ciudadSeleccionada"
+          >
+            <option
+              *ngFor="let ciudad of provinciaSeleccionada.ciudades"
+              [value]="ciudad"
+            >
+              {{ ciudad }}
+            </option>
+          </select>
+          <div *ngIf="error.ciudad" class="invalid-feedback">
+            Seleccione una Ciudad
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-4" />
+    <div class="form-group">
+      <label for="descripcion">Descripción *</label>
+
+      <ckeditor [(ngModel)]="form.descripcion"> </ckeditor>
+
+      <small
+        *ngIf="error.descripcion"
+        id="passwordHelp"
+        class="text-danger"
+      >
+        Rellene este campo
+      </small>
+    </div>
+  </div>
+  <div class="card-footer">
+    <button
+      class="btn btn-success rounded-pill"
+      (click)="publicar()"
+      style="float: right; width: 20%"
+    >
+      Publicar
+    </button>
+  </div>
+</div>
+
+

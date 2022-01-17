@@ -26,9 +26,12 @@
 
 .active{
     color: white;
-    border-color: darkblue;
 }
 
 button:focus {
     outline: none;
+}
+
+.list-group-item{
+    border: 1px solid rgba(0, 0, 0, 0) !important; 
 }

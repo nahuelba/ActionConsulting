@@ -1,6 +1,6 @@
 <div class="card" style="width: 100%">
   <div class="card-body">
-    <div *ngIf="empresa" style="float: right">
+    <div *ngIf="admin && empresa" style="float: right">
       <button
         type="button"
         class="btn dropdown-toggle-split"
@@ -11,39 +11,169 @@
         <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
       </button>
       <div class="dropdown-menu dropdown-menu-right">
-        <button class="dropdown-item" type="button">Action</button>
-        <button class="dropdown-item" type="button">Another action</button>
-        <button class="dropdown-item" type="button">Something else here</button>
+        <button
+          class="dropdown-item"
+          type="button"
+          [routerLink]="'/empresa/admin/' + job?.id + '/editar'"
+        >
+          Editar
+        </button>
+        <button
+          class="dropdown-item"
+          type="button"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          Cambiar Estado
+        </button>
+        <button
+          class="dropdown-item"
+          type="button"
+          data-toggle="modal"
+          data-target="#eliminarModal"
+        >
+          Eliminar Aviso
+        </button>
       </div>
     </div>
-    <div><span class="h4 mr-2">{{job?.tipo_empresa}} busca {{ job?.puesto }}</span>
+    <div>
+      <span class="h4 mr-2"
+        >{{ job?.puesto }}</span
+      >
 
       <span
-      *ngIf="empresa"
-      class="badge"
-      [ngClass]="{
-        'badge-success': job?.estado == 'Publicado',
-        'badge-secondary': job?.estado == 'Finalizado',
-        'badge-warning': job?.estado == 'Pendiente'
-      }"
-    >
-      {{ job?.estado }}
-    </span>
+        *ngIf="empresa"
+        class="badge"
+        [ngClass]="{
+          'badge-success': job?.estado == 'Publicado',
+          'badge-secondary': job?.estado == 'Finalizado',
+          'badge-warning': job?.estado == 'Pendiente'
+        }"
+      >
+        {{ job?.estado }}
+      </span>
+      <a *ngIf="admin && empresa"  class="card-subtitle mx-2">({{job?.postulaciones?.length}} Postulacion/es)</a>
+    </div>
 
+        <h6 class="card-subtitle my-2 text-muted" style="font-size: 0.9em">
+          {{ job?.pais?.pais }}, {{ job?.pais?.provincia?.provincia }}, {{ job?.pais?.provincia?.ciudad?.ciudad }}
+        </h6>
+        <h6 class="card-subtitle my-2 text-muted" style="font-size: 0.9em">
+          {{ job?.tipo_trabajo }}
+        </h6>
+        <h6 class="card-subtitle my-2 text-muted" style="font-size: 0.9em">
+          {{ job?.rubro }}
+        </h6>
+        
+        <p   class="font-weight-lighter" style="font-size: 0.8rem">
+          {{ job?.fecha_publicacion.toDate() | date: "dd/MM/yyyy" }} 
+          <span *ngIf="empresa && diasRestantesService.vencimiento!=-1" 
+          [ngClass]="{
+            'text-danger': diasRestantesService.vencimiento<10, 
+          'text-warning': diasRestantesService.vencimiento<20, 
+          'text-success': diasRestantesService.vencimiento<30}"
+          > 
+          (El aviso finalizará en 
+          {{diasRestantesService.vencimiento}} 
+          días) 
+        </span>
+        </p>  
 
-  </div>
-    <p class="font-weight-lighter" style="font-size: 0.8rem">
-      {{ job?.fecha_publicacion.toDate() | date: "dd/MM/yyyy" }}
-    </p>
-    
-
+        
+  
+  
 
     <p [innerHtml]="job?.descripcion"></p>
+  </div>
+</div>
 
 
-    
+<!-- Modal -->
+<div *ngIf="admin && empresa" class="modal fade"  id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cambiar Estado</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" [formGroup]="select">
+
+        <div class="form-group" >
+          <label>Estado *</label>
+          <select
+            class="form-control"
+            data-width="100%"
+            title="Elija un estado"
+            formControlName="estado"
+          
+          >
+          
+            <option *ngFor="let estado of estados" [value]="estado">{{estado}}</option>
+
+          </select>
+  
+        </div>
+        
+        <!-- <div class="form-group" >
+          <label>Destacado *</label>
+          <select
+            class="form-control"
+            data-width="100%"
+            title="Elija un estado"
+            formControlName="destacado"
+          
+          >
+            <option [value]="false">Estandar</option>
+            <option [value]="true">Destacado</option>
+          </select>
+  
+        </div> -->
+
+          <div class="form-group" >
+          <label>Categoría *</label>
+          <select
+            class="form-control"
+            data-width="100%"
+            title="Elija un estado"
+            formControlName="categoria"
+          
+          >
+            <option *ngFor="let categoria of categorias" [value]="categoria">{{categoria}}</option>
+          </select>
+  
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="cambiarEstado()">Cambiar estado</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-    
+<!-- Modal -->
+<div *ngIf="admin && empresa"  class="modal fade" id="eliminarModal" tabindex="-1" role="dialog" aria-labelledby="eliminarModal"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="eliminarModal">Eliminar Aviso</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        Estas seguro que deseas eliminar un Aviso? Esta accion es irreversible.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="eliminarTrabajo()">Eliminar</button>
+      </div>
+    </div>
   </div>
 </div>

@@ -14,21 +14,19 @@
       <i class="fa fa-home" aria-hidden="true"></i>
       Inicio
     </button>
-    <!-- <button type="button" class="list-group-item list-group-item-action list-item">Postulaciones</button> -->
-    <!-- <button type="button" class="list-group-item list-group-item-action list-item">Trabajos</button> -->
-    <!-- Trabajos -->
+    <!-- Avisos -->
     <div class="accordion" id="accordionExample">
       <button
         class="list-group-item list-group-item-action list-item"
         type="button"
-        [class.active]="this.router.url.includes('trabajos')"
+        [class.active]="this.router.url.includes('avisos')"
         data-toggle="collapse"
         data-target="#collapseOne"
         aria-expanded="true"
         aria-controls="collapseOne"
       >
         <i class="fa fa-briefcase" aria-hidden="true"></i>
-        Trabajos
+        Tus Avisos
       </button>
 
       <div
@@ -40,31 +38,78 @@
         <ul class="list-group list-group-flush" style="margin-left: 20px">
           <li
             class="list-group-item list-item list-group-item-action"
-            [routerLink]="['trabajos']"
+            [routerLink]="['/empresa/avisos']"
             [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }"
           >
-            Lista de Trabajos
+            Lista de Avisos
           </li>
           <li
+            *ngIf="user?.emailVerified"
             class="list-group-item list-item list-group-item-action"
-            [routerLink]="['trabajos/nuevo']"
+            [routerLink]="['/empresa/avisos/nuevo']"
             [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }"
           >
-            Nuevo Trabajo
+            Nuevo Aviso
           </li>
           <!-- <li class="list-group-item list-item list-group-item-action">A third item</li> -->
         </ul>
       </div>
     </div>
-    <!-- Fin Trabajos -->
-    <button
-      type="button"
-      class="list-group-item list-group-item-action list-item"
-    >
-      Cerrar sesión
-    </button>
+
+    <!-- Menu Admin -->
+    <div *ngIf="admin" class="accordion" id="MenuAdmin">
+      <button
+        class="list-group-item list-group-item-action list-item"
+        type="button"
+        [class.active]="this.router.url.includes('admin')"
+        data-toggle="collapse"
+        data-target="#menuAdmin"
+        aria-expanded="true"
+        aria-controls="menuAdmin"
+      >
+        <i class="fa fa-user" aria-hidden="true"></i>
+        Menu Admin
+      </button>
+
+      <div
+        id="menuAdmin"
+        class="collapse show"
+        aria-labelledby="headingOne"
+        data-parent="#MenuAdmin"
+      >
+        <ul class="list-group list-group-flush" style="margin-left: 20px">
+          <li
+            class="list-group-item list-item list-group-item-action"
+            [routerLink]="['admin']"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Lista de Avisos
+          </li>
+          <!-- <li
+            class="list-group-item list-item list-group-item-action"
+            [routerLink]="['admin/nuevo']"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Nuevo Trabajo
+          </li> -->
+          <li
+            class="list-group-item list-item list-group-item-action"
+            [routerLink]="['admin/postulaciones']"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Postulaciones
+          </li>
+          <!-- <li class="list-group-item list-item list-group-item-action">A third item</li> -->
+        </ul>
+      </div>
+    </div>
+    <!-- Fin Avisos -->
+
   </div>
 </div>
 
@@ -83,7 +128,8 @@
             aria-expanded="false"
           >
             <img
-              src="https://via.placeholder.com/100"
+            
+              [src]="!user?.photoURL ? 'https://via.placeholder.com/100' : user.photoURL"
               width="40"
               height="40"
               class="rounded-circle"
@@ -96,23 +142,23 @@
           >
             <div class="text-center">
               <img
-                src="https://via.placeholder.com/100"
+                [src]="!user?.photoURL ? 'https://via.placeholder.com/100' : user.photoURL"
                 width="40"
                 height="40"
                 class="rounded-circle"
               />
             </div>
-            <p class="text-center" style="margin-bottom: 0">name</p>
-            <p class="text-center text-muted" style="font-size: 0.9em">email</p>
+            <p class="text-center" style="margin-bottom: 0">{{user?.displayName}}</p>
+            <p class="text-center text-muted" style="font-size: 0.9em">{{user?.email}}</p>
 
             <div class="dropdown-divider"></div>
 
-            <a class="dropdown-item" href="#">Mi perfil</a>
+            <a class="dropdown-item" routerLink="/empresa/mi-perfil">Mi perfil</a>
             <!-- <a class="dropdown-item" [routerLink]="['/personal/postulaciones']">Postulaciones</a> -->
 
             <div class="dropdown-divider"></div>
 
-            <a class="dropdown-item" routerLink="">Cerrar Sesión</a>
+            <a class="dropdown-item" (click)="logout()" style="cursor: pointer;">Cerrar Sesión</a>
           </div>
           <!-- <a class="nav-link text-light" [routerLink]="" (click)="logout()">Salir</a> -->
         </li>

@@ -1,7 +1,8 @@
 export interface Filters {
     provincia:string,
     date:string,
-    tipoPuesto: string,
+    puesto: string,
     pais:string,
-    ciudad:string
+    ciudad:string,
+    busqueda:string
 }

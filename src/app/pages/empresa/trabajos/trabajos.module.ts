@@ -9,6 +9,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
 import { PipesModule } from 'src/app/pipes/pipes.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ng2-ckeditor';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { CKEditorModule } from 'ng2-ckeditor';
     ComponentsModule,
     PipesModule,
     FormsModule,
-    CKEditorModule
+    SharedModule
   ]
 })
 export class TrabajosModule { }

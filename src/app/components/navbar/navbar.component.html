@@ -1,39 +1,20 @@
 <div class="container-fluid bg-dark">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #313A46">
 
     <a class="navbar-brand" href="#">
       <img src="assets/img/ablanco.png" height="70" alt="">
     </a>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
 
-      <form *ngIf="puestoForm" class="form-inline ml-5 mr-auto my-2" style="width: 80%;" (ngSubmit)="Buscar()"
-        [formGroup]="search">
-        <div class="input-group" style="border-radius: 20px; width: 80%;">
-          <input type="text" class="form-control shadow-none" placeholder="Puesto de Trabajo" formControlName="puesto">
-          <div class="input-group-append">
-            <select class="form-control shadow-none" data-width="100%" formControlName="lugar">
-              <option selected>Lugar de Trabajo</option>
-              <option *ngFor="let lugar of lugares" [value]="lugar.id">{{ lugar.id }} <span
-                  class="text-muted">{{lugar.count}}</span></option>
-            </select>
-          </div>
-        </div>
-        <button class="btn btn-outline-primary ml-2" type="button" (click)="Buscar()"><i class="fa fa-search"
-            aria-hidden="true"></i></button>
-      </form>
+    
 
-      <ul class="navbar-nav ml-auto" *ngIf="user===null">
-        <li class="nav-item mr-2">
-          <button class="btn btn-success" [routerLink]="['/auth/register']">Registrarse</button>
-        </li>
+      <ul class="navbar-nav ml-auto" style="flex-direction: row !important;" *ngIf="user===null">
+        <!-- <li class="nav-item mr-2">
+          <button class="btn btn-success" style="height: 100%;" [routerLink]="['/personal/auth/register/tipo-cuenta']">Registrarse</button>
+        </li> -->
         <li class="nav-item">
-          <a class="nav-link text-light" [routerLink]="['/auth/login']">Ingresar</a>
+          <a class="nav-link text-light" [routerLink]="['/personal/auth/login']">Ingresar</a>
         </li>
       </ul>
 
@@ -41,13 +22,15 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            <img src="https://via.placeholder.com/100" width="40"
+            <img 
+            [src]="!user?.photoURL ? 'https://via.placeholder.com/100' : user.photoURL" 
+            width="40"
               height="40" class="rounded-circle">
           </a>
           <div class="dropdown-menu dropdown-menu-right" style="width: 250px !important;" aria-labelledby="navbarDropdownMenuLink">
     
             <div class="text-center">
-              <img src="https://via.placeholder.com/100"
+              <img [src]="!user?.photoURL ? 'https://via.placeholder.com/100' : user.photoURL"
               width="40" height="40" class="rounded-circle">
 
             </div>
@@ -57,8 +40,8 @@
 
             <div class="dropdown-divider"></div>
 
-            <a class="dropdown-item" href="#">Mi perfil</a>
-            <a class="dropdown-item" [routerLink]="['/personal/postulaciones']">Postulaciones</a>
+            <a class="dropdown-item" routerLink="/personal/mi-perfil/datos-personales">Mi perfil</a>
+            <a class="dropdown-item" *ngIf="!empresa" [routerLink]="['/personal/postulaciones']">Mis Postulaciones</a>
 
             <div class="dropdown-divider" ></div>
 
@@ -67,7 +50,7 @@
           <!-- <a class="nav-link text-light" [routerLink]="" (click)="logout()">Salir</a> -->
         </li>
       </ul>
-    </div>
+ 
   </nav>
 </div>
 

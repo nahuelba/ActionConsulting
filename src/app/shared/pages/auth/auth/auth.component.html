@@ -1,0 +1,24 @@
+<!-- As a link -->
+<nav class="navbar navbar-dark" style="background-color:#313A46;">
+    <a [routerLink]="tipo"><i class="fa fa-chevron-left fa-lg mx-3 back"  aria-hidden="true"></i></a>
+  
+    <a class="navbar-brand mx-auto" href="#">
+      
+      <img class="" src="assets/img/ablanco.png" height="50" alt="">
+    </a>
+  </nav>
+<div id="main" style="overflow: hidden;">
+
+  <div class="row">
+    <div class="col-6 background-image" [ngStyle]="{'background-image' : 'url(/assets/img' + tipo +'-auth.jpg)'}">
+      
+    </div>
+    <div class="col" [@routeAnimations]="prepareRoute(outlet)" >
+      <router-outlet #outlet="outlet"></router-outlet>
+
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>

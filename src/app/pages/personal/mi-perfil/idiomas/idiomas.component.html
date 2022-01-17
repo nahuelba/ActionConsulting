@@ -1,0 +1,61 @@
+<div class="border-bottom pb-3">
+    <span class="h4"> Idiomas </span>
+  </div>
+
+
+<div class="my-3">
+    <div class="row" >
+        <div class="col-6">
+            <div class="form-group">
+                <label>Idioma</label>
+                <select
+                  class="selectpicker"
+                  data-width="100%"
+                  title="Seleccionar"
+                  data-live-search="true"
+                  
+                >
+                 
+                  <option *ngFor="let idioma of idiomas" [value]="idioma.name">{{idioma.name}}</option>
+                </select>
+              </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label>Nivel oral</label>
+                <select
+                  class="selectpicker"
+                  data-width="100%"
+                  title="Seleccionar"
+        
+                >
+                  <option value="Principiante">Principiante</option>
+                  <option value="Intermedio">Intermedio</option>
+                  <option value="Avanzado">Avanzado</option>
+                </select>
+              </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label>Nivel escrito</label>
+                <select
+                  class="selectpicker"
+                  data-width="100%"
+                  title="Seleccionar"
+            
+                >
+                <option value="Principiante">Principiante</option>
+                <option value="Intermedio">Intermedio</option>
+                <option value="Avanzado">Avanzado</option>
+                </select>
+              </div>
+        </div>
+        <div class="col">
+          
+                
+                <button class="btn btn-danger" style="margin-top: 30px;"><i class="fa fa-trash" aria-hidden="true"></i></button>
+           
+        </div>
+    </div>
+    <button class="btn btn-success" (click)="addIdioma()">Agregar Idioma</button>
+</div>

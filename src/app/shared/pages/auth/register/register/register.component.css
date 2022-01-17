@@ -1,0 +1,18 @@
+.back:link {
+    color: white;
+    text-decoration: white;
+  }
+  
+  .back:hover {
+    color: white;
+    text-decoration: white;
+  }
+  .back {
+    color: white;
+    text-decoration: white;
+    height: 100%;
+  }
+
+  #main{
+    min-height: calc(100% - 96px - 50px);
+  }

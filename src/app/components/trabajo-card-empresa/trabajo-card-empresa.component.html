@@ -1,6 +1,7 @@
 <div class="card" style="min-height: 269px">
   <div class="card-body">
-    <h5 class="card-title">{{job.tipo_empresa}} busca {{ job.puesto }}</h5>
+    <h5 class="card-title">{{ job.puesto }}</h5>
+    <!-- <h6 class="card-subtitle text-muted">{{job.tipo_empresa}}</h6> -->
     <h6 class="card-subtitle my-2 text-muted" style="font-size: 0.9em">
       {{ job.pais.pais }}<br />
       {{ job.pais.provincia.provincia }}, {{ job.pais.provincia.ciudad.ciudad }}
@@ -17,24 +18,33 @@
       {{ job.estado }}
     </span>
 
+
     <p hidden [innerHTML]="job.descripcion" #descripcion></p>
 
-    <!-- <p class="card-text my-3 text-muted" [innerHTML]="job.descripcion | slice:0:500"></p> -->
+    <p class="card-text my-3" style="font-size: 0.9rem;">{{ getInnerText(descripcion).length > 150 ? (getInnerText(descripcion) | slice:0:100) +'...' : getInnerText(descripcion) }}</p>
 
-    <p class="card-text my-3">{{ getInnerText(descripcion).length > 150 ? (getInnerText(descripcion) | slice:0:100) +'...' : getInnerText(descripcion) }}</p>
-
-
-   
     <div class="row">
       <div class="col">
-        <!-- <p class="text-left text-muted" style="font-size: 0.8rem">
-          {{ job }}
-        </p> -->
+        <p *ngIf="admin" class="text-left text-muted" style="font-size: 0.8rem">
+          {{ job?.postulaciones?.length }} postulaciones
+        </p>
+        <p *ngIf="job?.destacado" class="badge badge-success" style="font-size: 0.8rem">
+          Destacado
+        </p>
       </div>
       <div class="col">
         <p class="text-right font-weight-lighter" style="font-size: 0.8rem">
-          {{ job.fecha_publicacion.toDate() | date: "dd/MM/yyyy" }}
+          {{ job.fecha_publicacion.toDate() | date: "dd/MM/yyyy" }} <br>
+          <span *ngIf="empresa && dias_restantes!=-1" 
+          [ngClass]="{
+            'text-danger': dias_restantes<10, 
+          'text-warning': dias_restantes<20, 
+          'text-success': dias_restantes<30}"
+          > 
+          ({{dias_restantes}} días restantes)
+          </span>
         </p>
+       
       </div>
     </div>
   </div>

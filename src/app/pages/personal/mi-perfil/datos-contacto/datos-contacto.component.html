@@ -1,0 +1,40 @@
+<div class="border-bottom pb-3">
+    <span class="h4"> Datos de Contacto </span>
+  </div>
+
+<form class="my-3">
+  <div class="form-group">
+    <label for="Puesto">Email</label>
+    <input type="email" class="form-control" formControlName="email" readonly/>
+    <!-- <small *ngIf="error.puesto" id="passwordHelp" class="text-danger">
+            Rellene este campo
+          </small> -->
+  </div>
+
+  <div class="form-group">
+    <label for="Puesto">Email Alternativo</label>
+    <input type="email" class="form-control" formControlName="emailalternativo" />
+    <!-- <small *ngIf="error.puesto" id="passwordHelp" class="text-danger">
+            Rellene este campo
+          </small> -->
+  </div>
+
+  <div class="form-group">
+    <label for="Puesto">Telefono 1</label>
+    <input type="number" class="form-control" formControlName="telefono1" />
+    <!-- <small *ngIf="error.puesto" id="passwordHelp" class="text-danger">
+            Rellene este campo
+          </small> -->
+  </div>
+
+  <div class="form-group">
+    <label for="Puesto">Telefono 2</label>
+    <input type="number" class="form-control" formControlName="telefono2" />
+    <!-- <small *ngIf="error.puesto" id="passwordHelp" class="text-danger">
+            Rellene este campo
+          </small> -->
+  </div>
+
+
+  <button class="btn btn-success rounded-pill mt-4">Actualizar perfil</button>
+</form>

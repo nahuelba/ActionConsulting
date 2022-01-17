@@ -2,115 +2,122 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CardService } from 'src/app/services/card.service';
 import { PostulacionService } from 'src/app/services/postulacion.service';
-import { Postulacion } from 'src/app/interfaces/postulacion.interface'
+import { Postulacion } from 'src/app/interfaces/postulacion.interface';
+import { SubirCvService } from 'src/app/services/subir-cv.service';
+import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-job-page',
   templateUrl: './job-page.component.html',
-  styleUrls: ['./job-page.component.css']
+  styleUrls: ['./job-page.component.css'],
 })
 export class JobPageComponent implements OnInit {
+  job: any;
 
-  job:any
+  user: any;
 
-  user:string="";
+  id: string = '';
 
-  id:string="";
+  postulado = {
+    postulacionTexto: '',
+    postulado: false,
+  };
 
-  Postulado:boolean=false
-
-  loader=true;
+  loader = true;
 
   cvCargado = false;
+  errorCV = false;
 
-
-  postulacion:Postulacion={
-    email:"",
-    fecha:new Date(),
-    trabajo:"",
-    cv: ""
+  postulacion: Postulacion = {
+    user: '',
+    fecha: new Date(),
+    trabajo: ''
   };
+  pdf:any
 
   constructor(
     private CardService: CardService,
     private route: ActivatedRoute,
     private PostulacionService: PostulacionService,
-    private router: Router, 
-    ) { }
+    private router: Router,
+    private SubirCvService: SubirCvService,
+    private spinner:NgxSpinnerService,
+    private toastr:ToastrService
+  ) {}
 
   ngOnInit(): void {
     //Get Id from url
-    let id:any = this.route.snapshot.paramMap.get('id');
+    let id: any = this.route.snapshot.paramMap.get('id');
 
-    this.id=id
-
-    
-
+    this.id = id;
 
     //Consult Firebase with id
-    this.CardService.getDocumentById(id)
-    .subscribe( (job) => {
-    
-        this.job=job;
-        console.log(this.job);
-        this.loader=false;
- 
-    })
+    this.CardService.getDocumentById(id).subscribe((job) => {
+      this.job = job;
+      console.log(this.job);
+      this.loader = false;
+    });
+
+    this.postulacion.trabajo = id;
+  }
+
+  checkUser(user: any) {
+    this.user = user;
+    //SI la cuenta es tipo empresa no dejar postularse
+    if (user.datos.tipo == 'empresa') {
+      this.postulado.postulado = true;
+      this.postulado.postulacionTexto =
+        'Esta cuenta es empresa, no se puede postular.';
+      return;
+    }
 
   
 
-    this.postulacion.trabajo=id
-   
-  }
-
-  checkUser(user:any){
-    console.log(user)
-    this.user=user;
     // debugger
-    this.postulacion.email=user.email
+    console.log(user);
+    this.postulacion.user = user.uid;
 
     //verificar si esta postulado
-    this.PostulacionService.getPostulaciones()
-    .subscribe(
-      data=>{
-        let VerificarPostulacion = data.filter((post:any) =>post['email']==user.email && post['trabajo']==this.id)
-
-        VerificarPostulacion.length === 0 ? this.Postulado=false:this.Postulado=true;
-     
+    this.PostulacionService.verificarPostulacion(
+      user.uid,
+      this.job.id
+    ).subscribe(
+      (data) => {
+        console.log(data);
+        if (data.length == 0) {
+          this.postulado.postulado = false;
+          this.postulado.postulacionTexto = 'Postularse';
+        } else {
+          this.postulado.postulado = true;
+          this.postulado.postulacionTexto = 'Ya estas postulado';
+        }
       },
-      err=>console.log(err)
-    )
+      (err) => console.log(err)
+    );
   }
 
-
-  Postulacion(){
-    console.log(this.postulacion)
-    this.PostulacionService.RealizarPostulacion(this.postulacion)
-    .then(res => {
-      console.log(res);
-      this.ngOnInit()
-      this.Postulado=true;
-    })
-    .catch(e => {
-      console.log(e);
-    })
+  Postulacion() {
+    this.spinner.show()
     
-  }
 
-  onFileChange(e:any){
-    console.log(e.files.item(0))
-    if(e.files.item(0)){
-      if(e.files.item(0).type == "application/pdf"){
-        this.postulacion.cv = e.files.item(0).name
-        this.cvCargado=true;
-  
+    console.log(this.postulacion);
+    this.PostulacionService.RealizarPostulacion(this.postulacion)
+      .then((res) => {
         
-      }else{
-        this.cvCargado=false;
-      }
-    }else{
-      this.cvCargado=false;
-    }
+        console.log(res);
+        this.ngOnInit();
+        this.postulado.postulado = true;
+        this.postulado.postulacionTexto = 'Ya estas postulado';
+        this.spinner.hide()
+        this.toastr.success('Te has postulado correctamente!')
+      })
+      .catch((e) => {
+        console.log(e);
+        this.spinner.hide()
+        this.toastr.warning('No te pudimos postular, intenta mas tarde.')
+      });
   }
 
+ 
 }

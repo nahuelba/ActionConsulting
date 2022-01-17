@@ -1,17 +1,19 @@
 <div class="row py-4">
   <div class="col">
-    <h4 style="margin-top: 9px">Detalle del Trabajo</h4>
+    <h4 style="margin-top: 9px">Detalle del Aviso</h4>
   </div>
   <div class="col">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb" style="background-color: #fafbfe">
         <li class="breadcrumb-item">
-          <a routerLink="/empresa/trabajos">Trabajos</a>
+          <a routerLink="/empresa/avisos">Avisos</a>
         </li>
-        <li class="breadcrumb-item active">Trabajo del detalle</li>
+        <li class="breadcrumb-item active">Detalle del Aviso</li>
       </ol>
     </nav>
   </div>
 </div>
 
-<app-trabajo-detalle-card [job]="job"></app-trabajo-detalle-card>
+<app-trabajo-detalle-card *ngIf="!loader" [empresa]="true" [job]="job"></app-trabajo-detalle-card>
+
+<app-detalle-skeleton *ngIf="loader"></app-detalle-skeleton>

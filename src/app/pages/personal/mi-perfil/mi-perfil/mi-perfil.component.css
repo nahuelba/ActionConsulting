@@ -1,0 +1,15 @@
+.active{
+    color:#A8CF46 !important; 
+
+}
+
+.nav-item:hover{
+    background-color: #F4F6F8;
+}
+
+.nav-link{
+    color: black;
+}
+#main{
+    min-height: calc(100% - 96px - 70px);
+  }

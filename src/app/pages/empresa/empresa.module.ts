@@ -5,7 +5,8 @@ import { EmpresaRoutingModule } from './empresa-routing.module';
 import { EmpresaComponent } from './empresa/empresa.component';
 import { ComponentsModule } from 'src/app/components/components.module';
 import { InicioComponent } from './inicio/inicio.component';
-import { TrabajosModule } from './trabajos/trabajos.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MiPerfilModule } from './mi-perfil/mi-perfil.module';
 
 
 
@@ -17,7 +18,8 @@ import { TrabajosModule } from './trabajos/trabajos.module';
   imports: [
     CommonModule,
     EmpresaRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    ReactiveFormsModule
 
   ]
 })

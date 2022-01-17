@@ -3,10 +3,12 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { job } from 'src/app/interfaces/card.interface';
 import { Filters } from 'src/app/interfaces/filters.interface';
-import { FilterDatePipe } from 'src/app/pipes/filter-date.pipe';
-import { FilterPipe } from 'src/app/pipes/filter.pipe';
+import { FilterDatePipe } from 'src/app/pipes/personal/filtros/filter-date.pipe';
+import { FilterPipe } from 'src/app/pipes/personal/filtros/filter.pipe';
+import { AuthService } from 'src/app/services/auth.service';
 import { CardService } from 'src/app/services/card.service';
 import { FiltrosService } from 'src/app/services/filtros.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 
 @Component({
@@ -17,13 +19,16 @@ import { FiltrosService } from 'src/app/services/filtros.service';
 })
 export class PersonalComponent implements OnInit {
 
+
+
   
   filters:Filters = {
     provincia :"",
     date:"",
-    tipoPuesto: "",
+    puesto: "",
     pais: "",
-    ciudad:""
+    ciudad:"",
+    busqueda:""
 
   }
   
@@ -41,12 +46,14 @@ export class PersonalComponent implements OnInit {
 
   jobsCarrousel!:job[];
 
+  
+
   constructor(
     private CardService:CardService,
     public FiltrosService:FiltrosService,
     private router: Router,
     private cdRef:ChangeDetectorRef
-    ) { }
+     ) { }
 
   ngOnInit(): void {
     
@@ -60,10 +67,21 @@ export class PersonalComponent implements OnInit {
   this.cdRef.detectChanges();
 }
 
+
+
+
   getJobs(){
     this.CardService.getCardsPublicadas()
     .subscribe(
       data=>{
+       //a.sort(function(a,b){return a.xx-b.xx});
+        data.sort(function (x, y) {
+          // true values first
+          return (x.destacado === y.destacado) ? 0 : x ? -1 : 1;
+          // false values first
+          // return (x === y)? 0 : x? 1 : -1;
+        });
+
         this.jobs=data
         console.log(this.jobs)
 
@@ -76,7 +94,7 @@ export class PersonalComponent implements OnInit {
         this.paises = this.CardService.removeDuplicates(arrayPaises)
 
 
-       this.FiltrosService.extraer(this.jobs, '')
+       this.FiltrosService.extraer(this.jobs)
 
 
       },
@@ -95,14 +113,7 @@ export class PersonalComponent implements OnInit {
         this.filters.ciudad = ""
         this.filters.pais=texto
     
-        //   Extraer provincias
-        let arrayProvincias:string[] = []
-        this.jobs.forEach((e:job) => {
-          if(e.pais.pais==texto){
-            arrayProvincias.push(e.pais.provincia.provincia) 
-          }
-        })
-        this.provincias = this.CardService.removeDuplicates(arrayProvincias)
+        
 
 
         break;
@@ -111,22 +122,15 @@ export class PersonalComponent implements OnInit {
         this.filters.provincia= texto
 
 
-        //   Extraer Ciudades
-        let arrayCiudades:string[] = []
-        this.jobs.forEach((e:job) => {
-          if(e.pais.provincia.provincia==texto){
-            arrayCiudades.push(e.pais.provincia.ciudad.ciudad) 
-          }
-        })
-        this.ciudades = this.CardService.removeDuplicates(arrayCiudades)
+      
         break;
 
       case 'ciudad':
         this.filters.ciudad=texto
         break;
 
-      case 'tipo_puesto':
-        this.filters.tipoPuesto=texto
+      case 'puesto':
+        this.filters.puesto=texto
         break;
       
       case 'fecha':
@@ -142,13 +146,14 @@ export class PersonalComponent implements OnInit {
     this.filters = {
       provincia :"",
       date:"",
-      tipoPuesto: "",
+      puesto: "",
       pais: "",
-      ciudad:""
+      ciudad:"",
+      busqueda:""
   
     }
 
-    this.FiltrosService.extraer(this.jobs, '')
+    this.FiltrosService.extraer(this.jobs)
   }
 
 }

@@ -1,7 +1,24 @@
-<app-navbar-empresa></app-navbar-empresa>
+<app-navbar-empresa [admin]="admin" [user]="user"></app-navbar-empresa>
 
-<div class="main">
-  <div class="container">
-    <router-outlet></router-outlet>
+<div class="main" id="main">
+  <div class="container" [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
   </div>
 </div>
+
+<footer class="footer ">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-6">
+              {{ year }} © ActionConsulting
+          </div>
+          <div class="col-md-6">
+              <div class="text-md-end footer-links d-none d-md-block text-right">
+                  <a class="mr-3">Acerca de</a>
+                  
+                  <a class="mr-3">Contactanos</a>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>

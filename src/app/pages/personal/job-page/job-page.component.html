@@ -1,61 +1,117 @@
 <app-navbar (sendUser)="checkUser($event)" [puestoForm]="false"></app-navbar>
-<div class="container">
-<div class="row py-4">
-  <div class="col">
-    <h4 style="margin-top: 9px">Detalle del Trabajo</h4>
+<div class="container" id="main">
+  <div class="row py-4">
+    <div class="col">
+      <h4 style="margin-top: 9px">Detalle del Aviso</h4>
+    </div>
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" style="background-color: transparent">
+          <li class="breadcrumb-item">
+            <a routerLink="/personal">Avisos</a>
+          </li>
+          <li class="breadcrumb-item active">Detalle del Aviso</li>
+        </ol>
+      </nav>
+    </div>
   </div>
-  <div class="col">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb" style="background-color: transparent">
-        <li class="breadcrumb-item">
-          <a routerLink="/personal">Trabajos</a>
-        </li>
-        <li class="breadcrumb-item active">Trabajo del detalle</li>
-      </ol>
-    </nav>
+
+  <app-trabajo-detalle-card
+  *ngIf="!loader && job?.estado=='Publicado'"
+    [job]="job"
+    [empresa]="false"
+  ></app-trabajo-detalle-card>
+
+  <div
+    *ngIf="job?.estado!='Publicado' && !loader"
+    class="text-center"
+    style="width: 100%; margin: auto"
+  >
+    <h4>El Aviso no existe o Finalizó. Intenta <a routerLink="/personal">volver atrás</a> y buscar otro.</h4>
   </div>
-</div>
 
-<app-trabajo-detalle-card [job]="job" [empresa]="false"></app-trabajo-detalle-card>
+  <app-detalle-skeleton *ngIf="loader"></app-detalle-skeleton>
 
-<div *ngIf="!loader" class="my-3">
-  
-  <div class="text-center">
-    <button *ngIf="user" type="button" class="btn btn-success rounded-pill" data-toggle="modal"
-    data-target="#exampleModal" [disabled]="Postulado"> {{Postulado ? "Ya estas postulado":"Postularme"}}</button>
-    <button *ngIf="!user" [routerLink]="['/personal/auth/login']" type="button" class="btn btn-success rounded-pill"> Iniciar Sesión para
-      postularme</button>
-      <p *ngIf="!user">No tienes cuenta? <a [routerLink]="['/personal/auth/register']">Registrate</a></p>
+  <div *ngIf="!loader && job.estado=='Publicado'" class="my-3">
+    <div class="text-center">
+      <button
+        *ngIf="user?.emailVerified"
+        type="button"
+        class="btn btn-success rounded-pill"
+        data-toggle="modal"
+        data-target="#postulacionModal"
+        [disabled]="postulado.postulado"
+      >
+        {{ postulado.postulacionTexto }}
+      </button>
+
+      <button
+        *ngIf="user && !user?.emailVerified"
+        type="button"
+        class="btn btn-success rounded-pill"
+        routerLink="/personal/mi-perfil/verificar-email"
+      >
+        Necesitas verificar el email para postularte
+      </button>
+
+      <button
+        *ngIf="!user"
+        [routerLink]="['/auth/login']"
+        type="button"
+        class="btn btn-success rounded-pill"
+      >
+        Iniciar Sesión para postularme
+      </button>
+      <p *ngIf="!user">
+        No tienes cuenta? <a [routerLink]="['/auth/register/tipo-cuenta']">Registrate</a>
+      </p>
     </div>
   </div>
 </div>
 
-
-
-
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
+<div
+  *ngIf="!postulado.postulado"
+  class="modal fade"
+  id="postulacionModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="postulacionModalLabel"
+  aria-hidden="true"
+>
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
+    <div class="modal-content" style="width: 600px;">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Postulación</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title" id="postulacionModalLabel">Postulación</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         ¿Estas seguro que deseas Postularte?
 
-        <div class="form-group mt-3">
-          <label for="Foto_perfil">Adjuntar cv (en pdf)</label>
-          <input type="file" id="Foto_perfil" class="form-control-file" (change)="onFileChange($event.target)">
-        </div>
+        <app-cargar-cv></app-cargar-cv>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success" data-dismiss="modal" [disabled]="!cvCargado" (click)="Postulacion()">Postularse</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-success"
+          data-dismiss="modal"
+          [disabled]="!user?.datos?.cv"
+          (click)="Postulacion()"
+        >
+          Postularse
+        </button>
       </div>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

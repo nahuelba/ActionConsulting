@@ -1,0 +1,40 @@
+
+  
+<div class="container" id="main">
+<div class="row">
+    <div class="col-md-7 col-lg-8 mx-auto">
+    <div class="card border-0 shadow rounded-3 my-5">
+        <div class="card-body p-4 p-sm-5">
+        <h5 class="card-title text-center mb-5 fw-light fs-5">Ingresar</h5>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-floating mb-3">
+            <input type="email" formControlName="email" class="form-control" id="floatingInput" placeholder="Email">
+            </div>
+            <div class="form-floating mb-3">
+            <input type="password" formControlName="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+            </div>
+
+            <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" value="" formControlName="remember" id="rememberPasswordCheck">
+            <label class="form-check-label" for="rememberPasswordCheck">
+                Recordarme
+            </label>
+            </div>
+
+            <div *ngIf="error" class="alert alert-danger" role="alert">
+            {{error}}
+            </div>
+            <div class="d-grid">
+            <button class="btn btn-success btn-login text-uppercase fw-bold" type="submit">Ingresar</button>
+            </div>
+            <p class="mt-4"><a [routerLink]="[tipo + '/auth/recuperar-password']">¿Has olvidado tu contraseña? </a></p>
+            <p class="mt-4">¿No tienes cuenta? <a [routerLink]="[tipo +'/auth/register' + tipo]">Registrate</a></p>
+        </form>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+  
+
+  

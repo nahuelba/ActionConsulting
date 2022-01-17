@@ -1,0 +1,33 @@
+<!-- As a link -->
+<nav class="navbar navbar-dark bg-dark">
+  <a routerLink="/personal"><i class="fa fa-chevron-left fa-lg mx-3 back"  aria-hidden="true"></i></a>
+
+  <a class="navbar-brand mx-auto" href="#">
+    
+    <img class="" src="assets/img/ablanco.png" height="50" alt="">
+  </a>
+</nav>
+<div class="container" id="main">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card border-0 shadow rounded-3 my-5">
+          <div class="card-body p-4 p-sm-5">
+            <h5 class="card-title text-center mb-5 fw-light fs-5">Reestablecer Contraseña</h5>
+
+            
+            <div class="text-center">
+
+                <i class="fa fa-envelope-o fa-5x" aria-hidden="true"></i>
+                
+                <p class="my-4">Te hemos enviado un email con las instrucciones a {{email}}</p>
+    
+                <p class="my-5 text-muted" style="font-size: 1rem;">No lo recibiste? <a (click)="reenviarEmail()" style="cursor: pointer;">Reenviar email</a> </p>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>

@@ -1,0 +1,15 @@
+<div class="border-bottom pb-3">
+    <span class="h4"> Verificar Email </span>
+  </div>
+
+  <form class="my-3" [formGroup]="form">
+    <div class="form-group">
+      <label for="Puesto">Email</label>
+      <input type="email" class="form-control" formControlName="email" readonly/>
+      <p class="text-danger" *ngIf="!user?.emailVerified">Este email no esta verificado. </p>
+      <p class="text-success" *ngIf="user?.emailVerified">Email verificado </p>
+
+    </div>
+
+    <button class="btn btn-success mt-2" *ngIf="!user?.emailVerified" (click)="enviarVerificacion()">Enviar email para verificar</button>
+  </form>

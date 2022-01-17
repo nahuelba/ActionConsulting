@@ -10,6 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarEmpresaComponent } from './navbar-empresa/navbar-empresa.component';
 import { TrabajoCardEmpresaComponent } from './trabajo-card-empresa/trabajo-card-empresa.component';
 import { TrabajoDetalleCardComponent } from './trabajo-detalle-card/trabajo-detalle-card.component';
+import { DetalleSkeletonComponent } from './detalle-skeleton/detalle-skeleton.component';
 
 
 
@@ -22,6 +23,7 @@ import { TrabajoDetalleCardComponent } from './trabajo-detalle-card/trabajo-deta
     NavbarEmpresaComponent,
     TrabajoCardEmpresaComponent,
     TrabajoDetalleCardComponent,
+    DetalleSkeletonComponent,
 
   ],
   exports:[
@@ -29,7 +31,8 @@ import { TrabajoDetalleCardComponent } from './trabajo-detalle-card/trabajo-deta
     NavbarComponent,
     NavbarEmpresaComponent,
     TrabajoCardEmpresaComponent,
-    TrabajoDetalleCardComponent
+    TrabajoDetalleCardComponent,
+    DetalleSkeletonComponent
   ],
   imports: [
     CommonModule,

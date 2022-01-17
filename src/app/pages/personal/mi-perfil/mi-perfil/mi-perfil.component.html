@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<div class="container" id="main"  >
+  <div class="row py-4">
+    <div class="col">
+      <div class="row">
+        <img
+          src="https://via.placeholder.com/100"
+          width="60"
+          height="60"
+          class="rounded-circle mr-3"
+        />
+        <div>
+          <h5>nombre</h5>
+          <p class="text-muted">Mi información personal</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" style="background-color: transparent">
+          <li class="breadcrumb-item">
+            <a routerLink="/personal">Avisos</a>
+          </li>
+          <li class="breadcrumb-item text-muted">Mi perfil</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="card" style="width: 100%">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-3" style="padding: 0px;">
+          <nav class="navbar border-right" style="padding: 0px;">
+            <!-- Links -->
+            <ul class="navbar-nav " style="width: 100%;"> 
+              <li class="nav-item">
+                <a class="nav-link ml-3" routerLink="datos-personales"  [routerLinkActive]="['active']">Datos Personales</a>
+              </li>
+              <li class="nav-item">
+                <a  class="nav-link ml-3" routerLink="datos-contacto"  [routerLinkActive]="['active']">Datos de Contacto</a>
+              </li>
+              <li class="nav-item">
+                <a  class="nav-link ml-3" routerLink="idiomas"  [routerLinkActive]="['active']">Idiomas</a>
+              </li>
+              <li class="nav-item">
+                <a  class="nav-link ml-3" routerLink="experiencia-laboral"  [routerLinkActive]="['active']">Experiencia laboral</a>
+              </li>
+              <li class="nav-item">
+                <a  class="nav-link ml-3" routerLink="formacion"  [routerLinkActive]="['active']">Formación</a>
+              </li>
+              <li class="nav-item">
+                <a  class="nav-link ml-3" routerLink="verificar-email"  [routerLinkActive]="['active']">Verificar Email</a>
+              </li>
+              <li class="nav-item">
+                <a  class="nav-link ml-3" routerLink="mas-datos"  [routerLinkActive]="['active']">Currículum</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="col">
+            
+            <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
