@@ -30,7 +30,7 @@ export class VerificarEmailGuard implements CanActivate, CanActivateChild {
             }
           }
           
-            this.router.navigate(['/auth/register/tipo-cuenta'])
+            this.router.navigate(['/personal'])
             return false;
         })
       )

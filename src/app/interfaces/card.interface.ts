@@ -10,8 +10,8 @@ export interface job {
     empresa_id:string,
     postulaciones?:any,
     destacado:boolean,
-    categoria:string,
-    rubro:string
+    rubro:string,
+    prioridad_trabajo:string
 }
 
 export interface pais {

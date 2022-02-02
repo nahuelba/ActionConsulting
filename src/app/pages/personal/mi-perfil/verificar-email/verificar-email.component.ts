@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -15,9 +16,15 @@ export class VerificarEmailComponent implements OnInit {
   })
 
   user:any
-  constructor(private authService:AuthService, private toastr:ToastrService) { }
+  constructor(
+    private authService:AuthService, 
+    private toastr:ToastrService,
+    private titleService: Title
+    ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Verificar Email | ACTION HUMAN CAPITAL CONSULTING');
+
     this.authService.getUserLogged()
     .subscribe(user =>{ 
       this.form.controls.email.setValue(user?.email || "")  

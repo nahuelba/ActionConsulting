@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,9 +10,11 @@ import { AuthService } from 'src/app/services/auth.service';
 export class InicioComponent implements OnInit {
 
   constructor(
-    private authService:AuthService) { }
+    private authService:AuthService,
+    private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Empresa | ACTION HUMAN CAPITAL CONSULTING');
   }
 
 }

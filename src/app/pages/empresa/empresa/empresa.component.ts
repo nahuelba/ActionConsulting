@@ -18,6 +18,8 @@ export class EmpresaComponent implements OnInit {
 
   admin:boolean =false
 
+  categoria:string ="Estándar"
+
   user:any;
   year = new Date().getFullYear()
 
@@ -27,8 +29,11 @@ export class EmpresaComponent implements OnInit {
 
     combineLatest([this.AuthService.getUserLogged(), this.AuthService.getUserAfsSinId()]).pipe(take(1))
     .subscribe(([res, user]:any) => {
-        console.log(res)
+  
         this.user={ ...res, datos:user};
+
+        this.categoria = this.user.datos.categoria
+        console.log(this.user)
         if(user == false){
           this.admin=true;
         }else{

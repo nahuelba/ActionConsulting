@@ -3,6 +3,7 @@ import { job } from 'src/app/interfaces/card.interface';
 import { CardService } from 'src/app/services/card.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { PostulacionService } from 'src/app/services/postulacion.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-trabajos',
@@ -17,13 +18,18 @@ export class TrabajosComponent implements OnInit {
 
   filter: string = '';
 
+  filterPrioridad: string = "";
+
   constructor(
     private CardService: CardService,
     private AuthService: AuthService,
-    private PostulacionService:PostulacionService
+    private PostulacionService:PostulacionService,
+    private titleService: Title
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Lista de Avisos | ACTION HUMAN CAPITAL CONSULTING');
+
     this.CardService.getAllCards()
     .subscribe((jobs:job[]) => {
       this.jobs = jobs

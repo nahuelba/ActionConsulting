@@ -14,7 +14,6 @@ import { AuthService } from '../services/auth.service';
   providedIn: 'root',
 })
 export class EmpresaGuard implements CanActivate {
-  user: any;
   constructor(private AuthService: AuthService, private router: Router) {}
 
   canActivate(

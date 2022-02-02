@@ -14,6 +14,8 @@ import { FormacionComponent } from './formacion/formacion.component';
 import { MasDatosComponent } from './mas-datos/mas-datos.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { VerificarEmailComponent } from './verificar-email/verificar-email.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { SelectsModule } from 'src/app/components/selects/selects.module';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { VerificarEmailComponent } from './verificar-email/verificar-email.compo
     NgbDatepickerModule,
     ReactiveFormsModule,
     SharedModule,
-    FormsModule
+    NgSelectModule,
+    FormsModule,
+    SelectsModule
   ]
 })
 export class MiPerfilModule { }

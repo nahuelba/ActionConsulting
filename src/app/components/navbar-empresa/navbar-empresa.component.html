@@ -1,5 +1,5 @@
 <div class="side-bar">
-  <div class="text-center py-3">
+  <div class="text-center py-3" routerLink="/" style="cursor: pointer;">
     <img src="assets/img/ablanco.png" height="50" alt="" />
   </div>
 
@@ -51,7 +51,16 @@
             [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }"
           >
-            Nuevo Aviso
+            Publicar Aviso
+          </li>
+          <li
+            *ngIf="categoria!='Estándar'"
+            class="list-group-item list-item list-group-item-action"
+            [routerLink]="['/empresa/buscar-usuarios']"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Buscar Usuarios
           </li>
           <!-- <li class="list-group-item list-item list-group-item-action">A third item</li> -->
         </ul>
@@ -104,6 +113,15 @@
           >
             Postulaciones
           </li>
+
+          <li
+            class="list-group-item list-item list-group-item-action"
+            [routerLink]="['admin/usuarios']"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Usuarios
+          </li>
           <!-- <li class="list-group-item list-item list-group-item-action">A third item</li> -->
         </ul>
       </div>
@@ -153,7 +171,7 @@
 
             <div class="dropdown-divider"></div>
 
-            <a class="dropdown-item" routerLink="/empresa/mi-perfil">Mi perfil</a>
+            <a class="dropdown-item" routerLink="/empresa/mi-perfil/datos-empresa">Mi perfil</a>
             <!-- <a class="dropdown-item" [routerLink]="['/personal/postulaciones']">Postulaciones</a> -->
 
             <div class="dropdown-divider"></div>

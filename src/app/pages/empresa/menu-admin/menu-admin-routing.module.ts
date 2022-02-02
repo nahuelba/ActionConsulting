@@ -4,6 +4,8 @@ import { EditarTrabajoComponent } from './editar-trabajo/editar-trabajo.componen
 import { PostulacionesComponent } from './postulaciones/postulaciones.component';
 import { TrabajoDetalleAdminComponent } from './trabajo-detalle-admin/trabajo-detalle-admin.component';
 import { TrabajosComponent } from './trabajos/trabajos.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UsuarioDetalleAdminComponent } from './usuario-detalle-admin/usuario-detalle-admin.component';
 
 const routes: Routes = [
   {
@@ -18,6 +20,16 @@ const routes: Routes = [
         path:'postulaciones',
         component: PostulacionesComponent,
         data:{animation:'postulaciones'}
+      },
+      {
+        path:'usuarios',
+        component: UsuariosComponent,
+        data:{animation:'usuarios'}
+      },
+      {
+        path:'usuario/:id',
+        component:UsuarioDetalleAdminComponent,
+        data:{animation:'usuario/:id'}
       },
       {
         path:':id',

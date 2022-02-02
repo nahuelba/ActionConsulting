@@ -1,0 +1,14 @@
+  <div class="form-group" [formGroup]="formGroup">
+    <label>Rubro *</label>
+    <ng-select 
+          [items]="rubros"
+
+          [ngClass]="{ 'is-invalid': false }"
+         formControlName="rubro"
+         >
+    </ng-select>
+
+        <!-- <small *ngIf="false" id="passwordHelp" class="text-danger">
+          Rellene este campo
+        </small> -->
+  </div>

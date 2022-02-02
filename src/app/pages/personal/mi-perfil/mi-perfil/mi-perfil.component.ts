@@ -8,10 +8,12 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class MiPerfilComponent implements OnInit {
 
+  user:any
   constructor(private AuthService:AuthService) { }
 
   ngOnInit(): void {
-
+    this.AuthService.getUserAfsSinId()
+    .subscribe( user => this.user=user)
   }
 
 }

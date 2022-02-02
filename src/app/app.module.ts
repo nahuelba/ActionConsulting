@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -11,12 +12,13 @@ import { NgxSpinnerModule } from "ngx-bootstrap-spinner";
 
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
-import * as $ from 'jquery';
 import { PagesModule } from './pages/pages.module';
 import { ComponentsModule } from './components/components.module';
 import { PipesModule } from './pipes/pipes.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -41,7 +43,9 @@ export function createTranslateLoader(http: HttpClient) {
     AngularFireAuthModule,
     PagesModule,
     NgxSpinnerModule,
-    NgbModule
+    NgbModule,
+    NgSelectModule,
+    FormsModule
 
   ],
   providers: [],

@@ -11,7 +11,10 @@
               Rellene este campo
             </small> -->
     </div>
+ 
+    <app-select-puesto [formGroup]="datosPersonales"></app-select-puesto>
 
+    
     <div class="form-group">
       <label for="Puesto">Fecha de Nacimiento</label>
       <form class="form-inline">
@@ -21,10 +24,10 @@
               class="form-control"
               placeholder="dd/mm/yyyy"
               name="d2"
-              [formControlName]="'fecha_nacimiento'"
               ngbDatepicker
               #d2="ngbDatepicker"
               [startDate]="{ month: 1, year: 2000 }"
+              [(ngModel)]="fecha_nacimiento"
             />
             <div class="input-group-append">
               <button
@@ -40,57 +43,10 @@
       </form>
     </div>
 
-    <div class="form-group">
-      <label>País</label>
-      <select
-        class="selectpicker"
-        data-width="100%"
-        title="Elija un País"
-        formControlName="pais"
-        (change)="elegirPais()"
-      >
-        <option value="">Elija un país</option>
-        <option *ngFor="let pais of paises" [value]="pais">
-          {{ pais }}
-        </option>
-      </select>
-    </div>
+    <span *ngIf="datosPersonales.value">
 
-    <div class="form-group" *ngIf="this.datosPersonales.value.pais">
-      <label>Provincia</label>
-      <select
-        class="selectpicker"
-        data-live-search="true"
-        data-width="100%"
-        title="Elija una Provincia"
-        formControlName="provincia"
-        (change)="elegirProvincia()"
-      >
-        <option value="">Elija una Provincia</option>
-        <option
-          *ngFor="let provincia of provincias"
-          [value]="provincia.provincia"
-        >
-          {{ provincia.provincia }}
-        </option>
-      </select>
-    </div>
-
-    <div class="form-group" *ngIf="this.datosPersonales.value.provincia">
-      <label>Ciudad</label>
-      <select
-        class="selectpicker"
-        data-live-search="true"
-        data-width="100%"
-        title="Elija una Ciudad"
-        formControlName="ciudad"
-      >
-        <option value="">Elija una ciudad</option>
-        <option *ngFor="let ciudad of ciudades" [value]="ciudad">
-          {{ ciudad }}
-        </option>
-      </select>
-    </div>
+      <app-select-pais-provincia-ciudad [formGroup]="datosPersonales" [user]="lugar"></app-select-pais-provincia-ciudad>
+    </span>
     <div class="dropdown-divider"></div>
 
     <div class="form-check mt-4">
@@ -130,7 +86,7 @@
       </div>
     
 
-        <button class="btn btn-success rounded-pill mt-4">Actualizar perfil</button>
+        <button class="btn btn-success rounded-pill mt-4" (click)="GuardarPerfil()">Actualizar perfil</button>
 
 
   </div>

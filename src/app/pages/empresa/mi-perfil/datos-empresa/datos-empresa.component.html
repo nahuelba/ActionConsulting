@@ -1,7 +1,7 @@
 <div class="border-bottom pb-3">
   <span class="h4"> Datos de Empresa </span>
 </div>
-<form class="my-3">
+<form class="my-3" [formGroup]="miPerfilForm">
 <div class="form-group">
   <label for="Puesto">Nombre de la empresa * </label>
   <input type="text" class="form-control" formControlName="nombre" />
@@ -9,20 +9,16 @@
       Rellene este campo
     </small> -->
 </div>
-<!-- <div class="form-group">
-    <label for="email">Email</label>
+<div class="form-group">
+    <label for="categoria">Categoría</label>
     <input
+      id="categoria"
       type="text"
       class="form-control"
+      formControlName="categoria"
+      readonly
     />
-   <small
-      *ngIf="error.tipo_empresa"
-      id="passwordHelp"
-      class="text-danger"
-    >
-      Rellene este campo
-    </small> 
-  </div> -->
+  </div>
 
 <div class="form-group mt-3">
   <label for="Foto_perfil">Adjunte nueva foto de perfil (opcional)</label>

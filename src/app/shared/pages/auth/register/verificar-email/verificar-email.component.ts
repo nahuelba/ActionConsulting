@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -11,9 +12,11 @@ export class VerificarEmailComponent implements OnInit {
 
   user:any
 
-  constructor(private AuthService:AuthService, private toastr:ToastrService) { }
+  constructor(private AuthService:AuthService, private toastr:ToastrService,
+    private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Verificar Email | ACTION HUMAN CAPITAL CONSULTING');
 
     this.AuthService.getUserLogged()
     .subscribe(data => this.user=data)

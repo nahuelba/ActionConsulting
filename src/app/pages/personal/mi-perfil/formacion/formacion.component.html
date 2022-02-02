@@ -1,1 +1,54 @@
-<p>formacion works!</p>
+<div class="border-bottom pb-3">
+    <span class="h4"> Formación </span>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <div *ngFor="let formacion of formaciones">
+        <div class="row">
+       <app-formaciones [formacion]="formacion"></app-formaciones>
+          <div style="float: right">
+            <button
+              type="button"
+              class="btn dropdown-toggle-split"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+              <button 
+              class="dropdown-item" 
+              type="button"
+              (click)="editarFormacion(formacion.id)"
+            
+              >
+                Editar
+              </button>
+              <button
+                class="dropdown-item"
+                type="button"
+              (click)="eliminarFormacion(formacion.id)"
+              >
+                Eliminar
+              </button>
+            </div>
+          </div>
+        </div>
+        <p>Otros Conocimientos</p>
+        <p>{{formacion.otros_conocimientos}}</p>
+  
+        <div class="dropdown-divider"></div>
+      </div>
+  
+      <button
+        class="btn btn-success"
+        style="display: block"
+        (click)="openModalFormacion()"
+      >
+        Agregar Formación
+      </button>
+    </div>
+  </div>
+  

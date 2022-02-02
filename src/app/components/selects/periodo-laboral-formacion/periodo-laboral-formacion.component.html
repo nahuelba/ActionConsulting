@@ -1,0 +1,107 @@
+<!-- Fecha de inicio -->
+<div class="row" [formGroup]="formGroup">
+    <div class="col" formGroupName="fecha_inicio">
+      <label>Fecha de Inicio</label>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="Puesto">Mes * </label>
+            <select
+              class="selectpicker"
+              [ngClass]="{ 'is-invalid': false }"
+              data-width="100%"
+              title="Elija un mes"
+              formControlName="mes"
+            >
+              <option *ngFor="let mes of meses_inicio" [value]="mes.nombre">
+                {{ mes.nombre }}
+              </option>
+            </select>
+
+            <small *ngIf="false" id="passwordHelp" class="text-danger">
+              Rellene este campo
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="Puesto">Año * </label>
+            <select
+              class="selectpicker"
+              [ngClass]="{ 'is-invalid': false }"
+              data-width="100%"
+              title="Elija un año"
+              formControlName="year"
+              (change)="anio_actual('inicio')"
+            >
+              <option *ngFor="let anio of anios" [value]="anio">
+                {{ anio }}
+              </option>
+            </select>
+
+            <small *ngIf="false" id="passwordHelp" class="text-danger">
+              Rellene este campo
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col" formGroupName="fecha_fin">
+      <label>Fecha de Finalización</label>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="Puesto">Mes * </label>
+            <select
+              class="selectpicker"
+              [ngClass]="{ 'is-invalid': false }"
+              data-width="100%"
+              title="Elija un mes"
+              formControlName="mes"
+              id="mes_fecha_fin"
+            >
+              <option *ngFor="let mes of meses_fin" [value]="mes.nombre">
+                {{ mes.nombre }}
+              </option>
+            </select>
+
+            <small *ngIf="false" id="passwordHelp" class="text-danger">
+              Rellene este campo
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <label for="Puesto">Año * </label>
+            <select
+              class="selectpicker"
+              [ngClass]="{ 'is-invalid': false }"
+              data-width="100%"
+              title="Elija un Año"
+              formControlName="year"
+              id="anio_fecha_fin"
+              (change)="anio_actual('fin')"
+            >
+              <option *ngFor="let anio of anios" [value]="anio">
+                {{ anio }}
+              </option>
+            </select>
+
+            <small *ngIf="false" id="passwordHelp" class="text-danger">
+              Rellene este campo
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="form-group form-check">
+        <input
+          #actualidad
+          type="checkbox"
+          class="form-check-input"
+          id="Check1"
+          (change)="trabajoActualmente($event)"
+        />
+        <label class="form-check-label" for="Check1">Trabajo Actualmente</label>
+      </div>
+    </div>
+  </div>

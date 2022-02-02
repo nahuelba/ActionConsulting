@@ -12,7 +12,8 @@ export const environment = {
     messagingSenderId: "567675559194",
     appId: "1:567675559194:web:f7003968ad2537cf2ae0a3"
   },
-  mobileLink: 'http://localhost:8100/'
+  link_empresa:"http://localhost:4200/empresa",
+  link_personal:""
 };
 
 /*

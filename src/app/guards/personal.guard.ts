@@ -24,10 +24,6 @@ export class PersonalGuard implements CanActivate {
           if(user === false){
             return true
           }
-          if(!user.tipo){
-            this.router.navigate(['/tipo-cuenta'])
-            return false
-          }
           if (user.tipo == 'personal') {
              return true;
            } else {

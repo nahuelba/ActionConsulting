@@ -31,6 +31,19 @@
         <p *ngIf="job?.destacado" class="badge badge-success" style="font-size: 0.8rem">
           Destacado
         </p>
+
+        <p class="text-left text-muted">
+        <span
+        *ngIf="empresa"
+        class="badge"
+        [ngClass]="{
+          'badge-danger': job.prioridad_trabajo == 'Máximo',
+          'badge-warning': job.prioridad_trabajo == 'Medio'
+        }"
+      >
+        {{ job.prioridad_trabajo }}
+      </span>
+    </p>
       </div>
       <div class="col">
         <p class="text-right font-weight-lighter" style="font-size: 0.8rem">

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import {TranslateService} from '@ngx-translate/core';
 
@@ -13,7 +14,8 @@ export class IndexComponent implements OnInit {
 
   langs:string[] = []
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, 
+    private titleService: Title) {
     translate.setDefaultLang('es');
     
     if (translate.getBrowserLang()=="es"){
@@ -29,6 +31,7 @@ export class IndexComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle('ACTION HUMAN CAPITAL CONSULTING');
   }
 
   changeLang(lang: string){

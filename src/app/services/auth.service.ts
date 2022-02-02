@@ -3,9 +3,11 @@ import firebase from 'firebase/app';
 import { AngularFireAuth  } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
-import { concatMap, first, map } from 'rxjs/operators';
-import { concat, forkJoin, observable, Observable, of } from 'rxjs';
+import { concatMap, first, map, take } from 'rxjs/operators';
+import { concat, forkJoin, from, observable, Observable, of } from 'rxjs';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
+import { environment } from 'src/environments/environment';
+import categorias from 'src/assets/Opciones/trabajos/categorias.json'
 
 
 @Injectable({
@@ -58,6 +60,7 @@ export class AuthService {
     return this.afs.collection('users').doc(id).set(user)
   }
 
+
   getUserAfs(id:string){
     return this.afs.collection('users').doc(id).valueChanges({ idField: 'id' })
     
@@ -80,9 +83,31 @@ export class AuthService {
   }
 
   updateCV(id:string, cv:any){
-    return this.afs.collection('users').doc(id).update({cv})
+    return this.afs.collection('users').doc(id).collection('CVs').add(cv)
     
   }
+  eliminarCV(id:string, id_cv:string){
+    return this.afs.collection('users').doc(id).collection('CVs').doc(id_cv).delete()
+  }
+  obtenerCvs(id:string){
+    return this.afs.collection('users').doc(id).collection('CVs').valueChanges({idField:'id'})
+  }
+
+  getAllUsers(){
+    return this.afs.collection('users').valueChanges({idField: 'id'})
+  }
+
+  getUserConId(id:string){
+    return this.afs.collection('users').doc(id).valueChanges({idField:'id'})
+  }
+
+  updateUser(id:string, data:any){
+    return this.afs.collection('users').doc(id).set(data, {merge: true})
+  }
+
+
+  
+
 
 
 
@@ -96,24 +121,34 @@ export class AuthService {
         .then((res) => {
             this.ngZone.run(() => {
               this.spinner.show()
+              debugger;
               
               console.log(res)
               if(res){
                 //detectar que tipo es la cuenta y redirigir
                 this.getUserAfs(res.user?.uid || "")
                   .subscribe((user:any) => {
-                    if(user.length>0){
+                    if(user.tipo){
                       this.spinner.hide()
                       this.router.navigate([user.tipo]);
                     }else{
                       //Crear tipo de cuenta
-                      const userNuevo = {
+                      let estandar = categorias.find(categ => categ.categoria == "Estándar") 
+
+                      let userNuevo:any = {
                         tipo: tipo.replace('/', ''), 
                         nombre:res.user?.displayName, 
-                        admin: false
+                        admin: false,
+                        email: res.user?.email,
+                        avisos: estandar?.avisos,
+                        usuarios: estandar?.usuarios
                       }
-                      this.saveUser(userNuevo, res.user?.uid || "")
-                      .then(data => {
+                      if(tipo.replace('/', '') == "empresa"){
+                        userNuevo['categoria'] = "Estándar"
+                      }
+                      
+                      from(this.saveUser(userNuevo, res.user?.uid || "")).pipe(take(1))
+                      .subscribe(data => {
                         this.spinner.hide()
                         this.router.navigate([tipo])
                       } )
@@ -150,7 +185,7 @@ export class AuthService {
   // Verificar correo
   verifyEmail(user:any) {
     var actionCodeSettings = {
-      url: 'http://localhost:4200/empresa'
+      url: environment.link_empresa
     };
     return user.sendEmailVerification(actionCodeSettings)
 
@@ -159,7 +194,7 @@ export class AuthService {
   RecoverPassword(email:string){
     return this.afAuth.sendPasswordResetEmail(
       email, 
-      { url: 'http://localhost:4200/personal' }); 
+      { url: environment.link_personal }); 
   }
 
  

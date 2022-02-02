@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { CardService } from 'src/app/services/card.service';
 import { PostulacionService } from 'src/app/services/postulacion.service'
 
@@ -18,10 +19,13 @@ export class PostulacionesComponent implements OnInit {
 
   constructor(
     private CardService:CardService,  
-    private PostulacionService:PostulacionService
+    private PostulacionService:PostulacionService,
+    private titleService: Title
     ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Postulaciones | ACTION HUMAN CAPITAL CONSULTING');
+
     // this.getJobs()
   }
 

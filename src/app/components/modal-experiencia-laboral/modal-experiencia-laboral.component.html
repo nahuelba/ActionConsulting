@@ -1,0 +1,70 @@
+<!-- Modal -->
+
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Agregar Experiencia</h5>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body" [formGroup]="experienciaLaboralForm">
+  <div class="row">
+    <div class="col">
+    
+        <app-select-puesto [formGroup]="experienciaLaboralForm"></app-select-puesto>
+
+    
+  
+        <app-select-rubro [formGroup]="experienciaLaboralForm"></app-select-rubro>
+   
+      <div class="form-group">
+        <label for="Puesto">Empresa * </label>
+        <input
+          type="text"
+          [ngClass]="{ 'is-invalid': false }"
+          placeholder="Empresa"
+          class="form-control"
+          formControlName="empresa"
+        />
+
+        <small *ngIf="false" id="passwordHelp" class="text-danger">
+          Rellene este campo
+        </small>
+      </div>
+    </div>
+    <div class="col">
+      <app-select-pais-provincia-ciudad [formGroup]="experienciaLaboralForm"></app-select-pais-provincia-ciudad>
+    </div>
+  </div>
+  <div class="dropdown-divider"></div>
+  <app-periodo-laboral-formacion [formGroup]="experienciaLaboralForm" ></app-periodo-laboral-formacion>
+
+  <div class="dropdown-divider"></div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1"
+      >Principales Responsabilidades</label
+    >
+    <textarea
+      class="form-control"
+      id="exampleFormControlTextarea1"
+      rows="6"
+      formControlName="principales_responsabilidades"
+    ></textarea>
+  </div>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-secondary"
+    (click)="activeModal.dismiss('Cross click')"
+  >
+    Cerrar
+  </button>
+  <button type="button" class="btn btn-success" (click)="enviarForm()">
+    {{ metodo }}
+  </button>
+</div>

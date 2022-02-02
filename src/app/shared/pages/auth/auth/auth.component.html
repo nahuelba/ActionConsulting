@@ -1,8 +1,8 @@
 <!-- As a link -->
 <nav class="navbar navbar-dark" style="background-color:#313A46;">
-    <a [routerLink]="tipo"><i class="fa fa-chevron-left fa-lg mx-3 back"  aria-hidden="true"></i></a>
+    <a [routerLink]="tipo == '/empresa' ? '/': '/personal'"><i class="fa fa-chevron-left fa-lg mx-3 back"  aria-hidden="true"></i></a>
   
-    <a class="navbar-brand mx-auto" href="#">
+    <a class="navbar-brand mx-auto" routerLink="/">
       
       <img class="" src="assets/img/ablanco.png" height="50" alt="">
     </a>

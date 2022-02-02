@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TipoCuentaComponent } from './tipo-cuenta.component';
+import { FormacionesComponent } from './formaciones.component';
 
-describe('TipoCuentaComponent', () => {
-  let component: TipoCuentaComponent;
-  let fixture: ComponentFixture<TipoCuentaComponent>;
+describe('FormacionesComponent', () => {
+  let component: FormacionesComponent;
+  let fixture: ComponentFixture<FormacionesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TipoCuentaComponent ]
+      declarations: [ FormacionesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TipoCuentaComponent);
+    fixture = TestBed.createComponent(FormacionesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

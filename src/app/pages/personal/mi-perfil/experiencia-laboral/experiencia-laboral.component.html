@@ -1,1 +1,53 @@
-<p>experiencia-laboral works!</p>
+<div class="border-bottom pb-3">
+  <span class="h4"> Experiencia Laboral </span>
+</div>
+
+<div class="card">
+  <div class="card-body">
+    <div *ngFor="let Experiencia of experiencias_laborales">
+      <div class="row">
+        <app-experiencias-laborales [Experiencia]="Experiencia"></app-experiencias-laborales>
+        <div style="float: right">
+          <button
+            type="button"
+            class="btn dropdown-toggle-split"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <button 
+            class="dropdown-item" 
+            type="button"
+            (click)="editarExperiencia(Experiencia.id)"
+            >
+              Editar
+            </button>
+            <button
+              class="dropdown-item"
+              type="button"
+              (click)="eliminarExperiencia(Experiencia.id)"
+            >
+              Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+      <p>Principales Responsabilidades</p>
+
+      <p>{{Experiencia.principales_responsabilidades}}</p>
+
+      <div class="dropdown-divider"></div>
+    </div>
+
+    <button
+      class="btn btn-success"
+      style="display: block"
+      (click)="openModalExperiencia()"
+    >
+      Agregar Experiencia
+    </button>
+  </div>
+</div>

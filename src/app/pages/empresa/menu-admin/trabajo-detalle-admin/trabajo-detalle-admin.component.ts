@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { job } from 'src/app/interfaces/card.interface';
 import { CardService } from 'src/app/services/card.service';
@@ -18,10 +19,13 @@ export class TrabajoDetalleAdminComponent implements OnInit {
   constructor(
     private CardService: CardService,
     private activatedRoute: ActivatedRoute,
-    private PostulacionService:PostulacionService
+    private PostulacionService:PostulacionService,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('Detalle del Aviso | ACTION HUMAN CAPITAL CONSULTING');
+
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     this.CardService.getDocumentById(id!)
     .subscribe((job: job | undefined) => {

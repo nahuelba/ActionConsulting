@@ -56,14 +56,14 @@
 
       <button
         *ngIf="!user"
-        [routerLink]="['/auth/login']"
+        [routerLink]="['/personal/auth/login']"
         type="button"
         class="btn btn-success rounded-pill"
       >
         Iniciar Sesión para postularme
       </button>
       <p *ngIf="!user">
-        No tienes cuenta? <a [routerLink]="['/auth/register/tipo-cuenta']">Registrate</a>
+        No tienes cuenta? <a [routerLink]="['/personal/auth/register/personal']">Registrate</a>
       </p>
     </div>
   </div>
@@ -80,7 +80,7 @@
   aria-hidden="true"
 >
   <div class="modal-dialog" role="document">
-    <div class="modal-content" style="width: 600px;">
+    <div class="modal-content" style="width: 700px;">
       <div class="modal-header">
         <h5 class="modal-title" id="postulacionModalLabel">Postulación</h5>
         <button
@@ -93,9 +93,9 @@
         </button>
       </div>
       <div class="modal-body">
-        ¿Estas seguro que deseas Postularte?
-
-        <app-cargar-cv></app-cargar-cv>
+        ¿Estas seguro que deseas Postularte?  <br>
+        Selecciona un CV para postularte
+        <app-cargar-cv (CV)="setCV($event)"></app-cargar-cv>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -105,7 +105,7 @@
           type="button"
           class="btn btn-success"
           data-dismiss="modal"
-          [disabled]="!user?.datos?.cv"
+          [disabled]="!postulacion.cv"
           (click)="Postulacion()"
         >
           Postularse

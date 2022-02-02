@@ -1,6 +1,23 @@
 [
-    "estandar",
-    "silver",
-    "gold",
-    "premium"
+    {
+        "categoria":"Estándar",
+        "avisos":5,
+        "usuarios":0
+        
+    },
+    {
+        "categoria":"Silver",
+        "avisos":10,
+        "usuarios":5
+    },
+    {
+        "categoria":"Gold",
+        "avisos":15,
+        "usuarios":10
+    },
+    {
+        "categoria":"Premium",
+        "avisos":20,
+        "usuarios":15
+    }
 ]

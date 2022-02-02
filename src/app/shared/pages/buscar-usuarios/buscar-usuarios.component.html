@@ -1,0 +1,146 @@
+<div class="card" style="width: 100%">
+    <div class="card-body" [formGroup]="buscarForm">
+
+    
+      <div class="row">
+        <div class="col">
+
+           <!-------- Puesto ---------->
+       <div class="form-group">
+        <label>Puesto * </label>
+        <select
+          class="selectpicker"
+          [ngClass]="{ 'is-invalid': false }"
+          data-width="100%"
+          title="Seleccionar Puesto"
+          formControlName="puesto"
+        >
+          <option *ngFor="let puesto of puestos" [value]="puesto">
+            {{ puesto }}
+          </option>
+        </select>
+        <small
+        *ngIf="this.buscarForm.get('puesto')?.errors?.['required']"
+        class="text-danger"
+      >
+        Rellene este campo
+      </small>
+      </div>
+
+          <!-- Idiomas
+       <div class="form-group">
+         <label>Idioma 1 (opcional)</label>
+         <select
+           class="selectpicker"
+           data-width="100%"
+           title="Seleccionar idioma"
+           formControlName="idioma1"
+         >
+           <option *ngFor="let idioma of idiomas" [value]="idioma">
+             {{ idioma}}
+           </option>
+         </select>
+       </div>
+
+       <div class="form-group">
+         <label>Idioma 2 (opcional)</label>
+         <select
+           class="selectpicker"
+           data-width="100%"
+           title="Seleccionar idioma"
+
+           formControlName="idioma2"
+         >
+           <option *ngFor="let idioma of idiomas" [value]="idioma">
+             {{ idioma }}
+           </option>
+         </select>
+       </div> -->
+
+       
+       
+     </div>
+        <div class="col">
+
+          <!-- País -->
+          <div class="form-group">
+            <label for="pais">País (opcional)</label>
+            <select
+              class="selectpicker"
+              data-width="100%"
+              title="Elija un País"
+              id="País"
+              formControlName="pais"
+              (change)="setProvincias($event)"
+            >
+            <option value="">
+                Elija un País
+              </option>
+              <option *ngFor="let pais of paises" [value]="pais">
+                {{ pais }}
+              </option>
+            </select>
+          </div>
+
+          <!-- Provincia -->
+          <div class="form-group" *ngIf="this.buscarForm.value.pais">
+            <label for="provincia">Provincia (opcional)</label>
+            <select
+              class="selectpicker"
+              data-live-search="true"
+              data-width="100%"
+              title="Elija una Provincia"
+              id="provincia"
+              formControlName="provincia"
+              (change)="setCiudad()"
+            >
+            <option value="">
+                Elija una Provincia
+              </option>
+              <option *ngFor="let provincia of provincias" [ngValue]="provincia">
+                {{ provincia.provincia }}
+              </option>
+            </select>
+          </div>
+
+          <!-- Ciudad -->
+          <div class="form-group" *ngIf="this.buscarForm.value.provincia">
+            <label for="ciudad">Ciudad (opcional)</label>
+            <select
+              class="selectpicker"
+              data-live-search="true"
+              data-width="100%"
+              title="Elija una Ciudad"
+              id="ciudad"
+              formControlName="ciudad"
+              (change)="setCiudad()"
+            >
+                <option value="">
+                    Elija una Ciudad
+                </option>
+                <option
+                *ngFor="let ciudad of this.buscarForm.value.provincia.ciudades"
+                [value]="ciudad"
+                >
+                {{ ciudad }}
+                </option>           
+            </select>
+          </div>
+        </div>     
+      </div>
+    
+
+  
+    </div>
+    <div class="card-footer">
+      <button
+        class="btn btn-success rounded-pill"
+        style="float: right; width: 20%"
+
+        (click)="buscar()"
+      >
+        Buscar
+      </button>
+    </div>
+  </div>
+  

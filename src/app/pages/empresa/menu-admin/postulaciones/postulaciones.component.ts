@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { job } from 'src/app/interfaces/card.interface';
@@ -31,10 +32,13 @@ export class PostulacionesComponent implements OnInit {
     private AuthService: AuthService,
     private SubirCVService:SubirCvService,
     private spinner: NgxSpinnerService,
-    private toastr:ToastrService
+    private toastr:ToastrService,
+    private titleService: Title
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
+    this.titleService.setTitle('Postulaciones | ACTION HUMAN CAPITAL CONSULTING');
+
     this.PostulacionesService.getPostulaciones().subscribe(
       (postulaciones: any) => {
         // console.log(postulaciones);
@@ -104,8 +108,9 @@ export class PostulacionesComponent implements OnInit {
       return;
     }
     this.spinner.show()
-    
-    this.SubirCVService.ObtenerPDF(cv.nombre, cv.tipo)
+
+
+    this.SubirCVService.ObtenerPDF( cv.email || "" ,cv.nombre, cv.tipo)
     .subscribe(data => {
       this.spinner.hide()
       window.open(data, "_blank")

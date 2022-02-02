@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { AuthService } from 'src/app/services/auth.service';
@@ -25,9 +26,11 @@ export class LoginMailComponent implements OnInit {
   constructor( private authService: AuthService, 
     private router:Router, 
     private afAuth: AngularFireAuth,
-    private spinner:NgxSpinnerService) { }
+    private spinner:NgxSpinnerService,
+    private titleService: Title) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Ingresar con Email | ACTION HUMAN CAPITAL CONSULTING');
     if(this.router.url.includes('personal')){
 
       this.tipo = '/personal'

@@ -8,6 +8,8 @@ import { job } from '../interfaces/card.interface';
 })
 export class CardService {
 
+
+
   expiracion = new Date(new Date().setDate(new Date().getDate() - 30));
   constructor(private firestore: AngularFirestore) { }
   

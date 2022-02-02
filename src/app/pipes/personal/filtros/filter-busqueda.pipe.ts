@@ -12,7 +12,7 @@ export class FilterBusquedaPipe implements PipeTransform {
       if (busqueda !== '') {
         let jobsFiltered = jobs.filter(
           (job) =>
-            job.descripcion.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
+            // job.descripcion.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
             job.pais.pais.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
             job.pais.provincia.provincia.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
             job.pais.provincia.ciudad.ciudad.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||

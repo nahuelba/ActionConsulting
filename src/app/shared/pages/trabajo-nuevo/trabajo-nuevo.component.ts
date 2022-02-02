@@ -15,6 +15,9 @@ import paises from 'src/assets/Opciones/ubicaciones.json';
 import puestos from 'src/assets/Opciones/trabajos/puestos.json'
 import tipo_trabajo from 'src/assets/Opciones/trabajos/tipo_trabajo.json'
 import rubros from 'src/assets/Opciones/trabajos/rubros.json'
+import prioridad_trabajo from 'src/assets/Opciones/trabajos/prioridad_trabajo.json'
+
+import NuevoTrabajoPlaceholder from 'src/assets/Opciones/trabajos/nuevoTrabajoPlaceholder.json'
 
 declare var $: any;
 @Component({
@@ -32,12 +35,12 @@ export class TrabajoNuevoComponent implements OnInit {
     provincia: false,
     ciudad: false,
     descripcion: false,
-    rubro:false
+    rubro:false,
+    prioridad_trabajo:false
   };
 
   form: job = {
     tipo_trabajo: '',
-    descripcion: '',
     fecha_publicacion: new Date(),
     puesto: '',
     pais: {
@@ -52,17 +55,20 @@ export class TrabajoNuevoComponent implements OnInit {
     estado: 'Pendiente',
     empresa_id: '',
     destacado:false,
-    categoria:'estandar',
-    rubro:''
+    rubro:'',
+    descripcion: NuevoTrabajoPlaceholder,
+
+    prioridad_trabajo:''
   };
 
 
   puestos = puestos
   tipo_trabajo = tipo_trabajo
   rubros = rubros
+  prioridad_trabajo = prioridad_trabajo
 
   
-  @ViewChild(CKEditorComponent) 'ckEditor': CKEditorComponent;
+  @ViewChild('ckeditorDescripcion') 'ckeditorDescripcion': CKEditorComponent;
 
   paises: string[] = paises;
   paisSeleccionado: string = '';
@@ -98,7 +104,8 @@ export class TrabajoNuevoComponent implements OnInit {
     if (this.job) {
       this.form.puesto = this.job.puesto;
       this.form.tipo_trabajo = this.job.tipo_trabajo;
-      this.form.descripcion = this.job.descripcion;
+
+      
       this.form.rubro = this.job.rubro
       var e = {
         target: {
@@ -106,6 +113,10 @@ export class TrabajoNuevoComponent implements OnInit {
         },
       };
       this.setProvincias(e);
+      
+      
+      this.form.descripcion = this.job.descripcion;
+      this.form.prioridad_trabajo = this.job.prioridad_trabajo
     }
     // setTimeout(function () {
     //   $('.selectpicker').selectpicker('refresh'); // refresh the selectpicker with fetched courses
@@ -113,12 +124,13 @@ export class TrabajoNuevoComponent implements OnInit {
   }
 
   ngAfterViewChecked() {
-    let editor = this.ckEditor.instance;
-    editor.config.height = 300;
-    editor.config.extraPlugins = 'autogrow';
-    editor.config.autoGrow_minHeight = 300;
-    editor.config.autoGrow_maxHeight = 450;
-    editor.config.toolbarGroups = [
+    let ckeditorDescripcion = this.ckeditorDescripcion.instance
+
+    var height = 300;
+    var extraPlugins = 'autogrow'
+    var autoGrow_minHeight = 300
+    var autoGrow_maxHeight = 400
+    var toolbarGroups = [
       { name: 'document', groups: ['mode', 'document', 'doctools'] },
       { name: 'clipboard', groups: ['clipboard', 'undo'] },
       {
@@ -140,9 +152,20 @@ export class TrabajoNuevoComponent implements OnInit {
       { name: 'others', groups: ['others'] },
       { name: 'about', groups: ['about'] },
     ];
+    var removeButtons = 'Source,Save,NewPage,ExportPdf,Preview,Print,Templates,Cut,Undo,Redo,Copy,Paste,PasteText,PasteFromWord,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Subscript,Superscript,Strike,CopyFormatting,CreateDiv,BidiLtr,BidiRtl,Language,Table,Smiley,PageBreak,Iframe,ShowBlocks,Maximize,About';
+    
 
-    editor.config.removeButtons =
-      'Source,Save,NewPage,ExportPdf,Preview,Print,Templates,Cut,Undo,Redo,Copy,Paste,PasteText,PasteFromWord,Find,Replace,SelectAll,Scayt,Form,Checkbox,Radio,TextField,Textarea,Select,Button,ImageButton,HiddenField,Subscript,Superscript,Strike,CopyFormatting,CreateDiv,BidiLtr,BidiRtl,Language,Table,Smiley,PageBreak,Iframe,ShowBlocks,Maximize,About';
+    ckeditorDescripcion.config.height = height
+    ckeditorDescripcion.config.extraPlugins = extraPlugins
+
+    ckeditorDescripcion.config.autoGrow_minHeight = autoGrow_minHeight
+    ckeditorDescripcion.config.autoGrow_maxHeight = autoGrow_maxHeight
+    ckeditorDescripcion.config.toolbarGroups = toolbarGroups
+    ckeditorDescripcion.config.removeButtons = removeButtons
+    
+    
+
+      
   }
 
   setProvincias(e: any) {
@@ -190,7 +213,8 @@ export class TrabajoNuevoComponent implements OnInit {
       provincia: false,
       ciudad: false,
       descripcion: false,
-      rubro:false
+      rubro:false,
+      prioridad_trabajo:false
     };
 
     setTimeout(function () {
@@ -217,6 +241,9 @@ export class TrabajoNuevoComponent implements OnInit {
     }
     if (this.form.descripcion == '') {
       this.error.descripcion = true;
+    }
+    if(this.form.prioridad_trabajo == ''){
+      this.error.prioridad_trabajo = true
     }
 
     if (Object.values(this.error).every((item) => item === false)) {

@@ -2,14 +2,16 @@
 <div class="row my-3">
   <div class="col">
     <button
-    *ngIf="user?.emailVerified"
+    *ngIf="user?.emailVerified && jobs.length<user?.datos?.categoria?.avisos"
       type="button"
       routerLink="nuevo"
       class="btn btn-success rounded-pill"
     >
       <i class="fa fa-plus" aria-hidden="true"></i>
-      Nuevo Aviso
+      Publicar Aviso
     </button>
+    <span *ngIf="user?.datos?.categoria?.avisos - jobs.length>0" class="mx-2">Quedan {{user?.datos?.categoria?.avisos - jobs.length}} avisos</span>
+    <span *ngIf="user?.datos?.categoria?.avisos - jobs.length<1"> No te quedan mas Avisos para publicar. <br> Mejora la cuenta para poder publicar más avisos</span>
     <button
     *ngIf="!user?.emailVerified"
       type="button"

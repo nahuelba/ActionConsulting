@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
@@ -12,15 +13,22 @@ export class MailEnviadoComponent implements OnInit {
 
   email:string = ""
 
-  constructor(private AuthService:AuthService, private toastr:ToastrService, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private AuthService:AuthService, 
+    private toastr:ToastrService, 
+    private activatedRoute: ActivatedRoute,
+    private titleService: Title
+    ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Mail Enviado | ACTION HUMAN CAPITAL CONSULTING');
     this.email = this.activatedRoute.snapshot.paramMap.get('email') || "";
 
 
   }
 
   reenviarEmail(){
+    
     this.AuthService.RecoverPassword(this.email)
       .then(
         data =>{ 

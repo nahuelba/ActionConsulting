@@ -1,0 +1,56 @@
+<div class="row py-4">
+    <div class="col">
+      <h4 style="margin-top: 9px">Busqueda de Usuarios</h4>
+    </div>
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb" style="background-color: #fafbfe">
+          <li class="breadcrumb-item">
+            <a routerLink="/empresa/buscar-usuarios">Formulario de busqueda</a>
+          </li>
+          <li class="breadcrumb-item active">Busqueda de usuarios</li>
+        </ol>
+      </nav>
+    </div> 
+  </div>
+
+
+
+
+  <div class="card">
+    <div class="card-body">
+      <h5>Te quedan {{usuarios_restantes}} usuarios por revelar</h5>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Puesto</th>
+            <th scope="col">País</th>
+            <th scope="col">Provincia</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users" class="userFila" [routerLink]="'/empresa/buscar-usuarios/usuario/' + user.id">
+            <td>{{ user.nombre }}</td>
+            <td>{{ user.puesto }}</td>
+            <td>{{ user.pais }}</td>
+            <td>{{ user.provincia }}</td>
+          </tr>
+        </tbody>
+  
+        <!-- <tbody *ngIf="loader">
+          <tr *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+            <td *ngFor="let item of [1, 2, 3, 4]">
+              <ngx-skeleton-loader
+                appearance="line"
+                [theme]="{
+                  width: '100%'
+                }"
+              ></ngx-skeleton-loader>
+            </td>
+          </tr>
+        </tbody> -->
+      </table>
+    </div>
+  </div>

@@ -9,6 +9,7 @@ import { FilterEmpresaPipe } from './empresa/postulaciones/filter-empresa.pipe';
 import { FilterPuestosPipe } from './empresa/postulaciones/filter-puestos.pipe';
 import { FilterPuestoPipe } from './personal/filtros/filter-puesto.pipe';
 import { FilterBusquedaPipe } from './personal/filtros/filter-busqueda.pipe';
+import { FilterPrioridadPipe } from './empresa/filter-prioridad.pipe';
 
 
 
@@ -22,7 +23,8 @@ import { FilterBusquedaPipe } from './personal/filtros/filter-busqueda.pipe';
     FilterEmpresaPipe,
     FilterPuestosPipe,
     FilterPuestoPipe,
-    FilterBusquedaPipe
+    FilterBusquedaPipe,
+    FilterPrioridadPipe
   ],
   exports:[
     FilterPipe,
@@ -33,7 +35,8 @@ import { FilterBusquedaPipe } from './personal/filtros/filter-busqueda.pipe';
     FilterEmpresaPipe,
     FilterPuestosPipe,
     FilterPuestoPipe,
-    FilterBusquedaPipe
+    FilterBusquedaPipe,
+    FilterPrioridadPipe
   ],
   imports: [
     CommonModule

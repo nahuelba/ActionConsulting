@@ -6,8 +6,11 @@ import { CKEditorModule } from 'ng2-ckeditor';
 import { NgxSpinnerModule } from 'ngx-bootstrap-spinner';
 import { FooterComponent } from './footer/footer.component';
 import { CargarCVComponent } from './pages/cargar-cv/cargar-cv.component';
-import { TipoCuentaComponent } from './tipo-cuenta/tipo-cuenta.component';
 import { NgbModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
+import { BuscarUsuariosComponent } from './pages/buscar-usuarios/buscar-usuarios.component';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { UsuarioDetalleComponent } from './pages/usuario-detalle/usuario-detalle.component';
+import { ComponentsModule } from '../components/components.module';
 
 
 
@@ -16,17 +19,23 @@ import { NgbModule, NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
     TrabajoNuevoComponent,
     FooterComponent,
     CargarCVComponent,
-    TipoCuentaComponent
+    BuscarUsuariosComponent,
+    UsuarioDetalleComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    CKEditorModule
+    CKEditorModule,
+    NgxSkeletonLoaderModule,
+    ReactiveFormsModule,
+    ComponentsModule
     ],
   exports:[
     TrabajoNuevoComponent,
     FooterComponent,
     CargarCVComponent,
+    BuscarUsuariosComponent,
+    UsuarioDetalleComponent
     
   ]
 })

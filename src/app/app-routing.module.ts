@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { EmpresaGuard } from './guards/empresa.guard';
 import { PersonalGuard } from './guards/personal.guard';
-import { TipoCuentaComponent } from './shared/tipo-cuenta/tipo-cuenta.component';
 
 
 

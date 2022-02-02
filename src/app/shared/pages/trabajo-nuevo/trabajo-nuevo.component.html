@@ -19,19 +19,13 @@
             title="Elija un Rubro"
             [(ngModel)]="form.rubro"
           >
-            <option
-              *ngFor="let rubro of rubros"
-              [value]="rubro"
-            >
+            <option *ngFor="let rubro of rubros" [value]="rubro">
               {{ rubro }}
             </option>
           </select>
-          <small
-            *ngIf="error.rubro"
-            class="text-danger"
-          >
+          <small *ngIf="error.rubro" class="text-danger">
             Rellene este campo
-          </small>  
+          </small>
         </div>
         <div class="form-group">
           <label for="Puesto">Puesto / Posición * </label>
@@ -50,28 +44,17 @@
             title="Elija una Puesto/Posición"
             [(ngModel)]="form.puesto"
           >
-            <option
-              *ngFor="let puesto of puestos"
-              [value]="puesto"
-            >
+            <option *ngFor="let puesto of puestos" [value]="puesto">
               {{ puesto }}
             </option>
           </select>
-          
-        
+
           <small *ngIf="error.puesto" id="passwordHelp" class="text-danger">
             Rellene este campo
           </small>
         </div>
         <div class="form-group">
           <label for="descripcions">Tipo de Trabajo *</label>
-          <!-- <input
-            type="text"
-            class="form-control"
-            [ngClass]="{ 'is-invalid': error.tipo_empresa }"
-            id="tipo_empresa"
-            [(ngModel)]="form.tipo_empresa"
-          /> -->
           <select
             class="selectpicker"
             [ngClass]="{ 'is-invalid': error.tipo_trabajo }"
@@ -95,7 +78,6 @@
           </small>
         </div>
 
-
         <!-- <div class="form-group">
           <label for="descripcions">Tipo de Empresa *</label>
           <input
@@ -112,7 +94,6 @@
             Rellene este campo
           </small>
         </div> -->
-
       </div>
       <div class="col">
         <div class="form-group">
@@ -133,7 +114,7 @@
             Seleccione un país
           </div>
         </div>
-  
+
         <div class="form-group" *ngIf="paisSeleccionado">
           <label>Provincia *</label>
           <select
@@ -153,7 +134,7 @@
             Seleccione una provincia
           </div>
         </div>
-  
+
         <div class="form-group" *ngIf="provinciaSeleccionada">
           <label>Ciudad *</label>
           <select
@@ -179,12 +160,40 @@
     </div>
     <hr class="my-4" />
     <div class="form-group">
-      <label for="descripcion">Descripción *</label>
+      <label for="descripcion">Descripcion*</label>
 
-      <ckeditor [(ngModel)]="form.descripcion"> </ckeditor>
+      <ckeditor
+        #ckeditorDescripcion
+        [(ngModel)]="form.descripcion"
+      >
+      </ckeditor>
 
       <small
         *ngIf="error.descripcion"
+        id="passwordHelp"
+        class="text-danger"
+      >
+        Rellene este campo
+      </small>
+    </div>
+
+    <hr class="my-4" />
+
+    <div class="form-group" style="width: 50%">
+      <label for="descripcions">Prioridad de trabajo *</label>
+      <select
+        class="selectpicker"
+        [ngClass]="{ 'is-invalid': error.prioridad_trabajo }"
+        data-width="100%"
+        title="Elija un Tipo de trabajo"
+        [(ngModel)]="form.prioridad_trabajo"
+      >
+        <option *ngFor="let prioridad of prioridad_trabajo" [value]="prioridad">
+          {{ prioridad }}
+        </option>
+      </select>
+      <small
+        *ngIf="error.prioridad_trabajo"
         id="passwordHelp"
         class="text-danger"
       >
@@ -202,5 +211,3 @@
     </button>
   </div>
 </div>
-
-

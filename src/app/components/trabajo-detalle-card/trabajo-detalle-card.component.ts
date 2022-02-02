@@ -54,8 +54,6 @@ export class TrabajoDetalleCardComponent implements OnInit {
 
       this.select.controls.destacado.setValue(this.job.destacado)
 
-      this.select.controls.categoria.setValue(this.job.categoria)
-
       this.diasRestantesService.calcularDiasRestantes(this.job)
 
     }

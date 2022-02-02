@@ -18,7 +18,6 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.router.url);
-    debugger
     if(this.router.url.includes('personal')){
 
       this.tipo = '/personal'

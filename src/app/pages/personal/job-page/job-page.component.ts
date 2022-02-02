@@ -6,6 +6,7 @@ import { Postulacion } from 'src/app/interfaces/postulacion.interface';
 import { SubirCvService } from 'src/app/services/subir-cv.service';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-job-page',
@@ -18,6 +19,7 @@ export class JobPageComponent implements OnInit {
   user: any;
 
   id: string = '';
+
 
   postulado = {
     postulacionTexto: '',
@@ -32,9 +34,11 @@ export class JobPageComponent implements OnInit {
   postulacion: Postulacion = {
     user: '',
     fecha: new Date(),
-    trabajo: ''
+    trabajo: '',
+    cv:null,
+    email:''
+
   };
-  pdf:any
 
   constructor(
     private CardService: CardService,
@@ -43,10 +47,13 @@ export class JobPageComponent implements OnInit {
     private router: Router,
     private SubirCvService: SubirCvService,
     private spinner:NgxSpinnerService,
-    private toastr:ToastrService
+    private toastr:ToastrService,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('Detalle del Aviso | ACTION HUMAN CAPITAL CONSULTING');
+
     //Get Id from url
     let id: any = this.route.snapshot.paramMap.get('id');
 
@@ -97,10 +104,14 @@ export class JobPageComponent implements OnInit {
     );
   }
 
+  setCV(e:any){
+    this.postulacion.cv = e
+  }
+
   Postulacion() {
     this.spinner.show()
     
-
+    this.postulacion.cv.email = this.user.email
     console.log(this.postulacion);
     this.PostulacionService.RealizarPostulacion(this.postulacion)
       .then((res) => {

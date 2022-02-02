@@ -9,8 +9,10 @@ import { TrabajoDetalleAdminComponent } from './trabajo-detalle-admin/trabajo-de
 import { EditarTrabajoComponent } from './editar-trabajo/editar-trabajo.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PostulacionesComponent } from './postulaciones/postulaciones.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { UsuarioDetalleAdminComponent } from './usuario-detalle-admin/usuario-detalle-admin.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     TrabajosComponent,
     TrabajoDetalleAdminComponent,
     EditarTrabajoComponent,
-    PostulacionesComponent
+    PostulacionesComponent,
+    UsuariosComponent,
+    UsuarioDetalleAdminComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +31,8 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     PipesModule,
     SharedModule,
     FormsModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    ReactiveFormsModule
   ]
 })
 export class MenuAdminModule { }

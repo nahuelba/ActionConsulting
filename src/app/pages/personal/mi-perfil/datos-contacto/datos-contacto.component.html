@@ -2,7 +2,7 @@
     <span class="h4"> Datos de Contacto </span>
   </div>
 
-<form class="my-3">
+<form class="my-3" [formGroup]="datosContactoForm">
   <div class="form-group">
     <label for="Puesto">Email</label>
     <input type="email" class="form-control" formControlName="email" readonly/>
@@ -36,5 +36,5 @@
   </div>
 
 
-  <button class="btn btn-success rounded-pill mt-4">Actualizar perfil</button>
+  <button (click)="GuardarPerfil()" class="btn btn-success rounded-pill mt-4">Actualizar perfil</button>
 </form>

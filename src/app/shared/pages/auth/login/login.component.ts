@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -27,13 +28,16 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router:Router
+    private router:Router,
+    private titleService: Title
       ) {
 
     
    }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Ingresar | ACTION HUMAN CAPITAL CONSULTING');
+
     if(this.router.url.includes('personal')){
 
       this.tipo = '/personal'

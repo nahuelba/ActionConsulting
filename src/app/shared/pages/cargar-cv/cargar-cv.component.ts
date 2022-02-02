@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { concat, forkJoin, from } from 'rxjs';
@@ -12,12 +12,20 @@ import { SubirCvService } from 'src/app/services/subir-cv.service';
 })
 export class CargarCVComponent implements OnInit {
 
+  @Output() CV = new EventEmitter<any>();
+
+  @Input() seleccionarCV:boolean = true;
+
   cvCargado = false;
   errorCV = false;
+  errorMismoNombre = false;
   pdf:any
 
   user:any
 
+  agregarcv:boolean = false;
+
+  user_email:string | null | undefined
   constructor(
     private AuthService:AuthService, 
     private spinner:NgxSpinnerService, 
@@ -30,35 +38,49 @@ export class CargarCVComponent implements OnInit {
    
     this.AuthService.getUserAfsSinId().subscribe(
       (user:any) => {
-        console.log(user)
+        this.AuthService.obtenerCvs(user.id)
+        .subscribe(Cvs => user['CVs'] = Cvs)
         this.user=user
+        console.log(this.user)
       })
-      }
+
+    this.AuthService.getUserLogged()
+    .subscribe(user => this.user_email = user?.email)
+  }
 
   onFileChange(e: any) {
     console.log(e.files.item(0));
     if (e.files.item(0)) {
       if (e.files.item(0).type == 'application/pdf' || e.files.item(0).type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document" || e.files.item(0).type=="application/msword") {
+        this.user?.CVs.forEach((cv:any) => {
+          console.log(cv)
+          if(e.files.item(0).name.includes( cv.nombre)){
+            this.errorMismoNombre=true;
+          }
+        });
+       
+
         this.pdf = e.files.item(0)
         this.cvCargado = true;
         this.errorCV = false;
       } else {
         this.cvCargado = false;
         this.errorCV = true;
+        this.errorMismoNombre=false;
       }
     } else {
       this.cvCargado = false;
       this.errorCV = false;
+      this.errorMismoNombre=false;
     }
   }
 
   subirCV(){
-    if(!this.cvCargado){
+    if(!this.cvCargado || this.errorMismoNombre){
       return;
     }
     this.spinner.show()
     
-    debugger  
     var tipo_cv = ""
     //definir el tipo de documento a guardar
     switch(this.pdf.type){
@@ -83,7 +105,7 @@ export class CargarCVComponent implements OnInit {
       tipo:tipo_cv,
       fecha: new Date()
     }
-    const esconderSpinner = concat(from(this.SubirCvService.subirCV(nombre_cv, this.pdf, tipo_cv)), from(this.AuthService.updateCV(this.user.id, CV)))
+    const esconderSpinner = concat(from(this.SubirCvService.subirCV(this.user_email || "", nombre_cv, this.pdf, tipo_cv)), from(this.AuthService.updateCV(this.user.id, CV)))
     //subirlo al storage de firebase
     
 
@@ -91,15 +113,16 @@ export class CargarCVComponent implements OnInit {
       console.log(data)
       this.spinner.hide()
       this.toastr.success('Se ha subido el CV con exito!')
+      this.agregarcv = false;
     },
     err => this.toastr.warning('No se ha podido subir el CV, intente mas tarde.'))
       
   }
 
-  descargarCV(){
+  descargarCV(cv:string, tipo:string){
 
     this.spinner.show()
-    this.SubirCvService.ObtenerPDF(this.user.cv.nombre, this.user.cv.tipo)
+    this.SubirCvService.ObtenerPDF(this.user_email || "", cv, tipo)
     .subscribe(data => {
     
       console.log(data)
@@ -109,11 +132,10 @@ export class CargarCVComponent implements OnInit {
     },
     (err: any) => {
       if(err.code == 'storage/object-not-found'){
-        this.AuthService.updateCV(this.user.id, null)
-        .then(data => {
+    
           this.spinner.hide()
           this.toastr.warning('No se ha podido encontrar el CV en la base de datos, intente subirlo de nuevo.')
-        })
+       
       }else{
         this.spinner.hide()
         this.toastr.warning('No se ha podido descargar el CV. Intente mas tarde.')
@@ -121,9 +143,9 @@ export class CargarCVComponent implements OnInit {
     })
 
   }
-  EliminarCV(){
+  EliminarCV(cv:string, tipo:string, id_cv:string){
     this.spinner.show()
-    concat(from(this.SubirCvService.deleteDocument(this.user.cv.nombre, this.user.cv.tipo)), from(this.AuthService.updateCV(this.user.id, null)))
+    concat(from(this.SubirCvService.deleteDocument(this.user_email || "",cv, tipo)), from(this.AuthService.eliminarCV(this.user.id, id_cv)))
     .subscribe(data => {
       console.log(data)
       this.spinner.hide()
@@ -132,4 +154,7 @@ export class CargarCVComponent implements OnInit {
     err => this.toastr.warning('No se pudo eliminar el CV, intente mas tarde.'))
 
   }
+
+
+
 }

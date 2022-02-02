@@ -9,6 +9,51 @@
       <i class="fa fa-plus" aria-hidden="true"></i>
       Nuevo trabajo
     </button> -->
+    <div
+      class="btn-toolbar"
+      role="toolbar"
+      aria-label="Toolbar with button groups"
+    >
+      <div class="btn-group mr-2" role="group">
+        <button
+          type="button"
+          class="btn btn-light"
+          [ngClass]="{ active: !filterPrioridad }"
+          (click)="filterPrioridad = ''"
+        >
+          Todos
+        </button>
+      </div>
+
+      <div class="btn-group" role="group">
+        <button
+          type="button"
+          class="btn btn-light"
+          [ngClass]="{ active: filter == 'Máximo' }"
+          (click)="filterPrioridad = 'Máximo'"
+        >
+        Máximo
+        </button>
+        <button
+          type="button"
+          class="btn btn-light"
+          [ngClass]="{ active: filter == 'Medio' }"
+          (click)="filterPrioridad = 'Medio'"
+        >
+        Medio
+        </button>
+        <button
+          type="button"
+          class="btn btn-light"
+          [ngClass]="{ active: filter == 'Mínimo' }"
+          (click)="filterPrioridad = 'Mínimo'"
+        >
+        Mínimo
+        </button>
+      </div>
+
+      
+    </div>
   </div>
   <div class="col">
     <div
@@ -53,7 +98,11 @@
           Finalizado
         </button>
       </div>
+
+      
     </div>
+
+    
   </div>
 </div>
 
@@ -68,7 +117,7 @@
   </ng-container>
 
   <!-- Card Job -->
-  <ng-container *ngFor="let job of jobs | filterEstado: filter">
+  <ng-container *ngFor="let job of jobs | filterEstado: filter | filterPrioridad:filterPrioridad">
     <app-trabajo-card-empresa
       routerLink="{{ job.id }}"
       [job]="job"

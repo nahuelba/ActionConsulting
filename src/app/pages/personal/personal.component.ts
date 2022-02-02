@@ -1,5 +1,6 @@
 import { DatePipe, formatDate } from '@angular/common';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { job } from 'src/app/interfaces/card.interface';
 import { Filters } from 'src/app/interfaces/filters.interface';
@@ -8,7 +9,6 @@ import { FilterPipe } from 'src/app/pipes/personal/filtros/filter.pipe';
 import { AuthService } from 'src/app/services/auth.service';
 import { CardService } from 'src/app/services/card.service';
 import { FiltrosService } from 'src/app/services/filtros.service';
-import { ToastService } from 'src/app/services/toast.service';
 
 
 @Component({
@@ -52,11 +52,13 @@ export class PersonalComponent implements OnInit {
     private CardService:CardService,
     public FiltrosService:FiltrosService,
     private router: Router,
-    private cdRef:ChangeDetectorRef
+    private cdRef:ChangeDetectorRef,
+    private titleService: Title
      ) { }
 
   ngOnInit(): void {
-    
+    this.titleService.setTitle('Personal | ACTION HUMAN CAPITAL CONSULTING');
+
     this.getJobs()
 
    

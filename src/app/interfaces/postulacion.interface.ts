@@ -3,6 +3,8 @@ export interface Postulacion {
     user:any;
     fecha:any;
     trabajo:any;
-    id?:string
+    id?:string,
+    cv:any,
+    email:string
     
 }

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { AuthService } from 'src/app/services/auth.service';
+import categorias from 'src/assets/Opciones/trabajos/categorias.json'
 
 @Component({
   selector: 'app-empresa-form',
@@ -26,9 +28,16 @@ export class EmpresaFormComponent implements OnInit {
 
   // @ViewChild('labelImport') labelImport: ElementRef;
 
-  constructor(private authService: AuthService, private router: Router, private spinner:NgxSpinnerService) {}
+  constructor(
+    private authService: AuthService, 
+    private router: Router, 
+    private spinner:NgxSpinnerService,
+    private titleService: Title
+    ) {}
 
   ngOnInit(): void {
+    this.titleService.setTitle('Registrarse | ACTION HUMAN CAPITAL CONSULTING');
+
     if(this.router.url.includes('personal')){
 
       this.tipo = '/personal'
@@ -73,11 +82,18 @@ export class EmpresaFormComponent implements OnInit {
             displayName: `${nombre}`,
           });
 
+          let estandar = categorias.find(categ => categ.categoria == "Estándar") 
+
           const userNuevo = 
             {
               tipo: this.registerForm.value.tipo, 
               nombre:nombre, 
-              admin: false
+              email:email,
+              admin: false,
+              categoria: 'Estándar',
+              avisos: estandar?.avisos,
+              usuarios: estandar?.usuarios
+
             }
 
           this.authService.saveUser(userNuevo, res.user.uid)

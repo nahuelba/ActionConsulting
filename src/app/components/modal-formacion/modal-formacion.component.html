@@ -1,0 +1,139 @@
+<!-- Modal -->
+
+ 
+
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Agregar Formación</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <div class="modal-body" [formGroup]="formacionForm" >
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="Puesto">Titulo / Carrera * </label>
+          <input
+          type="text"
+          [ngClass]="{ 'is-invalid': false }"
+          placeholder="Titulo / Carrera"
+          class="form-control"
+          formControlName="titulo"
+        />
+           
+         
+          <small *ngIf="false" id="passwordHelp" class="text-danger">
+            Rellene este campo
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label for="Puesto">Area de Estudio * </label>
+          <input
+          type="text"
+          [ngClass]="{ 'is-invalid': false }"
+          placeholder="Area de Estudio"
+          class="form-control"
+          formControlName="area_estudio"
+        />
+
+          <small *ngIf="false" id="passwordHelp" class="text-danger">
+            Rellene este campo
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="Puesto">Tipo de Estudio * </label>
+          <input
+            type="text"
+            [ngClass]="{ 'is-invalid': false }"
+            placeholder="Tipo de Estudio"
+            class="form-control"
+            formControlName="tipo_estudio"
+          />
+
+          <small *ngIf="false" id="passwordHelp" class="text-danger">
+            Rellene este campo
+          </small>
+        </div>
+       
+     
+
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>País</label>
+          <select
+            class="selectpicker"
+            data-width="100%"
+            title="Elija un País"
+            formControlName="pais"
+            (change)="elegirPais()"
+          >
+            <option value="">Elija un país</option>
+            <option *ngFor="let pais of paises" [value]="pais">
+              {{ pais }}
+            </option>
+          </select>
+        </div>
+
+        <div
+          class="form-group"
+          *ngIf="this.formacionForm.value.pais"
+        >
+          <label>Provincia</label>
+          <select
+            class="selectpicker"
+            data-live-search="true"
+            data-width="100%"
+            title="Elija una Provincia"
+            formControlName="provincia"
+            (change)="elegirProvincia()"
+          >
+            <option value="">Elija una Provincia</option>
+            <option
+              *ngFor="let provincia of provincias"
+              [value]="provincia.provincia"
+            >
+              {{ provincia.provincia }}
+            </option>
+          </select>
+        </div>
+
+        <div
+          class="form-group"
+          *ngIf="this.formacionForm.value.provincia"
+        >
+          <label>Ciudad</label>
+          <select
+            class="selectpicker"
+            data-live-search="true"
+            data-width="100%"
+            title="Elija una Ciudad"
+            formControlName="ciudad"
+          >
+            <option value="">Elija una ciudad</option>
+            <option *ngFor="let ciudad of ciudades" [value]="ciudad">
+              {{ ciudad }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown-divider"></div>
+    <app-periodo-laboral-formacion [formGroup]="formacionForm" ></app-periodo-laboral-formacion>
+
+
+    <div class="dropdown-divider"></div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Otros Conocimientos</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" formControlName="otros_conocimientos"></textarea>
+      </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss('Cross click')">
+      Cerrar
+    </button>
+    <button type="button" class="btn btn-success" (click)="enviarForm()">{{metodo}}</button>
+  </div>
+
+

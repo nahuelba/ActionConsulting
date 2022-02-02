@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { ToastrService } from 'ngx-toastr';
@@ -25,16 +26,17 @@ export class OlvidasteContraseniaComponent implements OnInit {
     private Router:Router, 
     private afAuth: AngularFireAuth,
     private spinner:NgxSpinnerService,
-    private toastr:ToastrService ) {
+    private toastr:ToastrService,
+    private titleService: Title ) {
 
       
     }
     
     ngOnInit(): void {
+      this.titleService.setTitle('Recuperar Contraseña | ACTION HUMAN CAPITAL CONSULTING');
   }
 
   recuperarContrasenia(){
-
     if(this.loginForm.valid){
 
       this.authService.RecoverPassword(this.loginForm.value.email)
