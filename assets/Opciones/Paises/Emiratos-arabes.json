@@ -1,0 +1,140 @@
+{
+    "pais": "Emiratos Árabes Unidos",
+    "provincias":[
+        {
+            "provincia": "Dubayy",
+            "ciudades": [
+                "Dubai",
+                "‘Ūd al Bayḑā’",
+                "Qarayţaysah",
+                "Margham",
+                "Qimah",
+                "Hunaywah",
+                "Ḩayl",
+                "‘Urqūb Juwayza",
+                "Ferij al Muhadham",
+                "Al Faq‘",
+                "Ḩattā",
+                "Al Lusaylī",
+                "Warīsān"
+            ]
+        },
+        {
+            "provincia": "Ash Shāriqah",
+            "ciudades": [
+                "Sharjah",
+                "Ḩaşat al Bidīyah",
+                "Muḑayfī",
+                "Lūlayyah",
+                "Al Jazīrah",
+                "Wādī Shī",
+                "Khawr Fakkān",
+                "Ash Shu‘ayb",
+                "Ḩiyāwah",
+                "Ar Rufayşah",
+                "Rafā‘",
+                "Shīs",
+                "Naḩwah",
+                "Al Ḩamrīyah",
+                "Adh Dhayd",
+                "Al ‘Awdah",
+                "Qidfa‘",
+                "‘Uqayr",
+                "Ghayl",
+                "Khawr Kalbā",
+                "Murbaḩ",
+                "Ḩarrah",
+                "Kalbā",
+                "Ḩayāt",
+                "Girath",
+                "Nuhayy"
+            ]
+        },
+        {
+            "provincia": "Abū Z̧aby",
+            "ciudades": [
+                "Abu Dhabi",
+                "Al ‘Ayn",
+                "Madīnat Zāyid"
+            ]
+        },
+        {
+            "provincia": "‘Ajmān",
+            "ciudades": [
+                "‘Ajmān",
+                "Sharīyah",
+                "Maşfūţ",
+                "Şufayrī"
+            ]
+        },
+        {
+            "provincia": "Ra’s al Khaymah",
+            "ciudades": [
+                "Ra’s al Khaymah",
+                "‘Asamah",
+                "Al ‘Ayn al Ghumūr",
+                "Waḩlah",
+                "Sījī",
+                "Ḑab‘ah",
+                "Mawrid"
+            ]
+        },
+        {
+            "provincia": "Al Fujayrah",
+            "ciudades": [
+                "Al Fujayrah",
+                "Zubārah",
+                "Biţnah",
+                "Mu‘tariḑah",
+                "Theeb",
+                "Wa‘bayn",
+                "Al Qurayyah",
+                "Al Manāmah",
+                "‘Abādilah",
+                "Al Ḩalāh",
+                "Ghurfah",
+                "Ḩayl",
+                "Al Fuqait",
+                "Sā’if",
+                "Badīyah",
+                "Far‘ah",
+                "Mukhtaraqah",
+                "Yalah",
+                "Ţayyibah",
+                "Ḩārat Zuţūţ",
+                "Al ‘Uyaynah",
+                "Rūl Ḑadnā",
+                "Rughaylāt",
+                "Tawian",
+                "Shawīyah",
+                "Dibā",
+                "Sinnah",
+                "Riyāmah",
+                "Dūb",
+                "Sram",
+                "Thoban",
+                "Ḩafarah",
+                "Al Gissemari",
+                "Khulaybīyah",
+                "Z̧anḩah",
+                "Saqamqam",
+                "Ḑāhir",
+                "Jareef",
+                "Al Kubūs",
+                "‘Ashashah",
+                "‘Aqqah",
+                "Ras Dibba",
+                "Murbaḑ",
+                "Şafad",
+                "Ţarīqat Ja‘d",
+                "Ţarīf Kalbā"
+            ]
+        },
+        {
+            "provincia": "Umm al Qaywayn",
+            "ciudades": [
+                "Umm al Qaywayn"
+            ]
+        }
+    ]
+  }

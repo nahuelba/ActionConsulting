@@ -1,0 +1,233 @@
+{
+    "pais": "Perú",
+    "provincias": [
+        {
+            "provincia": "Lima",
+            "ciudades": [
+                "Lima",
+                "Huacho",
+                "Huaycan",
+                "Barranca",
+                "Chosica",
+                "Huaral",
+                "Huaura",
+                "Chancay",
+                "Pativilca",
+                "San Vicente de Cañete",
+                "Chilca"
+            ]
+        },
+        {
+            "provincia": "Callao",
+            "ciudades": [
+                "Callao"
+            ]
+        },
+        {
+            "provincia": "Arequipa",
+            "ciudades": [
+                "Arequipa",
+                "Mollendo",
+                "Camaná",
+                "Chivay"
+            ]
+        },
+        {
+            "provincia": "La Libertad",
+            "ciudades": [
+                "Trujillo",
+                "Virú",
+                "Huamachuco",
+                "Pacasmayo",
+                "Otuzco",
+                "San Pedro de Lloc",
+                "Salaverry"
+            ]
+        },
+        {
+            "provincia": "Lambayeque",
+            "ciudades": [
+                "Chiclayo",
+                "Lambayeque",
+                "Ferreñafe",
+                "Puerto Pimentel",
+                "Motupe",
+                "Olmos"
+            ]
+        },
+        {
+            "provincia": "Ancash",
+            "ciudades": [
+                "Chimbote",
+                "Huaraz",
+                "Casma",
+                "Carás",
+                "Huarmey",
+                "Yungay"
+            ]
+        },
+        {
+            "provincia": "Piura",
+            "ciudades": [
+                "Piura",
+                "Paita",
+                "Sullana",
+                "Talara",
+                "Chulucanas",
+                "Sechura"
+            ]
+        },
+        {
+            "provincia": "Cusco",
+            "ciudades": [
+                "Cusco",
+                "Sicuani",
+                "Santo Tomás",
+                "Paucartambo",
+                "Urubamba"
+            ]
+        },
+        {
+            "provincia": "Junín",
+            "ciudades": [
+                "Huancayo",
+                "Tarma",
+                "Forbe Oroya",
+                "Jauja",
+                "Junín",
+                "San Ramón",
+                "Satipo"
+            ]
+        },
+        {
+            "provincia": "Loreto",
+            "ciudades": [
+                "Iquitos",
+                "Yurimaguas",
+                "Contamana",
+                "Requena",
+                "Caballococha"
+            ]
+        },
+        {
+            "provincia": "Ucayali",
+            "ciudades": [
+                "Pucallpa",
+                "Esperanza"
+            ]
+        },
+        {
+            "provincia": "Puno",
+            "ciudades": [
+                "Juliaca",
+                "Puno",
+                "Juli",
+                "Ayaviri",
+                "Ilave",
+                "Putina",
+                "Desaguadero"
+            ]
+        },
+        {
+            "provincia": "Tacna",
+            "ciudades": [
+                "Tacna"
+            ]
+        },
+        {
+            "provincia": "Ica",
+            "ciudades": [
+                "Ica",
+                "Pisco",
+                "Chincha Alta",
+                "Nazca",
+                "Santiago"
+            ]
+        },
+        {
+            "provincia": "San Martín",
+            "ciudades": [
+                "Tarapoto",
+                "Moyobamba",
+                "Juanjuí",
+                "Tocache Nuevo",
+                "Lamas"
+            ]
+        },
+        {
+            "provincia": "Cajamarca",
+            "ciudades": [
+                "Cajamarca",
+                "Chota",
+                "Jaén",
+                "Cajabamba",
+                "San Miguel de Pallaques"
+            ]
+        },
+        {
+            "provincia": "Huánuco",
+            "ciudades": [
+                "Huánuco",
+                "Tingo María"
+            ]
+        },
+        {
+            "provincia": "Ayacucho",
+            "ciudades": [
+                "Ayacucho",
+                "Huanta",
+                "Puquio",
+                "Coracora"
+            ]
+        },
+        {
+            "provincia": "Tumbes",
+            "ciudades": [
+                "Tumbes",
+                "Zarumilla"
+            ]
+        },
+        {
+            "provincia": "Madre de Dios",
+            "ciudades": [
+                "Puerto Maldonado"
+            ]
+        },
+        {
+            "provincia": "Apurímac",
+            "ciudades": [
+                "Andahuaylas",
+                "Abancay"
+            ]
+        },
+        {
+            "provincia": "Moquegua",
+            "ciudades": [
+                "Moquegua",
+                "Ilo"
+            ]
+        },
+        {
+            "provincia": "Pasco",
+            "ciudades": [
+                "Cerro de Pasco",
+                "Oxapampa"
+            ]
+        },
+        {
+            "provincia": "Huancavelica",
+            "ciudades": [
+                "Huancavelica"
+            ]
+        },
+        {
+            "provincia": "Amazonas",
+            "ciudades": [
+                "Bagua Grande",
+                "Chachapoyas",
+                "Mendoza",
+                "Santa María de Nieva"
+            ]
+        }
+    ]
+  }

@@ -1,0 +1,80 @@
+{
+    "pais": "Bolivia",
+    "provincias": [
+        {
+            "provincia": "Santa Cruz",
+            "ciudades": [
+                "Santa Cruz",
+                "Warnes",
+                "Montero",
+                "Camiri",
+                "Camiri",
+                "San Ignacio de Velasco"
+            ]
+        },
+        {
+            "provincia": "La Paz",
+            "ciudades": [
+                "La Paz",
+                "Viacha"
+            ]
+        },
+        {
+            "provincia": "Cochabamba",
+            "ciudades": [
+                "Cochabamba",
+                "Sacaba",
+                "Quillacollo",
+                "Villa Tunari",
+                "Puerto Villarroel",
+                "Tiquipaya"
+            ]
+        },
+        {
+            "provincia": "Chuquisaca",
+            "ciudades": [
+                "Sucre"
+            ]
+        },
+        {
+            "provincia": "Oruro",
+            "ciudades": [
+                "Oruro",
+                "Oruro"
+            ]
+        },
+        {
+            "provincia": "Potosí",
+            "ciudades": [
+                "Potosí",
+                "Llallagua",
+                "Villazón",
+                "Uyuni",
+                "Tupiza"
+            ]
+        },
+        {
+            "provincia": "Tarija",
+            "ciudades": [
+                "Tarija",
+                "Villamontes",
+                "Bermejo"
+            ]
+        },
+        {
+            "provincia": "El Beni",
+            "ciudades": [
+                "Trinidad",
+                "Riberalta",
+                "Guayaramerín",
+                "San Borja"
+            ]
+        },
+        {
+            "provincia": "Pando",
+            "ciudades": [
+                "Cobija"
+            ]
+        }
+    ]
+}

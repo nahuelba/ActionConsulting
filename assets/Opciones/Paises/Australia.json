@@ -1,0 +1,96 @@
+{
+    "pais": "Australia",
+    "provincias": [
+        {
+            "provincia": "New South Wales",
+            "ciudades": [
+                "Sydney",
+                "Newcastle",
+                "Central Coast",
+                "Wollongong",
+                "Maitland",
+                "Blue Mountains",
+                "Tweed Heads",
+                "Wagga Wagga",
+                "Coffs Harbour",
+                "Albury - Wodonga (Albury part)",
+                "Port Macquarie",
+                "Orange",
+                "Canberra - Queanbeyan (Queanbeyan part)",
+                "Dubbo",
+                "Tamwort"
+            ]
+        },
+        {
+            "provincia": "Victoria",
+            "ciudades": [
+                "Melbourne",
+                "Geelong",
+                "Ballarat",
+                "Bendigo",
+                "Melton",
+                "Mildura",
+                "Shepparton - Mooroopna",
+                "Pakenham",
+                "Wodonga",
+                "Sunbury",
+                "Warrnambool"
+            ]
+        },
+        {
+            "provincia": "Northern Territory",
+            "ciudades": [
+                "Darwin",
+                "Alice Springs",
+                "Palmerston",
+                "Katherine",
+                "McMinns Lagoon"
+            ]
+        },
+        {
+            "provincia": "South Australia",
+            "ciudades": [
+                "Adelaide",
+                "Gawler",
+                "Mount Gambier",
+                "Whyalla",
+                "Murray Bridge"
+            ]
+        },
+        {
+            "provincia": "Tasmania",
+            "ciudades": [
+                "Hobart",
+                "Launceston",
+                "Devonport",
+                "Burnie - Somerset",
+                "Ulverstone"
+            ]
+        },
+        {
+            "provincia": "Western Australia",
+            "ciudades": [
+                "Perth",
+                "Bunbury",
+                "Geraldton",
+                "Kalgoorlie-Boulder",
+                "Albany"
+            ]
+        },
+        {
+            "provincia": "Queensland",
+            "ciudades": [
+                "Brisbane",
+                "Gold Coast-Tweed Heads (Gold Coast part)",
+                "Sunshine Coast",
+                "Townsville",
+                "Cairns",
+                "Toowoomba",
+                "Mackay",
+                "Rockhampton",
+                "Hervey Bay",
+                "Bundaberg"
+            ]
+        }
+    ]
+}

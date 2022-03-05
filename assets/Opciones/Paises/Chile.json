@@ -1,0 +1,183 @@
+{
+    "pais": "Chile",
+    "provincias": [
+        {
+            "provincia": "Región Metropolitana",
+            "ciudades": [
+                "Santiago",
+                "Puente Alto",
+                "Maipú",
+                "La Florida",
+                "San Bernardo",
+                "Las Condes",
+                "Colina",
+                "La Granja",
+                "Lo Barnechea",
+                "Espejo",
+                "Buin",
+                "San Joaquín",
+                "La Reina",
+                "Peñaflor",
+                "Talagante",
+                "Lampa",
+                "Isla de Maipo",
+                "Melipilla"
+            ]
+        },
+        {
+            "provincia": "Biobío",
+            "ciudades": [
+                "Concepción",
+                "Chillán",
+                "Talcahuano",
+                "Los Ángeles",
+                "Coronel",
+                "Chiguayante",
+                "Penco",
+                "Lota",
+                "Tomé",
+                "Cañete",
+                "Curanilahue",
+                "Chillán Viejo",
+                "Lebu",
+                "Hualqui"
+            ]
+        },
+        {
+            "provincia": "Antofagasta",
+            "ciudades": [
+                "Antofagasta",
+                "Calama",
+                "Tocopilla"
+            ]
+        },
+        {
+            "provincia": "Valparaíso",
+            "ciudades": [
+                "Viña del Mar",
+                "Valparaíso",
+                "Quilpué",
+                "Villa Alemana",
+                "San Antonio",
+                "Quillota",
+                "San Felipe",
+                "Los Andes",
+                "La Calera",
+                "Placilla de Peñuelas",
+                "Concón",
+                "Quintero",
+                "Cartagena",
+                "La Cruz",
+                "Casablanca",
+                "La Ligua",
+                "Hanga Roa"
+            ]
+        },
+        {
+            "provincia": "Araucanía",
+            "ciudades": [
+                "Temuco",
+                "Villarrica",
+                "Angol",
+                "Victoria",
+                "Nueva Imperial",
+                "Pucón",
+                "Carahue"
+            ]
+        },
+        {
+            "provincia": "Libertador General Bernardo O’Higgins",
+            "ciudades": [
+                "Rancagua",
+                "San Fernando",
+                "Las Cabras",
+                "Pichidegua",
+                "Pichilemu"
+            ]
+        },
+        {
+            "provincia": "Maule",
+            "ciudades": [
+                "Talca",
+                "Curicó",
+                "Linares",
+                "Parral",
+                "Constitución",
+                "Cauquenes",
+                "San Javier"
+            ]
+        },
+        {
+            "provincia": "Coquimbo",
+            "ciudades": [
+                "Coquimbo",
+                "La Serena",
+                "Ovalle",
+                "Salamanca",
+                "Los Vilos",
+                "Illapel"
+            ]
+        },
+        {
+            "provincia": "Arica y Parinacota",
+            "ciudades": [
+                "Arica",
+                "Putre"
+            ]
+        },
+        {
+            "provincia": "Tarapacá",
+            "ciudades": [
+                "Iquique",
+                "Alto Hospicio",
+                "Pozo Almonte"
+            ]
+        },
+        {
+            "provincia": "Los Lagos",
+            "ciudades": [
+                "Puerto Montt",
+                "Osorno",
+                "Alerce",
+                "Ancud",
+                "Castro",
+                "Puerto Varas",
+                "Purranque",
+                "Chaitén"
+            ]
+        },
+        {
+            "provincia": "Atacama",
+            "ciudades": [
+                "Copiapó",
+                "Vallenar",
+                "Chañaral"
+            ]
+        },
+        {
+            "provincia": "Los Ríos",
+            "ciudades": [
+                "Valdivia",
+                "La Unión"
+            ]
+        },
+        {
+            "provincia": "Magallanes y de la Antártica Chilena",
+            "ciudades": [
+                "Punta Arenas",
+                "Puerto Natales",
+                "Porvenir",
+                "Puerto Williams"
+            ]
+        },
+        {
+            "provincia": "Aysén",
+            "ciudades": [
+                "Coyhaique",
+                "Puerto Aysén",
+                "Chile Chico",
+                "Cochrane"
+            ]
+        }
+    ]
+  }

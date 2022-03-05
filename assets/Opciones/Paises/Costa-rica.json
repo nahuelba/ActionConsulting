@@ -1,0 +1,51 @@
+
+  {
+    "pais": "Costa Rica",
+    "provincias": [
+        {
+            "provincia": "San José",
+            "ciudades": [
+                "San José",
+                "San Juan"
+            ]
+        },
+        {
+            "provincia": "Cartago",
+            "ciudades": [
+                "Cartago"
+            ]
+        },
+        {
+            "provincia": "Limón",
+            "ciudades": [
+                "Puerto Limón"
+            ]
+        },
+        {
+            "provincia": "Guanacaste",
+            "ciudades": [
+                "Liberia"
+            ]
+        },
+        {
+            "provincia": "Puntarenas",
+            "ciudades": [
+                "Buenos Aires",
+                "Puntarenas"
+            ]
+        },
+        {
+            "provincia": "Alajuela",
+            "ciudades": [
+                "Alajuela",
+                "Quesada"
+            ]
+        },
+        {
+            "provincia": "Heredia",
+            "ciudades": [
+                "Heredia"
+            ]
+        }
+    ]
+  }
