@@ -10,13 +10,16 @@ import { PipesModule } from 'src/app/pipes/pipes.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CKEditorModule } from 'ng2-ckeditor';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { PostulacionesModule } from 'src/app/shared/pages/postulaciones/postulaciones.module';
+import { EditarTrabajoComponent } from './editar-trabajo/editar-trabajo.component';
 
 
 @NgModule({
   declarations: [
     TrabajosComponent,
     NuevoTrabajoComponent,
-    TrabajoDetalleComponent
+    TrabajoDetalleComponent,
+    EditarTrabajoComponent
   ],
   imports: [
     CommonModule,
@@ -24,6 +27,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ComponentsModule,
     PipesModule,
     FormsModule,
+    PostulacionesModule,
     SharedModule
   ]
 })

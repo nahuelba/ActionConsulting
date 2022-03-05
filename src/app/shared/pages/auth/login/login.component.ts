@@ -56,9 +56,9 @@ export class LoginComponent implements OnInit {
     this.authService.SigninWithGoogle(this.tipo)
   }
 
-  // facebookSignIn(){
-
-  // }
+  facebookSignIn(){
+    this.authService.SigninWithFacebook(this.tipo)
+  }
 
 
 

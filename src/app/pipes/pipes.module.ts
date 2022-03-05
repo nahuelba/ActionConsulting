@@ -5,11 +5,11 @@ import { FilterDatePipe } from './personal/filtros/filter-date.pipe';
 import { FilterPaisPipe } from './personal/filtros/filter-pais.pipe';
 import { FilterCiudadPipe } from './personal/filtros/filter-ciudad.pipe';
 import { FilterEstadoPipe } from './empresa/filter-estado.pipe';
-import { FilterEmpresaPipe } from './empresa/postulaciones/filter-empresa.pipe';
-import { FilterPuestosPipe } from './empresa/postulaciones/filter-puestos.pipe';
 import { FilterPuestoPipe } from './personal/filtros/filter-puesto.pipe';
 import { FilterBusquedaPipe } from './personal/filtros/filter-busqueda.pipe';
 import { FilterPrioridadPipe } from './empresa/filter-prioridad.pipe';
+import { FormatSueldoPipe } from './format-sueldo.pipe';
+import { FilterRubroPipe } from './personal/filtros/filter-rubro.pipe';
 
 
 
@@ -20,11 +20,12 @@ import { FilterPrioridadPipe } from './empresa/filter-prioridad.pipe';
     FilterPaisPipe,
     FilterCiudadPipe,
     FilterEstadoPipe,
-    FilterEmpresaPipe,
-    FilterPuestosPipe,
+
     FilterPuestoPipe,
     FilterBusquedaPipe,
-    FilterPrioridadPipe
+    FilterPrioridadPipe,
+    FormatSueldoPipe,
+    FilterRubroPipe
   ],
   exports:[
     FilterPipe,
@@ -32,11 +33,11 @@ import { FilterPrioridadPipe } from './empresa/filter-prioridad.pipe';
     FilterPaisPipe,
     FilterCiudadPipe,
     FilterEstadoPipe,
-    FilterEmpresaPipe,
-    FilterPuestosPipe,
     FilterPuestoPipe,
+    FilterRubroPipe,
     FilterBusquedaPipe,
-    FilterPrioridadPipe
+    FilterPrioridadPipe,
+    FormatSueldoPipe
   ],
   imports: [
     CommonModule

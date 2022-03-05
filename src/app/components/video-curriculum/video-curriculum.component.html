@@ -1,0 +1,36 @@
+<div class="dropdown-divider"></div>
+
+<span *ngIf="!checkearSiHayVideo()">
+  <!-- Video Curriculum -->
+  <button
+    class="btn btn-success rounded-pill mt-4"
+    *ngIf="!agregarvideoCV"
+    (click)="agregarvideoCV = true"
+  >
+    Agregar video Curriculum
+  </button>
+  <span *ngIf="agregarvideoCV">
+    <div class="form-group mt-3">
+      <label
+        >Agregar video Curriculum.<br />
+        Formatos permitidos: .mp4 .avi</label
+      >
+      <input
+        type="file"
+        class="form-control-file"
+        (change)="checkVideoCurriculum($event.target)"
+      />
+
+      <small *ngIf="errorFormato" class="text-danger">
+        El formato debe ser .mp4 .avi
+      </small>
+      <small *ngIf="ErrorvideoSize" class="text-danger">
+        El video debe pesar 10 megas o menos.
+      </small>
+    </div>
+
+    <button class="btn btn-success rounded-pill mt-4" (click)="subirvideoCV()">
+      Subir video Curriculum
+    </button>
+  </span>
+</span>

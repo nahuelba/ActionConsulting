@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { ToastrService } from 'ngx-toastr';
-import { concat, forkJoin, from } from 'rxjs';
+import { combineLatest, concat, forkJoin, from } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service'
 import { SubirCvService } from 'src/app/services/subir-cv.service';
 
@@ -105,7 +105,11 @@ export class CargarCVComponent implements OnInit {
       tipo:tipo_cv,
       fecha: new Date()
     }
-    const esconderSpinner = concat(from(this.SubirCvService.subirCV(this.user_email || "", nombre_cv, this.pdf, tipo_cv)), from(this.AuthService.updateCV(this.user.id, CV)))
+    const esconderSpinner = combineLatest([
+      from(this.SubirCvService.subirCV(this.user_email || "", nombre_cv, this.pdf, tipo_cv)), 
+      from(this.AuthService.updateCV(this.user.id, CV)),
+      this.AuthService.updateUser(this.user.id, {ultimo_cv : new Date()})
+    ])
     //subirlo al storage de firebase
     
 
@@ -156,5 +160,6 @@ export class CargarCVComponent implements OnInit {
   }
 
 
+  
 
 }

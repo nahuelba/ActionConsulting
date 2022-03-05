@@ -16,7 +16,7 @@ export class FilterPipe implements PipeTransform {
 
         if( provincia!==""){
 
-          let jobsFiltered = jobs.filter(job => job.pais.provincia.provincia==provincia)
+          let jobsFiltered = jobs.filter(job => job.provincia==provincia)
           this.FiltrosService.extraer(jobsFiltered)
           return jobsFiltered;
         }

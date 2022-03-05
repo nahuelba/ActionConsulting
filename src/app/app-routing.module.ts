@@ -23,6 +23,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/empresa/empresa.module').then(m => m.EmpresaModule),
     data:{animation:'empresa'}
   },
+  {
+    path:'contacto',
+    loadChildren: () => import('./shared/pages/contacto/contacto.module').then(m => m.ContactoModule),
+
+  }
   // {
   //   path:'auth',
   //   loadChildren: () => import('./pages/auth/auth.module').then(m=> m.AuthModule),

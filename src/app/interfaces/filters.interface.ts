@@ -4,5 +4,6 @@ export interface Filters {
     puesto: string,
     pais:string,
     ciudad:string,
-    busqueda:string
+    busqueda:string,
+    rubro:string
 }

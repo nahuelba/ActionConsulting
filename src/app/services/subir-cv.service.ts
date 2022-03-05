@@ -23,6 +23,8 @@ export class SubirCvService {
     return this.storage.ref(email + '/CVs/' + nombreArchivo + formato).getDownloadURL()
   }
 
+  
+
   deleteDocument(email:string, nombreArchivo: string, formato:string){
     return this.storage.ref(email + '/CVs/' + nombreArchivo + formato).delete()
   }
@@ -30,7 +32,6 @@ export class SubirCvService {
   obtenerCVSconId(id:string, email:string){
     return this.authService.obtenerCvs(id).pipe(
       concatMap((cvs:any)=>{
-        debugger 
         if(cvs.length!=0){
           let observables:any[] = []
           cvs.forEach((cv:any) => {

@@ -1,0 +1,16 @@
+<div class="form-group"  [formGroup]="formGroup"  >
+    <label >Fecha de Ultimo CV subido</label>
+    <div *ngFor="let fecha of Fechas" class="form-check">
+      <input
+      
+        class="form-check-input"
+        type="radio"
+        name="ultimoCV"
+        [id]="fecha"
+        [value]="fecha"
+        formControlName="ultimoCV"
+      />
+      <label class="form-check-label" [for]="fecha"> {{fecha}}</label>
+    </div>
+
+  </div>

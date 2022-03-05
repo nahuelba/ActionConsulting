@@ -27,7 +27,7 @@ export class EmpresaComponent implements OnInit {
 
   ngOnInit(): void {
 
-    combineLatest([this.AuthService.getUserLogged(), this.AuthService.getUserAfsSinId()]).pipe(take(1))
+    combineLatest([this.AuthService.getUserLogged(), this.AuthService.getUserAfsSinId()])
     .subscribe(([res, user]:any) => {
   
         this.user={ ...res, datos:user};

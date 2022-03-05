@@ -12,6 +12,7 @@ export class SelectPuestoComponent implements OnInit {
   puestos = puestos
 
   @Input() formGroup!:FormGroup
+  @Input() obligatorio:boolean = false;
 
   constructor() { }
 

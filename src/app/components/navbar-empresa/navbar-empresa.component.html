@@ -1,73 +1,24 @@
 <div class="side-bar">
-  <div class="text-center py-3" routerLink="/" style="cursor: pointer;">
+  <div class="text-center py-3" routerLink="/empresa" style="cursor: pointer">
     <img src="assets/img/ablanco.png" height="50" alt="" />
   </div>
 
   <div class="list-group">
+
     <button
-      type="button"
-      class="list-group-item list-group-item-action list-item"
-      [routerLink]="['/empresa']"
-      [routerLinkActive]="['active']"
-      [routerLinkActiveOptions]="{ exact: true }"
-    >
-      <i class="fa fa-home" aria-hidden="true"></i>
-      Inicio
-    </button>
-    <!-- Avisos -->
-    <div class="accordion" id="accordionExample">
-      <button
-        class="list-group-item list-group-item-action list-item"
-        type="button"
-        [class.active]="this.router.url.includes('avisos')"
-        data-toggle="collapse"
-        data-target="#collapseOne"
-        aria-expanded="true"
-        aria-controls="collapseOne"
-      >
-        <i class="fa fa-briefcase" aria-hidden="true"></i>
-        Tus Avisos
-      </button>
+    *ngFor="let item of menu"
+    type="button"
+    class="list-group-item list-group-item-action list-item"
+    [routerLink]="[item.url]"
+    [routerLinkActive]="['active']"
+    [routerLinkActiveOptions]="{ exact: (item.nombre=='Inicio' ? true :false) }"
+  >
+    <i [class]="'fa fa-' + item.icon" aria-hidden="true"></i>
+    {{item.nombre}}
+  </button>
 
-      <div
-        id="collapseOne"
-        class="collapse show"
-        aria-labelledby="headingOne"
-        data-parent="#accordionExample"
-      >
-        <ul class="list-group list-group-flush" style="margin-left: 20px">
-          <li
-            class="list-group-item list-item list-group-item-action"
-            [routerLink]="['/empresa/avisos']"
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            Lista de Avisos
-          </li>
-          <li
-            *ngIf="user?.emailVerified"
-            class="list-group-item list-item list-group-item-action"
-            [routerLink]="['/empresa/avisos/nuevo']"
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            Publicar Aviso
-          </li>
-          <li
-            *ngIf="categoria!='Estándar'"
-            class="list-group-item list-item list-group-item-action"
-            [routerLink]="['/empresa/buscar-usuarios']"
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            Buscar Usuarios
-          </li>
-          <!-- <li class="list-group-item list-item list-group-item-action">A third item</li> -->
-        </ul>
-      </div>
-    </div>
+<!-- 
 
-    <!-- Menu Admin -->
     <div *ngIf="admin" class="accordion" id="MenuAdmin">
       <button
         class="list-group-item list-group-item-action list-item"
@@ -97,14 +48,7 @@
           >
             Lista de Avisos
           </li>
-          <!-- <li
-            class="list-group-item list-item list-group-item-action"
-            [routerLink]="['admin/nuevo']"
-            [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            Nuevo Trabajo
-          </li> -->
+      
           <li
             class="list-group-item list-item list-group-item-action"
             [routerLink]="['admin/postulaciones']"
@@ -122,19 +66,27 @@
           >
             Usuarios
           </li>
-          <!-- <li class="list-group-item list-item list-group-item-action">A third item</li> -->
+       
         </ul>
       </div>
-    </div>
+    </div> -->
     <!-- Fin Avisos -->
-
   </div>
 </div>
 
-<div class="container-fluid">
+<div class="container-fluid" style="    padding-left: 260px;">
   <nav class="navbar fixed-top navbar-expand-sm bg-white">
     <div class="navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          Curriculums: {{user?.datos.curriculums}}
+        </li>
+        <li class="nav-item">
+          Avisos: {{user?.datos.avisos}}
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+      
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -146,8 +98,7 @@
             aria-expanded="false"
           >
             <img
-            
-              [src]="!user?.photoURL ? 'https://via.placeholder.com/100' : user.photoURL"
+              src="assets/img/usuario.png"
               width="40"
               height="40"
               class="rounded-circle"
@@ -160,23 +111,33 @@
           >
             <div class="text-center">
               <img
-                [src]="!user?.photoURL ? 'https://via.placeholder.com/100' : user.photoURL"
+                src="assets/img/usuario.png"
                 width="40"
                 height="40"
                 class="rounded-circle"
               />
             </div>
-            <p class="text-center" style="margin-bottom: 0">{{user?.displayName}}</p>
-            <p class="text-center text-muted" style="font-size: 0.9em">{{user?.email}}</p>
+            <p class="text-center" style="margin-bottom: 0">
+              {{ user?.datos.nombre }}
+            </p>
+            <p class="text-center text-muted" style="font-size: 0.9em">
+              {{ user?.email }}
+            </p>
 
             <div class="dropdown-divider"></div>
 
-            <a class="dropdown-item" routerLink="/empresa/mi-perfil/datos-empresa">Mi perfil</a>
+            <a
+              class="dropdown-item"
+              routerLink="/empresa/mi-perfil/datos-empresa"
+              >Mi perfil</a
+            >
             <!-- <a class="dropdown-item" [routerLink]="['/personal/postulaciones']">Postulaciones</a> -->
 
             <div class="dropdown-divider"></div>
 
-            <a class="dropdown-item" (click)="logout()" style="cursor: pointer;">Cerrar Sesión</a>
+            <a class="dropdown-item" (click)="logout()" style="cursor: pointer"
+              >Cerrar Sesión</a
+            >
           </div>
           <!-- <a class="nav-link text-light" [routerLink]="" (click)="logout()">Salir</a> -->
         </li>

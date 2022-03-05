@@ -41,7 +41,7 @@ export class BusquedaComponent implements OnInit {
    
         if(categoria){
 
-          this.usuarios_restantes= categoria.usuarios  - usuarios.length
+          this.usuarios_restantes= categoria.curriculums  - usuarios.length
          
         }
       })

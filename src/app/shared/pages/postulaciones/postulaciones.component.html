@@ -1,0 +1,156 @@
+<div *ngIf="avisos" class="row py-4">
+  <div class="col">
+    <h4 style="margin-top: 9px">Postulaciones del aviso</h4>
+  </div>
+  <div class="col">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb" style="background-color: #fafbfe">
+        <li class="breadcrumb-item">
+          <a routerLink="/empresa/avisos">Avisos</a>
+        </li>
+        <li class="breadcrumb-item">
+          <a [routerLink]="'/empresa/avisos/' + id_trabajo"
+            >Detalle del Aviso</a
+          >
+        </li>
+        <li class="breadcrumb-item active">Postulaciones</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<div *ngIf="!avisos" class="row py-4">
+  <div class="col">
+    <h4 style="margin-top: 9px">Busqueda general</h4>
+  </div>
+</div>
+
+<div class="card" style="width: 100%">
+  <div class="card-body">
+    <div class="my-3">
+      <!-- Filtros -->
+      <span *ngFor="let filtro of filtros | keyvalue">
+        <button
+          *ngIf="filtro.value && filtro.value != 'Indistinto'"
+          type="button"
+          class="btn btn-secondary"
+          (click)="limpiarFiltro(filtro.key)"
+        >
+          <!-- Sueldo Max -->
+          <span *ngIf="filtro.key == 'sueldoMin'">Desde $</span>
+          <!-- Sueldo min -->
+          <span *ngIf="filtro.key == 'sueldoMax'">Hasta $</span>
+
+          <!-- Licencia -->
+          <span
+            *ngIf="
+              filtro.key == 'licencia' ||
+                filtro.key == 'movilidad' ||
+                filtro.key == 'discapacidad';
+              else normal
+            "
+            >Con {{ filtro.key }}</span
+          >
+          <ng-template #normal>
+            {{ filtro.value }}
+          </ng-template>
+          <span class="fa fa-close"></span>
+        </button>
+      </span>
+
+      <button
+        class="btn btn-success"
+        style="float: right"
+        (click)="abrirFiltros()"
+      >
+        Filtros
+      </button>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <!-- Si es avisos o busqueda general-->
+        <div
+          *ngFor="
+            let postulacion of !avisos
+              ? postulaciones
+              : (postulaciones
+                | filterPais: (filtros ? filtros.pais : '')
+                | filterProvincia: (filtros ? filtros.provincia : '')
+                | filterCiudad: (filtros ? filtros.ciudad : '')
+                | filterSueldo
+                  : (filtros
+                      ? {
+                          sueldoMax: filtros.sueldoMax,
+                          sueldoMin: filtros.sueldoMin
+                        }
+                      : '')
+                | filterGenero: (filtros ? filtros.genero : '')
+                | filterCheckboxs
+                  : (filtros
+                      ? {
+                          licencia: filtros.licencia,
+                          movilidad: filtros.movilidad,
+                          discapacidad: filtros.discapacidad
+                        }
+                      : '')
+                | filterEdad
+                  : (filtros
+                      ? { edadMax: filtros.edadMax, edadMin: filtros.edadMin }
+                      : '')
+                | filterUltimoCv: (filtros ? filtros.ultimoCV : '')
+                | filterPuestos: (filtros ? filtros.puesto : '')
+                | filterRubro: (filtros ? filtros.rubro : ''))
+          "
+          class="postulacion"
+          [ngClass]="{ activado: postulacion.user?.id == idSeleccionado }"
+          (click)="cargarUsuario(postulacion)"
+        >
+          <div class="row">
+            <div class="col">
+              <h6>
+                <span *ngIf="!postulacion.nombre"> Nombre </span>
+
+                <span *ngIf="postulacion.nombre">
+                  {{ postulacion.nombre }}
+                </span>
+
+                <span *ngIf="postulacion.user?.fecha_nacimiento">
+                  |
+                  {{ filtrosService.getAge(postulacion.user.fecha_nacimiento) }}
+                  Años
+                </span>
+              </h6>
+              <!-- <h6>Puesto</h6>
+          <h6>Formación</h6> -->
+              <h6 *ngIf="postulacion.user?.pais">
+                <span>{{ postulacion.user.pais }}</span>
+                <span>, {{ postulacion.user.provincia }}</span>
+                <span>, {{ postulacion.user.ciudad }}</span>
+              </h6>
+              <h6 *ngIf="!postulacion.user?.sueldo">
+                No especifico un salario
+              </h6>
+              <h6 *ngIf="postulacion.user?.sueldo">
+                $ {{ postulacion.user.sueldo }}
+              </h6>
+            </div>
+            <div *ngIf="postulacion.user.foto" class="col-3">
+              <img
+                [src]="postulacion.user.foto"
+                width="40"
+                height="40"
+                class="rounded-circle"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <app-postulacion
+          #postulacion
+          (revelarNombre)="revelarNombre($event)"
+        ></app-postulacion>
+      </div>
+    </div>
+  </div>
+</div>

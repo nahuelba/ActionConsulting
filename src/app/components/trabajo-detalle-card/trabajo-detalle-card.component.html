@@ -14,7 +14,7 @@
         <button
           class="dropdown-item"
           type="button"
-          [routerLink]="'/empresa/admin/' + job?.id + '/editar'"
+          [routerLink]="'/empresa/avisos/' + job?.id + '/editar'"
         >
           Editar
         </button>
@@ -36,9 +36,13 @@
         </button>
       </div>
     </div>
-    <div>
-      <span class="h4 mr-2">{{ job?.puesto }}</span>
 
+    <div *ngIf="empresa" style="float: right;">
+      <button class="btn btn-success" routerLink="postulaciones">Ver Postulaciones</button>
+    </div>
+    <div>
+      <span class="h4 mr-2">{{ job?.titulo }}</span>
+      
       <span
         *ngIf="empresa"
         class="badge"
@@ -50,14 +54,15 @@
       >
         {{ job?.estado }}
       </span>
-      <a *ngIf="admin && empresa" class="card-subtitle mx-2"
-        >({{ job?.postulaciones?.length }} Postulacion/es)</a
-      >
+      <h6 class="mr-2">{{ job?.puesto }}</h6>
+      <!-- <a *ngIf="empresa" class="card-subtitle mx-2"
+        >({{ job?.postulaciones }} Postulacion/es)</a
+      > -->
     </div>
 
     <h6 class="card-subtitle my-2 text-muted" style="font-size: 0.9em">
-      {{ job?.pais?.pais }}, {{ job?.pais?.provincia?.provincia }},
-      {{ job?.pais?.provincia?.ciudad?.ciudad }}
+      {{ job?.pais }}, {{ job?.provincia }},
+      {{ job?.ciudad }}
     </h6>
     <h6 class="card-subtitle my-2 text-muted" style="font-size: 0.9em">
       {{ job?.tipo_trabajo }}

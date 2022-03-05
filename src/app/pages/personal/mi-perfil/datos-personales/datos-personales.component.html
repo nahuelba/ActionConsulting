@@ -2,66 +2,76 @@
   <span class="h4"> Datos Personales </span>
 </div>
 
-<div class="row my-3" [formGroup]="datosPersonales">
-  <div class="col-8">
-    <div class="form-group">
+<div class="row my-3">
+  <div class="col">
+    <div class="form-group" [formGroup]="datosContacto">
       <label for="Puesto">Nombre *</label>
       <input type="text" class="form-control" formControlName="nombre" />
-      <!-- <small *ngIf="error.puesto" id="passwordHelp" class="text-danger">
-              Rellene este campo
-            </small> -->
+      <small
+        *ngIf="datosContacto.get('nombre')?.invalid"
+        id="passwordHelp"
+        class="text-danger"
+      >
+        Rellene este campo
+      </small>
     </div>
- 
-    <app-select-puesto [formGroup]="datosPersonales"></app-select-puesto>
+    <span [formGroup]="datosPersonales">
+      <app-select-puesto [formGroup]="datosPersonales"></app-select-puesto>
+      <app-select-rubro [formGroup]="datosPersonales"></app-select-rubro>
+      <label>Salario en mano pretendido</label>
 
-    
-    <div class="form-group">
-      <label for="Puesto">Fecha de Nacimiento</label>
-      <form class="form-inline">
-        <div class="form-group">
-          <div class="input-group">
-            <input
-              class="form-control"
-              placeholder="dd/mm/yyyy"
-              name="d2"
-              ngbDatepicker
-              #d2="ngbDatepicker"
-              [startDate]="{ month: 1, year: 2000 }"
-              [(ngModel)]="fecha_nacimiento"
-            />
-            <div class="input-group-append">
-              <button
-                class="btn btn-outline-secondary calendar"
-                (click)="d2.toggle()"
-                type="button"
-              >
-                <i class="fa fa-calendar" aria-hidden="true"></i>
-              </button>
+     <app-select-sueldo [formGroup]="datosPersonales"></app-select-sueldo>
+
+      <app-radio-genero [formGroup]="datosPersonales"></app-radio-genero>
+      <div class="form-group">
+        <label for="Puesto">Fecha de Nacimiento</label>
+        <form class="form-inline">
+          <div class="form-group">
+            <div class="input-group">
+              <input
+                class="form-control"
+                placeholder="dd/mm/yyyy"
+                name="d2"
+                ngbDatepicker
+                #d2="ngbDatepicker"
+                [startDate]="{ month: 1, year: 2000 }"
+                [(ngModel)]="fecha_nacimiento"
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-secondary calendar"
+                  (click)="d2.toggle()"
+                  type="button"
+                >
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
 
-    <span *ngIf="datosPersonales.value">
+      <span *ngIf="datosPersonales.value">
+        <app-select-pais-provincia-ciudad
+          [formGroup]="datosPersonales"
+          [user]="lugar"
+        ></app-select-pais-provincia-ciudad>
+      </span>
+      <div class="dropdown-divider"></div>
 
-      <app-select-pais-provincia-ciudad [formGroup]="datosPersonales" [user]="lugar"></app-select-pais-provincia-ciudad>
-    </span>
-    <div class="dropdown-divider"></div>
+      <div class="form-check mt-4">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          formControlName="licencia"
+          id="licencia"
+        />
+        <label class="form-check-label" for="licencia">
+          Poseo licencia de conducir
+        </label>
+      </div>
 
-    <div class="form-check mt-4">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        formControlName="licencia"
-        id="licencia"
-      />
-      <label class="form-check-label" for="licencia">
-        Poseo licencia de conducir
-      </label>
-    </div>
-
-    <div class="form-check mt-4">
+      <div class="form-check mt-4">
         <input
           class="form-check-input"
           type="checkbox"
@@ -84,40 +94,55 @@
           Poseo algún tipo de discapacidad
         </label>
       </div>
-    
 
-        <button class="btn btn-success rounded-pill mt-4" (click)="GuardarPerfil()">Actualizar perfil</button>
-
-
+      <button
+        class="btn btn-success rounded-pill mt-4"
+        (click)="GuardarPerfil()"
+      >
+        Actualizar perfil
+      </button>
+    </span>
   </div>
 
   <div class="col">
-      <p>
+    <p>Foto de perfil</p>
+    <div>
+      <img
+        [src]="datosPersonales.value.foto_perfil ? datosPersonales.value.foto_perfil  : 'https://via.placeholder.com/100'"
+        width="200"
+        height="200"
+        class="rounded-circle mr-3 img-center"
+      />
+      <div class="btn-group">
+        <button
+          type="button"
+          class="btn dropdown-toggle btn-perfil"
+          data-toggle="dropdown"
+          data-display="static"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Editar
+        </button>
+        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+          <button class="dropdown-item">
+     
+            <label>
+              Subir nueva foto <input type="file" (change)="subirFotoPerfil($event.target)" hidden>
+          </label>
+          
 
-          Foto de perfil
-      </p>
-      <div>
-          <img
-              src="https://via.placeholder.com/100"
-              width="200"
-              height="200"
-              class="rounded-circle mr-3"
-            />
-            <div class="btn-group">
-                <button type="button" style="margin-top: -60px;height: 35px;" class="btn dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                  Editar
-                </button>
-                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                  <button class="dropdown-item" type="button">Subir nueva foto</button>
-                  <button class="dropdown-item" type="button">Eliminar Foto</button>
-                </div>
-              </div>
+            <!-- Subir nueva foto<input  type="file" (click)="subirFotoPerfil()" hidden/> -->
+          </button>
+          <button class="dropdown-item" type="button" (click)="eliminarFoto()">Eliminar Foto</button>
+        </div>
       </div>
     </div>
-
-
-
-
-
-
+    <small *ngIf="errorFormato" class="text-danger">
+      El formato debe ser .jpg .jpeg .png
+    </small>
+    <small *ngIf="ErrorSize" class="text-danger">
+      El video debe pesar 5 megas o menos
+    </small>
+  </div>
 </div>

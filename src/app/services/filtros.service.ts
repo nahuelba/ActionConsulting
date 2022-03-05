@@ -13,6 +13,7 @@ export class FiltrosService {
   paises: any = []
   fechas:any = []
   ciudades:any = []
+  rubro:any = []
 
   cantidad_trabajos:number = 0
 
@@ -22,7 +23,7 @@ export class FiltrosService {
   
     //extraer pais
     let ArrayPais:any = []
-    jobs.forEach((job:job) => ArrayPais.push(job.pais.pais))
+    jobs.forEach((job:job) => ArrayPais.push(job.pais))
     this.paises = this.CardService.removeDuplicates(ArrayPais)
   
     //Extraer fechas
@@ -105,11 +106,16 @@ export class FiltrosService {
       jobs.forEach((job:job) => ArrayPuesto.push(job.puesto))
       this.puestos = this.CardService.removeDuplicates(ArrayPuesto)
 
+      //extraer Rubro
+      let ArrayRubro:any = []
+      jobs.forEach((job:job) => ArrayRubro.push(job.rubro))
+      this.rubro = this.CardService.removeDuplicates(ArrayRubro)
+
     //   Extraer provincias
     let arrayProvincias:string[] = []
     jobs.forEach((e:job) => {
-      if(e.pais.pais){
-        arrayProvincias.push(e.pais.provincia.provincia) 
+      if(e.pais){
+        arrayProvincias.push(e.provincia) 
       }
     })
     this.provincias = this.CardService.removeDuplicates(arrayProvincias)
@@ -117,8 +123,8 @@ export class FiltrosService {
       //   Extraer Ciudades
       let arrayCiudades:string[] = []
       jobs.forEach((e:job) => {
-        if(e.pais.provincia.provincia){
-          arrayCiudades.push(e.pais.provincia.ciudad.ciudad) 
+        if(e.provincia){
+          arrayCiudades.push(e.ciudad) 
         }
       })
       this.ciudades = this.CardService.removeDuplicates(arrayCiudades)
@@ -135,5 +141,23 @@ export class FiltrosService {
 
   contar_trabajos(jobs:job[]){
     this.cantidad_trabajos = jobs.length
+  }
+
+
+  getAge(date:any) {
+    var today = new Date();
+    var birthDate = new Date(date.year, date.month-1, date.day);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+  }
+
+  getFechaLimite(edad:number){
+    var today = new Date();
+    return today.getFullYear() - edad
+
   }
 }

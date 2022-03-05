@@ -18,6 +18,7 @@ export class SelectPaisProvinciaCiudadComponent implements OnInit {
 
   @Input() formGroup!: FormGroup;
   @Input() user:any
+  @Input() obligatorio:boolean = false;
 
 
   ngOnInit(): void {
@@ -34,10 +35,10 @@ export class SelectPaisProvinciaCiudadComponent implements OnInit {
     if (!this.formGroup.value.pais) {
       return;
     }
-    this.UbicacionesService.getProvincias(this.formGroup.value.pais).subscribe(
+    this.UbicacionesService.getProvincias(( this.formGroup.value.pais )).subscribe(
       (data: pais) => {
         this.provincias = data.provincias;
-        if(this.user.provincia){
+        if(this.user?.provincia){
           this.formGroup.controls.provincia.setValue(this.user.provincia)
           this.elegirProvincia({provincia:this.user.provincia})
         }
@@ -58,7 +59,7 @@ export class SelectPaisProvinciaCiudadComponent implements OnInit {
     });
 
 
-    if(this.user.ciudad){
+    if(this.user?.ciudad){
       this.formGroup.controls.ciudad.setValue(this.user.ciudad)
     }
   }

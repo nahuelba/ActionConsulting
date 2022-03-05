@@ -1,56 +1,89 @@
 <div class="container-fluid bg-dark">
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #313A46">
-
-    <a class="navbar-brand" routerLink="/">
-      <img src="assets/img/ablanco.png" height="70" alt="">
+  <nav
+    class="navbar navbar-expand-lg navbar-dark"
+    style="background-color: #313a46"
+  >
+    <a class="navbar-brand" routerLink="/personal">
+      <img src="assets/img/ablanco.png" height="70" alt="" />
     </a>
 
-    
-
-    
-
-      <ul class="navbar-nav ml-auto" style="flex-direction: row !important;" *ngIf="user===null">
-        <!-- <li class="nav-item mr-2">
+    <ul
+      class="navbar-nav ml-auto"
+      style="flex-direction: row !important"
+      *ngIf="user === null"
+    >
+      <!-- <li class="nav-item mr-2">
           <button class="btn btn-success" style="height: 100%;" [routerLink]="['/personal/auth/register/tipo-cuenta']">Registrarse</button>
         </li> -->
-        <li class="nav-item">
-          <a class="nav-link text-light" [routerLink]="['/personal/auth/login']">Ingresar</a>
-        </li>
-      </ul>
+      <li class="nav-item">
+        <a class="nav-link text-light" [routerLink]="['/personal/auth/login']"
+          >Ingresar</a
+        >
+      </li>
+    </ul>
 
-      <ul *ngIf="user" class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <img 
-            [src]="!user?.photoURL ? 'https://via.placeholder.com/100' : user.photoURL" 
+    <ul *ngIf="user" class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdownMenuLink"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <img
+            [src]="foto_perfil ? foto_perfil :'assets/img/usuarionavbar.png'"
             width="40"
-              height="40" class="rounded-circle">
-          </a>
-          <div class="dropdown-menu dropdown-menu-right" style="width: 250px !important;" aria-labelledby="navbarDropdownMenuLink">
-    
-            <div class="text-center">
-              <img [src]="!user?.photoURL ? 'https://via.placeholder.com/100' : user.photoURL"
-              width="40" height="40" class="rounded-circle">
-
-            </div>
-            <p class="text-center" style="margin-bottom: 0;">{{user.displayName}}</p>
-            <p class="text-center text-muted" style="font-size: 0.9em;">{{user.email}}</p>
-        
-
-            <div class="dropdown-divider"></div>
-
-            <a class="dropdown-item" routerLink="/personal/mi-perfil/datos-personales">Mi perfil</a>
-            <a class="dropdown-item" *ngIf="!empresa" [routerLink]="['/personal/postulaciones']">Mis Postulaciones</a>
-
-            <div class="dropdown-divider" ></div>
-
-            <a class="dropdown-item" (click)="logout()" routerLink="">Cerrar Sesión</a>
+            height="40"
+            style="background-color: white;"
+            class="rounded-circle"
+          />
+        </a>
+        <div
+          class="dropdown-menu dropdown-menu-right"
+          style="width: 250px !important"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+          <div class="text-center">
+            <img
+            [src]="foto_perfil ? foto_perfil : 'assets/img/usuario.png'"
+              width="40"
+              height="40"
+              class="rounded-circle"
+            />
           </div>
-          <!-- <a class="nav-link text-light" [routerLink]="" (click)="logout()">Salir</a> -->
-        </li>
-      </ul>
- 
+          <p class="text-center" style="margin-bottom: 0">
+            {{ user.displayName }}
+          </p>
+          <p class="text-center text-muted" style="font-size: 0.9em">
+            {{ user.email }}
+          </p>
+
+          <div class="dropdown-divider"></div>
+
+          <a
+            class="dropdown-item"
+            routerLink="/personal/mi-perfil/datos-personales"
+            >Mi perfil</a
+          >
+          <a
+            class="dropdown-item"
+            *ngIf="!empresa"
+            [routerLink]="['/personal/postulaciones']"
+            >Mis Postulaciones</a
+          >
+
+          <div class="dropdown-divider"></div>
+
+          <a class="dropdown-item" (click)="logout()" routerLink=""
+            >Cerrar Sesión</a
+          >
+        </div>
+        <!-- <a class="nav-link text-light" [routerLink]="" (click)="logout()">Salir</a> -->
+      </li>
+    </ul>
   </nav>
 </div>
 

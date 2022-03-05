@@ -26,6 +26,7 @@ export class NavbarComponent implements OnInit {
   })
 
 
+  foto_perfil:string = ""
  
 
   constructor(
@@ -42,6 +43,7 @@ export class NavbarComponent implements OnInit {
           this.authService.getUserAfs(res.uid)
           .subscribe((user:any) => {
             
+            this.foto_perfil = user.foto
             if(user.tipo=="empresa"){
               this.empresa= true;
             }

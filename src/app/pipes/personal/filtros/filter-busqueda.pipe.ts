@@ -13,9 +13,9 @@ export class FilterBusquedaPipe implements PipeTransform {
         let jobsFiltered = jobs.filter(
           (job) =>
             // job.descripcion.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
-            job.pais.pais.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
-            job.pais.provincia.provincia.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
-            job.pais.provincia.ciudad.ciudad.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
+            job.pais.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
+            job.provincia.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
+            job.ciudad.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
             job.puesto.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()) ||
             job.tipo_trabajo.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase())
         );

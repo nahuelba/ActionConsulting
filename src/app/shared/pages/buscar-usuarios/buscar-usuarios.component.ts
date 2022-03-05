@@ -7,6 +7,7 @@ import idiomas from 'src/assets/Opciones/idiomas.json'
 import puestos from 'src/assets/Opciones/trabajos/puestos.json'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { validateAllFormFields } from 'src/app/helpers';
 
 declare var $:any;
 @Component({
@@ -15,15 +16,6 @@ declare var $:any;
   styleUrls: ['./buscar-usuarios.component.css']
 })
 export class BuscarUsuariosComponent implements OnInit {
-
-  
-  paises = paises
-
-  idiomas = idiomas
-
-  puestos = puestos
-
-  provincias: Provincia[] = [];
 
   user:any;
 
@@ -47,40 +39,13 @@ export class BuscarUsuariosComponent implements OnInit {
 
 
   ngOnInit(): void {
-    setTimeout(function () {
-      $('.selectpicker').selectpicker('refresh'); // refresh the selectpicker with fetched courses
-    }, 100);
-   
-  }
-
-  setProvincias(e:any){
-    this.buscarForm.controls.provincia.setValue(null);
-
-    if (e.target.value) {
-      this.UbicacionesService.getProvincias(e.target.value).subscribe(
-        (data: pais) => {
-          this.provincias = data.provincias;
-          setTimeout(function () {
-            $('.selectpicker').selectpicker('refresh'); // refresh the selectpicker with fetched courses
-          }, 100);
-        }
-        );
-    }
-
-    
-  }
-
-
-  setCiudad(){
-    setTimeout(function () {
-      $('.selectpicker').selectpicker('refresh'); // refresh the selectpicker with fetched courses
-    }, 100);
-    console.log(this.buscarForm.value.provincia)
-  
   }
 
   buscar(){
     console.log(this.buscarForm.value)
+
+    validateAllFormFields(this.buscarForm)
+    
     if(this.buscarForm.valid){
       const {puesto, idioma1, idioma2, pais, provincia, ciudad} = this.buscarForm.value
 

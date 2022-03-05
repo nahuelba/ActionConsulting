@@ -11,6 +11,9 @@ import { BuscarUsuariosComponent } from './pages/buscar-usuarios/buscar-usuarios
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { UsuarioDetalleComponent } from './pages/usuario-detalle/usuario-detalle.component';
 import { ComponentsModule } from '../components/components.module';
+import { SelectsModule } from '../components/selects/selects.module';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -25,9 +28,13 @@ import { ComponentsModule } from '../components/components.module';
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule,
     CKEditorModule,
     NgxSkeletonLoaderModule,
     ReactiveFormsModule,
+    ComponentsModule,
+    SelectsModule,
+    NgSelectModule,
     ComponentsModule
     ],
   exports:[

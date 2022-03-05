@@ -2,22 +2,26 @@
     {
         "categoria":"Estándar",
         "avisos":5,
-        "usuarios":0
+        "curriculums":0,
+        "precio":0
         
     },
     {
         "categoria":"Silver",
         "avisos":10,
-        "usuarios":5
+        "curriculums":5,
+        "precio":600
     },
     {
         "categoria":"Gold",
         "avisos":15,
-        "usuarios":10
+        "curriculums":10,
+        "precio":900
     },
     {
         "categoria":"Premium",
         "avisos":20,
-        "usuarios":15
+        "curriculums":15,
+        "precio":1200
     }
 ]

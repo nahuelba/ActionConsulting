@@ -62,7 +62,7 @@ export class AuthService {
 
 
   getUserAfs(id:string){
-    return this.afs.collection('users').doc(id).valueChanges({ idField: 'id' })
+    return this.afs.collection('users').doc(id).valueChanges({ idField: 'id' }).pipe(take(1))
     
   }
   getUserAfsSinId(){
@@ -80,6 +80,10 @@ export class AuthService {
 
   getAllEmpresas(){
     return this.afs.collection('users', ref => ref.where('tipo','==', 'empresa')).valueChanges({idField: 'id'})
+  }
+
+  getAllUsersPersonal(){
+    return this.afs.collection('users', ref => ref.where('tipo','==', 'personal').limit(25)).valueChanges({idField: 'id'})
   }
 
   updateCV(id:string, cv:any){
@@ -104,10 +108,6 @@ export class AuthService {
   updateUser(id:string, data:any){
     return this.afs.collection('users').doc(id).set(data, {merge: true})
   }
-
-
-  
-
 
 
 
@@ -141,7 +141,8 @@ export class AuthService {
                         admin: false,
                         email: res.user?.email,
                         avisos: estandar?.avisos,
-                        usuarios: estandar?.usuarios
+                        curriculums: estandar?.curriculums,
+                        foto: res.user?.photoURL
                       }
                       if(tipo.replace('/', '') == "empresa"){
                         userNuevo['categoria'] = "Estándar"
@@ -172,15 +173,15 @@ export class AuthService {
               console.log(error)
           });
   }
-//    // Firebase Facebook Sign-in
-//    SigninWithFacebook() {
-//     return this.OAuthProvider(new firebase.auth.GoogleAuthProvider())
-//         .then((res:any) => {
-//             console.log('Successfully logged in!')
-//         }).catch((error:any) => {
-//             console.log(error)
-//         });
-// }
+   // Firebase Facebook Sign-in
+   SigninWithFacebook(tipo:string) {
+    return this.OAuthProvider(new firebase.auth.FacebookAuthProvider(), tipo)
+        .then((res:any) => {
+            console.log('Successfully logged in!')
+        }).catch((error:any) => {
+            console.log(error)
+        });
+}
 
   // Verificar correo
   verifyEmail(user:any) {

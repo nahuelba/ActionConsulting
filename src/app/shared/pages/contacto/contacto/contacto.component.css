@@ -1,0 +1,16 @@
+
+.back {
+    color: white;
+    text-decoration: white;
+    height: 100%;
+  }
+  
+  .back:link {
+    color: white;
+    text-decoration: white;
+  }
+  
+  .back:hover {
+    color: white;
+    text-decoration: white;
+  }

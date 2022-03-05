@@ -16,7 +16,7 @@ export class FilterPaisPipe implements PipeTransform {
 
         if( pais!==""){
 
-          let jobsFiltered = jobs.filter(job => job.pais.pais==pais)
+          let jobsFiltered = jobs.filter(job => job.pais==pais)
           this.FiltrosService.extraer(jobsFiltered)
           return jobsFiltered;
         }

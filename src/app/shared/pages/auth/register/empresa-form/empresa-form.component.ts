@@ -92,7 +92,7 @@ export class EmpresaFormComponent implements OnInit {
               admin: false,
               categoria: 'Estándar',
               avisos: estandar?.avisos,
-              usuarios: estandar?.usuarios
+              curriculums: estandar?.curriculums
 
             }
 

@@ -1,0 +1,124 @@
+<div class="modal-header">
+    <h4 class="modal-title">Aplicar Filtros</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" [formGroup]="filtrosForm">
+
+    <h5>Lugar de residencia</h5>
+
+    <app-select-pais-provincia-ciudad [formGroup]="filtrosForm" [user]="lugar"></app-select-pais-provincia-ciudad>
+    <div class="dropdown-divider"></div>
+
+    
+    <h5>Sueldo en mano pretendido</h5>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+         <input 
+              type="number"
+            class="form-control"
+            placeholder="Desde"
+               formControlName="sueldoMin"
+               >
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <input 
+              type="number"
+              class="form-control"
+              placeholder="Hasta"
+               formControlName="sueldoMax"
+               >
+        </div>
+      </div>
+    </div>
+
+    <div class="dropdown-divider"></div>
+
+    
+    <h5>Datos Personales</h5>
+
+    <app-select-puesto [formGroup]="filtrosForm"></app-select-puesto>
+
+    <app-select-rubro [formGroup]="filtrosForm"></app-select-rubro>
+
+    <label>Edad</label>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+      
+          <input 
+              type="number"
+            class="form-control"
+            placeholder="Desde"
+               formControlName="edadMin"
+               >
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+
+          <input 
+              type="number"
+              class="form-control"
+              placeholder="Hasta"
+               formControlName="edadMax"
+               >
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+     <div class="col">
+       <app-radio-ultimo-cv [formGroup]="filtrosForm"></app-radio-ultimo-cv>
+      </div>
+      <div class="col">
+        <app-radio-genero [formGroup]="filtrosForm" [indistinto]="true"></app-radio-genero>
+      </div>
+    </div>
+
+    <!-- Ultimo cv Subido -->
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        formControlName="licencia"
+        id="licencia"
+      />
+      <label class="form-check-label" for="licencia">
+        Ver sólo candidatos con licencia de conducir
+      </label>
+    </div>
+
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        formControlName="movilidad"
+        id="movilidad"
+      />
+      <label class="form-check-label" for="movilidad">
+        Ver sólo candidatos con movilidad propia
+      </label>
+    </div>
+
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        formControlName="discapacidad"
+        id="discapacidad"
+      />
+      <label class="form-check-label" for="discapacidad">
+        Ver sólo candidatos con discapacidad
+      </label>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close(false)">Cerrar</button>
+    <button type="button" class="btn btn-success" (click)="activeModal.close(filtrosForm)">Aplicar Filtros</button>
+  </div>

@@ -19,6 +19,12 @@ import { ExperienciasLaboralesComponent } from './experiencias-laborales/experie
 import { FormacionesComponent } from './formaciones/formaciones.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { SelectsModule } from './selects/selects.module';
+import { TablaPreciosComponent } from './tabla-precios/tabla-precios.component';
+import { ModalPreciosComponent } from './modal-precios/modal-precios.component';
+import { TablaAvisosComponent } from './tabla-avisos/tabla-avisos.component';
+import { ModalRevelarConfirmacionComponent } from './modal-revelar-confirmacion/modal-revelar-confirmacion.component';
+import { ModalFiltrosComponent } from './modal-filtros/modal-filtros.component';
+import { VideoCurriculumComponent } from './video-curriculum/video-curriculum.component';
 
 
 
@@ -38,6 +44,12 @@ import { SelectsModule } from './selects/selects.module';
     ModalEliminarFormacionComponent,
     ExperienciasLaboralesComponent,
     FormacionesComponent,
+    TablaPreciosComponent,
+    ModalPreciosComponent,
+    TablaAvisosComponent,
+    ModalRevelarConfirmacionComponent,
+    ModalFiltrosComponent,
+    VideoCurriculumComponent,
     
 
 
@@ -51,6 +63,10 @@ import { SelectsModule } from './selects/selects.module';
     DetalleSkeletonComponent,
     ExperienciasLaboralesComponent,
     FormacionesComponent,
+    TablaPreciosComponent,
+    ModalPreciosComponent,
+    TablaAvisosComponent,
+    VideoCurriculumComponent
     
   ],
   imports: [

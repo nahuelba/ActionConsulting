@@ -21,6 +21,7 @@ export class IdiomasComponent implements OnInit {
 
   user:any
 
+
   constructor(
     private formBuilder: FormBuilder,
     private AuthService:AuthService,
@@ -81,7 +82,14 @@ export class IdiomasComponent implements OnInit {
   }
 
   GuardarPerfil(){
-    console.log(this.idiomasForm.value)
+    //verificar si el idioma no esta repetido
+    console.log(this.idiomasForm.value.idiomas)
+
+    if(!this.isUnique(this.idiomasForm.value.idiomas)){
+      this.toastr.error('Los idiomas no pueden repetirse.')
+      return;
+    }
+    
     if(this.idiomasForm.valid){
       this.spinner.show()
       this.AuthService.updateUser(this.user.id, this.idiomasForm.value)
@@ -97,6 +105,19 @@ export class IdiomasComponent implements OnInit {
     }
     
   }
+
+
+  isUnique(arr:any) {
+    var tmpArr = [];
+    for(var obj in arr) {
+      if(tmpArr.indexOf(arr[obj].idioma) < 0){ 
+        tmpArr.push(arr[obj].idioma);
+      } else {
+        return false; // Duplicate value for property1 found
+      }
+    }
+    return true; // No duplicate values found for property1
+ }
 
   
 

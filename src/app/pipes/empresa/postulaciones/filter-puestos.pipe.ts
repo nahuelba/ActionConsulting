@@ -6,12 +6,11 @@ import { Postulacion } from 'src/app/interfaces/postulacion.interface';
 })
 export class FilterPuestosPipe implements PipeTransform {
 
-  transform(postulacion: Postulacion[], puesto:string): Postulacion[] {
+  transform(postulacion: Postulacion[], puesto:any): Postulacion[] {
     if(postulacion){
+      if( puesto){
 
-      if( puesto!==""){
-
-        return postulacion.filter(postulacion => postulacion.trabajo.puesto==puesto)
+        return postulacion.filter(postulacion => postulacion.user.puesto==puesto)
       }
 
   }

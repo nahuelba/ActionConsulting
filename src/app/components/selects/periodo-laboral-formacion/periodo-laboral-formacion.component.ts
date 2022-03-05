@@ -10,11 +10,10 @@ import meses from 'src/assets/Opciones/meses.json'
 })
 export class PeriodoLaboralFormacionComponent implements OnInit {
 
-  @ViewChild('actualidad')actualidad! :ElementRef;  
 
   @Input() formGroup!:FormGroup
+  @Input() actualidad!:boolean
 
-  act:boolean = false
 
   meses = meses
   meses_inicio = meses
@@ -35,15 +34,18 @@ export class PeriodoLaboralFormacionComponent implements OnInit {
 
     this.anio_actual('inicio')
     this.anio_actual('fin')
+
+    console.log(this.actualidad)
+    this.trabajoActualmente(
+      {
+        target:
+        {
+          checked:this.actualidad
+        }
+      }
+    )
   }
 
-  ngAfterViewInit(){
-    if(this.act){
-      this.actualidad.nativeElement.checked = true
-    }
-
- 
-  }
 
 
   trabajoActualmente(e:any){
@@ -51,20 +53,11 @@ export class PeriodoLaboralFormacionComponent implements OnInit {
       this.formGroup.controls.fecha_fin.setValue({
         mes: "",
       year: ""
-      })
-      // $("#mes_fecha_fin").attr('disabled',true);
-      // $("#anio_fecha_fin").attr('disabled',true);
-
-  
+      }) 
       this.formGroup.controls.fecha_fin.disable()
       
     }else{
-      // $("#mes_fecha_fin").attr('disabled',false);
-      // $("#anio_fecha_fin").attr('disabled',false);
-
-
       this.formGroup.controls.fecha_fin.enable()
-
     }
   }
 
@@ -73,11 +66,7 @@ export class PeriodoLaboralFormacionComponent implements OnInit {
     if(tipo=="inicio"){
       if(this.formGroup.controls.fecha_inicio.value.year==this.hoy.getFullYear().toString()){
 
-        this.formGroup.controls.fecha_inicio.setValue({
-          mes:'',
-          year:2022
-        })
-    
+        
         for (let mes = 0; mes < this.meses_inicio.length; mes++) {
           if(this.meses_inicio[mes].nombre.toLowerCase()==this.hoy.toLocaleString('default', { month: 'long' }).toLowerCase()){
 
@@ -87,11 +76,16 @@ export class PeriodoLaboralFormacionComponent implements OnInit {
             
             this.meses_inicio = result
 
-     
+            
             break;
           }
           
         }
+        const MesDeInicio = this.meses_fin.find(mes => mes.nombre == this.formGroup.controls.fecha_inicio.value.mes)
+        this.formGroup.controls.fecha_inicio.setValue({
+          mes:( MesDeInicio ? MesDeInicio.nombre : ""),
+          year:2022
+        })
       }else{
         this.meses_inicio = meses
  
@@ -102,25 +96,27 @@ export class PeriodoLaboralFormacionComponent implements OnInit {
     if(tipo=="fin"){
       if(this.formGroup.controls.fecha_fin.value.year==this.hoy.getFullYear().toString()){
 
-        this.formGroup.controls.fecha_fin.setValue({
-          mes:'',
-          year:2022
-        })
-    
+        
         for (let mes = 0; mes < this.meses_fin.length; mes++) {
           if(this.meses_fin[mes].nombre.toLowerCase()==this.hoy.toLocaleString('default', { month: 'long' }).toLowerCase()){
 
             const index = this.meses_fin.indexOf(this.meses_fin[mes]);
-
+            
             const result = index < 0 ? [] : this.meses_fin.slice(0, index + 1 );
             
             this.meses_fin = result
-
+            
 
             break;
           }
-          
         }
+        const MesDeFin = this.meses_fin.find(mes => mes.nombre == this.formGroup.controls.fecha_fin.value.mes)
+
+        
+        this.formGroup.controls.fecha_fin.setValue({
+          mes:( MesDeFin ? MesDeFin.nombre : ""),
+          year:2022
+        })
       }else{
         this.meses_fin = meses
 

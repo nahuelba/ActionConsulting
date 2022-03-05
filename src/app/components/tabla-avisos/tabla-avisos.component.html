@@ -1,0 +1,35 @@
+<div class="card">
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Nombre del aviso</th>
+          <th scope="col">Estado</th>
+          <th scope="col">Fecha de finalización</th>
+          <th scope="col">Postulaciones</th>
+          <th scope="col" *ngIf="admin">Empresa</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let job of jobs" [routerLink]="['/empresa/avisos/' + job.id]" style="cursor: pointer;"> 
+          <td>{{ job.titulo }}</td>
+          <td>{{ job.estado }}</td>
+          <td>
+            <span
+              *ngIf="job.dias_restantes != -1"
+              [ngClass]="{
+                'text-danger':(job.dias_restantes ? job.dias_restantes < 10: false),
+                'text-warning': job.dias_restantes ? job.dias_restantes < 20: false,
+                'text-success':job.dias_restantes ? job.dias_restantes < 30: false
+              }"
+            >
+              {{ job.dias_restantes }} días restantes
+            </span>
+          </td>
+          <td>{{job.postulaciones}}</td>
+         <td *ngIf="admin">{{job.empresa}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

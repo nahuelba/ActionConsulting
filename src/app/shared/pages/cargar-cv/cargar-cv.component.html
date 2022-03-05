@@ -1,5 +1,7 @@
 <ng-container *ngIf="user?.CVs?.length > 0">
-  <div *ngFor="let cv of user?.CVs; let i=index" class="row border mx-2 py-2 my-4"  style="width: 80%">
+  <ng-container *ngFor="let cv of user?.CVs; let i=index"
+  >
+  <div class="row border mx-2 py-2 my-4"  style="width: 80%">
     
     <div class="col-9">
       <label class="form-check-label" [for]="'cv' + i ">
@@ -13,6 +15,12 @@
         >
         <span class="badge badge-primary" *ngIf="cv.tipo == '.docx'"
           >DOCX</span
+        >
+        <span class="badge badge-success" *ngIf="cv.tipo == '.mp4'"
+          >MP4</span
+        >
+        <span class="badge badge-success" *ngIf="cv.tipo == '.avi'"
+          >AVI</span
         >
       </h5>
       <p class="text-muted">
@@ -37,6 +45,7 @@
     </div>
 
   </div>
+  </ng-container>
 </ng-container>
 
 <div class="dropdown-divider"></div>
@@ -78,3 +87,5 @@
 
 
 <p class="text-muted" *ngIf="user?.CVs?.length==3">Solo puedes subir hasta 3 curriculums</p>
+
+<app-video-curriculum [user_email]="user_email" [user]="user"></app-video-curriculum>

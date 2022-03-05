@@ -7,6 +7,7 @@ import { SubirCvService } from 'src/app/services/subir-cv.service';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Title } from '@angular/platform-browser';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-job-page',
@@ -34,9 +35,7 @@ export class JobPageComponent implements OnInit {
   postulacion: Postulacion = {
     user: '',
     fecha: new Date(),
-    trabajo: '',
     cv:null,
-    email:''
 
   };
 
@@ -48,7 +47,8 @@ export class JobPageComponent implements OnInit {
     private SubirCvService: SubirCvService,
     private spinner:NgxSpinnerService,
     private toastr:ToastrService,
-    private titleService: Title
+    private titleService: Title,
+    private AuthService:AuthService
   ) {}
 
   ngOnInit(): void {
@@ -66,7 +66,6 @@ export class JobPageComponent implements OnInit {
       this.loader = false;
     });
 
-    this.postulacion.trabajo = id;
   }
 
   checkUser(user: any) {
@@ -87,8 +86,8 @@ export class JobPageComponent implements OnInit {
 
     //verificar si esta postulado
     this.PostulacionService.verificarPostulacion(
-      user.uid,
-      this.job.id
+      this.job.id,
+      user.uid
     ).subscribe(
       (data) => {
         console.log(data);
@@ -113,13 +112,14 @@ export class JobPageComponent implements OnInit {
     
     this.postulacion.cv.email = this.user.email
     console.log(this.postulacion);
-    this.PostulacionService.RealizarPostulacion(this.postulacion)
+    this.PostulacionService.RealizarPostulacion(this.postulacion, this.id)
       .then((res) => {
         
         console.log(res);
         this.ngOnInit();
         this.postulado.postulado = true;
         this.postulado.postulacionTexto = 'Ya estas postulado';
+        this.PostulacionService.AgregarPostulacion(this.user.uid, {fecha:new Date(), trabajo:this.id})
         this.spinner.hide()
         this.toastr.success('Te has postulado correctamente!')
       })
@@ -128,6 +128,8 @@ export class JobPageComponent implements OnInit {
         this.spinner.hide()
         this.toastr.warning('No te pudimos postular, intenta mas tarde.')
       });
+
+    
   }
 
  

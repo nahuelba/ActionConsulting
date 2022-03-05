@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { job } from 'src/app/interfaces/card.interface';
+import { AuthService } from 'src/app/services/auth.service';
 import { CardService } from 'src/app/services/card.service';
 import { DiasRestantesService } from 'src/app/services/dias-restantes.service';
 
@@ -21,6 +22,8 @@ export class TrabajoDetalleCardComponent implements OnInit {
   categorias:any = categorias
 
   estados:any = estados
+
+  user:any
 
   @Input() job!:job;
   @Input() empresa:boolean = false;
@@ -40,13 +43,14 @@ export class TrabajoDetalleCardComponent implements OnInit {
     private router:Router,
     private spinner: NgxSpinnerService,
     public diasRestantesService:DiasRestantesService,
-    private toastr:ToastrService
+    private toastr:ToastrService,
+    private AuthService:AuthService
     ) { }
 
   ngOnInit(): void {
 
-
-    
+    this.AuthService.getUserAfsSinId()
+    .subscribe(user => this.user = user)
   }
   ngOnChanges(){
     if(this.job){

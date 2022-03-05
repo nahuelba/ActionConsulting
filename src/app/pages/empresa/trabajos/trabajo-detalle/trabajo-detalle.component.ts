@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CardService } from 'src/app/services/card.service';
 import { job } from 'src/app/interfaces/card.interface';
 import { Title } from '@angular/platform-browser';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -15,15 +16,21 @@ export class TrabajoDetalleComponent implements OnInit {
 
   loader:boolean = true;
 
+  user:any
+
   constructor(
     private CardService: CardService,
     private activatedRoute: ActivatedRoute,
-    private titleService: Title
+    private titleService: Title,
+    private AuthService:AuthService
   ) {}
 
   ngOnInit(): void {
     this.titleService.setTitle('Detalle del Aviso | ACTION HUMAN CAPITAL CONSULTING');
     const id = this.activatedRoute.snapshot.paramMap.get('id');
+
+    this.AuthService.getUserAfsSinId()
+    .subscribe(user => this.user = user)
     this.CardService.getDocumentById(id!)
     .subscribe((job: any) => {
       if(job){

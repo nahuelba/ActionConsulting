@@ -35,3 +35,7 @@ button:focus {
 .list-group-item{
     border: 1px solid rgba(0, 0, 0, 0) !important; 
 }
+
+.nav-item{
+    padding-left: 20px;
+}

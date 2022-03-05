@@ -94,17 +94,17 @@ export class UsuarioDetalleComponent implements OnInit {
   
       // this.formPerfil.controls.discapacidad.disable();
       
-      this.MiPerfilService.leerExperienciasLaborales(this.user.id)
+      this.MiPerfilService.leerExperienciasLaborales(this.id)
       .subscribe(experiencias => {
         this.experiencias_laborales = experiencias
       })
-      this.MiPerfilService.leerFormacion(this.user.id)
+      this.MiPerfilService.leerFormacion(this.id)
       .subscribe(formaciones => {
         this.formaciones = formaciones
       })
 
       //CV
-      this.subirCVService.obtenerCVSconId(this.user.id, user?.email || "")
+      this.subirCVService.obtenerCVSconId(this.id, user?.email || "")
       .subscribe(cvs => {
         console.log(cvs)
         if(cvs){

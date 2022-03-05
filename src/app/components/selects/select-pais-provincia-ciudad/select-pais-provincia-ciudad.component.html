@@ -1,7 +1,7 @@
 <span [formGroup]="formGroup">
 
   <div class="form-group">
-    <label for="pais">País</label>
+    <label for="pais">País <span *ngIf="obligatorio">*</span></label>
     <ng-select 
     [items]="paises" 
     bindLabel="pais" 
@@ -9,10 +9,14 @@
     (change)="elegirPais()">
     
     </ng-select>
+
+    <small *ngIf="formGroup.get('pais')?.invalid && formGroup.get('pais')?.touched" id="passwordHelp" class="text-danger">
+      Rellene este campo
+    </small>
   </div>
 
 <div class="form-group" *ngIf="this.formGroup.value.pais">
-    <label for="provincia">Provincia</label>
+    <label for="provincia">Provincia <span *ngIf="obligatorio">*</span></label>
     <ng-select 
     [items]="provincias"
     bindLabel="provincia"
@@ -20,16 +24,26 @@
     (change)="elegirProvincia($event)"
     >
 </ng-select> 
+
+<small *ngIf="formGroup.get('provincia')?.invalid && formGroup.get('provincia')?.touched" id="passwordHelp" class="text-danger">
+  Rellene este campo
+</small>
+
+
   </div>
 
   <div class="form-group" *ngIf="this.formGroup.value.provincia">
-    <label for="ciudad">Ciudad</label>
+    <label for="ciudad">Ciudad <span *ngIf="obligatorio">*</span></label>
     <ng-select 
     [items]="ciudades"
     bindLabel="ciudad"
     formControlName="ciudad"
     >    
 </ng-select> 
+
+<small *ngIf="formGroup.get('ciudad')?.invalid && formGroup.get('ciudad')?.touched" id="passwordHelp" class="text-danger">
+  Rellene este campo
+</small>
   </div> 
 
 </span>

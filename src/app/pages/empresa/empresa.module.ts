@@ -7,19 +7,23 @@ import { ComponentsModule } from 'src/app/components/components.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MiPerfilModule } from './mi-perfil/mi-perfil.module';
+import { PreciosComponent } from './precios/precios.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
 @NgModule({
   declarations: [
     EmpresaComponent,
-    InicioComponent
+    InicioComponent,
+    PreciosComponent
   ],
   imports: [
     CommonModule,
     EmpresaRoutingModule,
     ComponentsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
 
   ]
 })

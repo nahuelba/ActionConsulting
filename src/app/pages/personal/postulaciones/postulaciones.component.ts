@@ -50,18 +50,19 @@ export class PostulacionesComponent implements OnInit {
     this.user=user;
     console.log(this.user)
     this.PostulacionService.getPostulacionUser(this.user.uid)
-    .subscribe((postulaciones) => {
+    .subscribe((postulaciones:any) => {
+      console.log('Trabajos',postulaciones)
+      
       postulaciones.forEach((postulacion:any) => {
         this.CardService.getDocumentById(postulacion.trabajo)
-        .subscribe(trabajo => {
-          postulacion['trabajo'] = trabajo
+        .subscribe((trabajo:any) => {
+          postulacion['titulo'] = trabajo.titulo
+          postulacion['puesto'] = trabajo.puesto
         })
       })
-      this.postulaciones= postulaciones
       
+      this.postulaciones = postulaciones
       this.loader=false
-      console.log(this.postulaciones)
-
     })
    
     

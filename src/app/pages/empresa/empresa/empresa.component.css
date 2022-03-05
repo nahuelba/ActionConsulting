@@ -22,8 +22,18 @@
     transition: all .2s ease-in-out;
   }
 
+  .footer a{
+    color: #98a6ad;
+  }
+
+  .footer a:hover{
+    text-decoration: none;
+  }
+
   
 
   #main{
     min-height: calc(100% - 56px - 70px);
   }
+
+  

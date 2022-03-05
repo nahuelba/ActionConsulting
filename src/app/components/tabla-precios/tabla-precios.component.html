@@ -1,0 +1,23 @@
+<div class="text-center">
+    <div class="container" >
+        <div class="row pt-4" >
+            <div *ngFor="let categoria of categorias" class="col-lg-4">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">{{categoria.categoria}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <h1><b>$ {{categoria.precio}} </b><small class="text-muted">/ mes</small></h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li>{{categoria.avisos}} cantidad de avisos.</li>
+                            <li>{{categoria.curriculums}} cantidad de curriculums.</li>
+                        </ul> 
+                        <button *ngIf="categoria.categoria!=user?.categoria" type="button" class="btn btn-lg btn-block btn-success" [routerLink]="['/contacto', {'categoria':categoria.categoria}]">Elegir Categoría</button>
+                        <button *ngIf="categoria.categoria==user?.categoria" type="button" class="btn btn-lg btn-block btn-success" disabled>Estas en esta categoría</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

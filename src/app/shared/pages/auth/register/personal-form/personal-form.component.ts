@@ -4,6 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { AuthService } from 'src/app/services/auth.service';
+import { MiPerfilService } from 'src/app/services/mi-perfil.service';
 
 
 @Component({
@@ -32,7 +33,9 @@ export class PersonalFormComponent implements OnInit {
     private authService: AuthService, 
     private router: Router, 
     private spinner:NgxSpinnerService,
-    private titleService: Title) {}
+    private titleService: Title,
+    private MiPerfilService:MiPerfilService
+    ) {}
 
   ngOnInit(): void {
     this.titleService.setTitle('Registrarse | ACTION HUMAN CAPITAL CONSULTING');
@@ -84,14 +87,20 @@ export class PersonalFormComponent implements OnInit {
           const userNuevo = 
             {
               tipo: this.registerForm.value.tipo, 
-              nombre:nombre, 
-              email:email,
+              // nombre:nombre, 
+              // email:email,
               admin: false
             }
 
           this.authService.saveUser(userNuevo, res.user.uid)
           .then((data:any) => {
-            this.spinner.hide()
+            
+            this.MiPerfilService.agregarDatosContacto(res.user.uid || "", {
+              email:email,
+              nombre:nombre
+            }).then(data => 
+              this.spinner.hide()
+              )
           })
           
           this.authService.verifyEmail(res.user)

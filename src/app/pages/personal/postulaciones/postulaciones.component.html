@@ -20,19 +20,19 @@
     <table class="table">
       <thead>
         <tr>
+          <th scope="col">Aviso</th>
           <th scope="col">Puesto</th>
-          <th scope="col">Tipo de empresa</th>
           <th scope="col">Fecha de postulación</th>
         </tr>
       </thead>
       <tbody *ngIf="!loader">
         <tr *ngFor="let postulacion of postulaciones">
           <td>
-            <a routerLink="/personal/{{ postulacion.trabajo.id }}">{{
-              postulacion.trabajo.puesto
+            <a routerLink="/personal/{{ postulacion.trabajo }}">{{
+              postulacion.titulo
             }}</a>
           </td>
-          <td>{{ postulacion.trabajo.tipo_empresa }}</td>
+          <td>{{ postulacion.puesto }}</td>
           <td>{{ postulacion.fecha.toDate() | date: "dd/MM/yyyy" }}</td>
         </tr>
       </tbody>

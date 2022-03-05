@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { AuthService } from 'src/app/services/auth.service';
 import { CardService } from 'src/app/services/card.service';
+import menu from 'src/assets/Opciones/menu.json'
 
 @Component({
   selector: 'app-navbar-empresa',
@@ -14,6 +15,9 @@ export class NavbarEmpresaComponent implements OnInit {
   @Input() admin:boolean = false;
   @Input() user:any;
   @Input() categoria:string = "Estándar"
+
+
+  menu = menu
 
 
   constructor(

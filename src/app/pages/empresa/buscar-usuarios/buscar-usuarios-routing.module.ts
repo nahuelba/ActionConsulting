@@ -6,27 +6,32 @@ import { BusquedaUsuarioDetalleComponent } from './busqueda-usuario-detalle/busq
 import { BusquedaComponent } from './busqueda/busqueda.component';
 
 const routes: Routes = [
+  // {
+  //   path:'',
+  //   children:[
+  //     {
+  //       path:'',
+  //       component:BuscarComponent,
+  //       data:{animation:'buscar-usuarios'}
+  //     },
+  //     {
+  //       path:':puesto',
+  //       component:BusquedaComponent,
+  //       data:{animation:':puesto'},
+  //     },
+  //     {
+  //       path:'usuario/:id',
+  //       component:BusquedaUsuarioDetalleComponent,
+  //       data:{animation:'usuario/:id'},
+  //       canActivate:[BuscarUsuariosGuard]
+  //     }
+
+  //   ]
+  // }
   {
     path:'',
-    children:[
-      {
-        path:'',
-        component:BuscarComponent,
-        data:{animation:'buscar-usuarios'}
-      },
-      {
-        path:':puesto',
-        component:BusquedaComponent,
-        data:{animation:':puesto'},
-      },
-      {
-        path:'usuario/:id',
-        component:BusquedaUsuarioDetalleComponent,
-        data:{animation:'usuario/:id'},
-        canActivate:[BuscarUsuariosGuard]
-      }
-
-    ]
+    loadChildren: () => import('src/app/shared/pages/postulaciones/postulaciones.module').then(m => m.PostulacionesModule),
+    data:{animation:''}
   }
 ];
 

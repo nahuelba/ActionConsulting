@@ -14,6 +14,6 @@
   </div>
 </div>
 
-<app-trabajo-detalle-card *ngIf="!loader" [empresa]="true" [job]="job"></app-trabajo-detalle-card>
+<app-trabajo-detalle-card *ngIf="!loader" [empresa]="true" [job]="job" [admin]="user?.admin"></app-trabajo-detalle-card>
 
 <app-detalle-skeleton *ngIf="loader"></app-detalle-skeleton>

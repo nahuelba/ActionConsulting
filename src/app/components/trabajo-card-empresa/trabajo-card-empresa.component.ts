@@ -18,7 +18,7 @@ export class TrabajoCardEmpresaComponent implements OnInit {
   constructor(public diasRestantesService:DiasRestantesService) { }
 
   ngOnInit(): void {
-
+    
     if(this.job){
       this.diasRestantesService.calcularDiasRestantes(this.job)
       this.dias_restantes = this.diasRestantesService.vencimiento

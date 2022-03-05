@@ -6,6 +6,7 @@ import { EmpresaGuard } from 'src/app/guards/empresa.guard';
 import { FormularioUsuariosGuard } from 'src/app/guards/formulario-usuarios.guard';
 import { EmpresaComponent } from './empresa/empresa.component';
 import { InicioComponent } from './inicio/inicio.component';
+import { PreciosComponent } from './precios/precios.component';
 
 const routes: Routes = [
   {
@@ -25,11 +26,11 @@ const routes: Routes = [
         data:{animation:'avisos'}
       },
       {
-        path:'admin',
-        loadChildren: () => import('./menu-admin/menu-admin.module').then(m => m.MenuAdminModule),
-        canActivate:[AdminGuard],
-        data:{animation:'admin'}
+        path:'precios',
+        component: PreciosComponent,
+        data:{animation:'precios'}
       },
+     
       {
         path:'mi-perfil',
         loadChildren: () => import('./mi-perfil/mi-perfil.module').then(m => m.MiPerfilModule),
@@ -38,8 +39,7 @@ const routes: Routes = [
       {
         path:'buscar-usuarios',
         loadChildren: () => import('./buscar-usuarios/buscar-usuarios.module').then(m => m.BuscarUsuariosModule),
-        data:{animation:'buscar-usuarios'},
-        canActivate:[FormularioUsuariosGuard]
+        data:{animation:'buscar-usuarios'}
       }
     
     ]

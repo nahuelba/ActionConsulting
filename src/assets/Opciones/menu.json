@@ -1,0 +1,23 @@
+[
+    {
+        "nombre":"Inicio",
+        "icon":"home",
+        "url":"/empresa"
+    },
+    {
+        "nombre":"Avisos",
+        "icon":"briefcase",
+        "url":"/empresa/avisos"
+    },
+    {
+        "nombre":"Busqueda",
+        "icon":"search",
+        "url":"/empresa/buscar-usuarios",
+        "_comment":{
+            "nombre":"Precios",
+            "icon":"money",
+            "url":"/empresa/precios"
+        }
+ 
+    }
+]

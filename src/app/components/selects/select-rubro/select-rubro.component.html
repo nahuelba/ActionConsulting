@@ -3,12 +3,11 @@
     <ng-select 
           [items]="rubros"
 
-          [ngClass]="{ 'is-invalid': false }"
          formControlName="rubro"
          >
     </ng-select>
 
-        <!-- <small *ngIf="false" id="passwordHelp" class="text-danger">
-          Rellene este campo
-        </small> -->
+    <small *ngIf="formGroup.get('rubro')?.invalid && formGroup.get('rubro')?.touched" id="passwordHelp" class="text-danger">
+      Rellene este campo
+    </small>
   </div>

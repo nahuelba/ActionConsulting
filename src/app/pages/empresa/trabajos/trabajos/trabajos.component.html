@@ -2,16 +2,14 @@
 <div class="row my-3">
   <div class="col">
     <button
-    *ngIf="user?.emailVerified && jobs.length<user?.datos?.categoria?.avisos"
+    *ngIf="user?.emailVerified"
       type="button"
-      routerLink="nuevo"
+      (click)="trabajoNuevo()"
       class="btn btn-success rounded-pill"
     >
       <i class="fa fa-plus" aria-hidden="true"></i>
       Publicar Aviso
     </button>
-    <span *ngIf="user?.datos?.categoria?.avisos - jobs.length>0" class="mx-2">Quedan {{user?.datos?.categoria?.avisos - jobs.length}} avisos</span>
-    <span *ngIf="user?.datos?.categoria?.avisos - jobs.length<1"> No te quedan mas Avisos para publicar. <br> Mejora la cuenta para poder publicar más avisos</span>
     <button
     *ngIf="!user?.emailVerified"
       type="button"
@@ -21,6 +19,53 @@
       Necesitar verificar tu email para publicar.
     </button>
   </div>
+  <!-- <div *ngIf="user?.datos?.admin">
+    <div
+    class="btn-toolbar"
+    role="toolbar"
+    aria-label="Toolbar with button groups"
+  >
+    <div class="btn-group mr-2" role="group">
+      <button
+        type="button"
+        class="btn btn-light"
+        [ngClass]="{ active: !filterPrioridad }"
+        (click)="filterPrioridad = ''"
+      >
+        Todos
+      </button>
+    </div>
+
+    <div class="btn-group" role="group">
+      <button
+        type="button"
+        class="btn btn-light"
+        [ngClass]="{ active: filter == 'Máximo' }"
+        (click)="filterPrioridad = 'Máximo'"
+      >
+      Máximo
+      </button>
+      <button
+        type="button"
+        class="btn btn-light"
+        [ngClass]="{ active: filter == 'Medio' }"
+        (click)="filterPrioridad = 'Medio'"
+      >
+      Medio
+      </button>
+      <button
+        type="button"
+        class="btn btn-light"
+        [ngClass]="{ active: filter == 'Mínimo' }"
+        (click)="filterPrioridad = 'Mínimo'"
+      >
+      Mínimo
+      </button>
+    </div>
+
+    
+  </div>
+  </div> -->
   <div class="col">
     <div
       class="btn-toolbar"
@@ -69,28 +114,21 @@
 </div>
 
 <div class="row" style="height: 100%">
-  <!-- Skeleton -->
+  <!-- Skeleton
 
   <ng-container *ngIf="loader">
     <app-jobcard-skeleton
       *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9]"
       class="col-lg-4 col-md-6 my-3"
     ></app-jobcard-skeleton>
-  </ng-container>
+  </ng-container> -->
+  <span *ngIf="jobs.length!=0" style="width: 100%;">
 
-  <!-- Card Job -->
-  <ng-container *ngFor="let job of jobs | filterEstado: filter">
-    <app-trabajo-card-empresa
-      routerLink="{{ job.id }}"
-      [job]="job"
-      *ngIf="jobs.length > 0 && !loader"
-      class="col-lg-4 col-md-6 my-3"
-    >
-    </app-trabajo-card-empresa>
-  </ng-container>
+    <app-tabla-avisos [jobs]="jobs | filterEstado:filter | filterPrioridad:filterPrioridad" [admin]="user?.datos?.admin"></app-tabla-avisos>
+  </span>
 
   <div
-    *ngIf="!jobs?.length && !loader"
+    *ngIf="!jobs?.length"
     class="text-center"
     style="width: 100%; margin: auto"
   >

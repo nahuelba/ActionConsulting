@@ -1,0 +1,50 @@
+<div class="form-group"  [formGroup]="formGroup"  >
+    <label >Género</label>
+    <div class="form-check" *ngIf="indistinto">
+      <input
+      
+        class="form-check-input"
+        type="radio"
+        name="genero"
+        id="Indistinto"
+        value="Indistinto"
+        formControlName="genero"
+      />
+      <label class="form-check-label" for="Indistinto"> Indistinto</label>
+    </div>
+
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="genero"
+        id="Masculino"
+        value="Masculino"
+        formControlName="genero"
+      />
+      <label class="form-check-label" for="Masculino"> Masculino </label>
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="radio"
+        name="genero"
+        id="Femenino"
+        value="Femenino"
+        formControlName="genero"
+      />
+      <label class="form-check-label" for="Femenino"> Femenino </label>
+    </div>
+    <div class="form-check">
+      <input 
+      class="form-check-input" 
+      type="radio"
+       name="genero" 
+       id="Otro" 
+       formControlName="genero"
+       value="Otro"
+       />
+      <label class="form-check-label" for="Otro"> Otro </label>
+    </div>
+
+  </div>

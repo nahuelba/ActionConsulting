@@ -1,0 +1,43 @@
+<div class="card" style="width: 100%">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-10">
+        <!-- Busqueda General -->
+        <h4>Busqueda General</h4>
+        <p>
+          Accede a nuestra busqueda general para encontrar potenciales
+          candidatos.
+        </p>
+      </div>
+      <div class="col" style="margin: auto">
+        <button class="btn btn-success" routerLink="/empresa/buscar-usuarios">
+          Buscar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <!-- <div class="card" style="width: 100%">
+      <div class="card-body"></div>
+    </div> -->
+  </div>
+  <div class="col-8">
+    <h4>Avisos</h4>
+
+    <div class="row">
+      <ng-container *ngFor="let job of jobs">
+        <app-trabajo-card-empresa
+          routerLink="/empresa/avisos/{{ job.id }}"
+          [job]="job"
+          *ngIf="jobs.length > 0"
+          class="col-xl-6 col-lg-6 my-3"
+          [empresa]="true"
+        >
+        </app-trabajo-card-empresa>
+      </ng-container>
+    </div>
+  </div>
+</div>

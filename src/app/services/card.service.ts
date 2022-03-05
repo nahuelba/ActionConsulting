@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { map, take } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { concatMap, map, take } from 'rxjs/operators';
 import { job } from '../interfaces/card.interface';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class CardService {
 
 
   expiracion = new Date(new Date().setDate(new Date().getDate() - 30));
-  constructor(private firestore: AngularFirestore) { }
+  constructor(private firestore: AngularFirestore, private AuthService:AuthService) { }
   
   getCardsPublicadas() {
     return this.firestore.collection<job>('trabajos', ref => ref
@@ -43,6 +45,20 @@ export class CardService {
       })
     
     )
+  }
+
+  getTrabajosAdminOno(){
+    return this.AuthService.getUserAfsSinId().pipe(
+      concatMap((user:any)=>{ 
+        if(user){
+          return (user.admin ? this.getAllCards() : this.getCardsDelUsuario(user.id) )
+          // return this.getUserAfs(user.uid)
+
+        }else{
+          return of(false)
+        }
+      })
+    );
   }
 
   getAllCards(){
