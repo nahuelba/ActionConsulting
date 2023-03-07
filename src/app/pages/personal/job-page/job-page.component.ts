@@ -103,9 +103,7 @@ export class JobPageComponent implements OnInit {
     );
   }
 
-  setCV(e:any){
-    this.postulacion.cv = e
-  }
+
 
   Postulacion() {
     this.spinner.show()

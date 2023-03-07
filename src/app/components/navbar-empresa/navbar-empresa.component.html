@@ -70,6 +70,39 @@
         </ul>
       </div>
     </div> -->
+    <div *ngIf="admin" class="accordion" id="MenuAdmin">
+      <button
+        class="list-group-item list-group-item-action list-item"
+        type="button"
+        [class.active]="this.router.url.includes('admin')"
+        data-toggle="collapse"
+        data-target="#menuAdmin"
+        aria-expanded="true"
+        aria-controls="menuAdmin"
+      >
+        <i class="fa fa-user" aria-hidden="true"></i>
+        Menu Admin
+      </button>
+
+      <div
+        id="menuAdmin"
+        class="collapse show"
+        aria-labelledby="headingOne"
+        data-parent="#MenuAdmin"
+      >
+        <ul class="list-group list-group-flush" style="margin-left: 20px">
+          <li
+            class="list-group-item list-item list-group-item-action"
+            [routerLink]="['/empresa/menu-admin/usuarios']"
+            [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Usuarios
+          </li>
+       
+        </ul>
+      </div>
+    </div>
     <!-- Fin Avisos -->
   </div>
 </div>

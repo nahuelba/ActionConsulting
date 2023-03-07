@@ -87,12 +87,16 @@ export class PostulacionesComponent implements OnInit {
             console.log(postulaciones);
             this.postulaciones = []
 
-            postulaciones.forEach((postulacion: any) => {
+            postulaciones.forEach((postulacion: any, index: number, object:any) => {
               this.AuthService.getUserAfs(postulacion.user)
               .subscribe(
-                (user) => {
-                  postulacion['user'] = user;
-                  this.RevelarUsuario(postulacion)
+                (user: any) => {
+                  if(user.verificado==false){
+                    object.splice(index, 1);
+                  }else{
+                    postulacion['user'] = user;
+                    this.RevelarUsuario(postulacion)
+                  }
                 }
               );
 
@@ -102,7 +106,7 @@ export class PostulacionesComponent implements OnInit {
           this.titleService.setTitle('Busqueda general | ACTION HUMAN CAPITAL CONSULTING');
 
           // this.postulaciones = usuarios;
-          this.AuthService.getAllUsersPersonal()
+          this.AuthService.getAllUsersPersonalVerificados()
           .subscribe((users: any) => {
             this.postulaciones = []
             users.forEach((user: any) => {

@@ -40,6 +40,11 @@ const routes: Routes = [
         path:'buscar-usuarios',
         loadChildren: () => import('./buscar-usuarios/buscar-usuarios.module').then(m => m.BuscarUsuariosModule),
         data:{animation:'buscar-usuarios'}
+      },
+      {
+        path:'menu-admin',
+        loadChildren: () => import('./menu-admin/menu-admin.module').then(m => m.MenuAdminModule),
+        canActivate: [AdminGuard]
       }
     
     ]

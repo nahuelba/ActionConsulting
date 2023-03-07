@@ -33,7 +33,7 @@
   </div>
 
   <div class="form-group" *ngIf="this.formGroup.value.provincia">
-    <label for="ciudad">Ciudad <span *ngIf="obligatorio">*</span></label>
+    <label for="ciudad">Ciudad</label>
     <ng-select 
     [items]="ciudades"
     bindLabel="ciudad"
@@ -41,9 +41,9 @@
     >    
 </ng-select> 
 
-<small *ngIf="formGroup.get('ciudad')?.invalid && formGroup.get('ciudad')?.touched" id="passwordHelp" class="text-danger">
+<!-- <small *ngIf="formGroup.get('ciudad')?.invalid && formGroup.get('ciudad')?.touched" id="passwordHelp" class="text-danger">
   Rellene este campo
-</small>
+</small> -->
   </div> 
 
 </span>

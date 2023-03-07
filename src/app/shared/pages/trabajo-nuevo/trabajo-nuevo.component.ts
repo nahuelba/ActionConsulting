@@ -44,7 +44,7 @@ lugar:any;
     puesto: ['', Validators.required],
     pais: ['', Validators.required],
     provincia:['', Validators.required],
-    ciudad:['', Validators.required],
+    ciudad:[''],
     estado: ['Pendiente', Validators.required],
     empresa_id: ['', Validators.required],
     destacado:[false, Validators.required],
@@ -169,11 +169,13 @@ lugar:any;
           if(this.job){
             //si es editar
             
+            //Omitir reemplazar id de empresa al editar
+            delete this.trabajoNuevoForm.value.empresa_id 
             this.CardService.actualizarTrabajo(this.job.id, this.trabajoNuevoForm.value)
             .then (data =>{
               console.log(data)
               this.spinner.hide()
-              this.router.navigate(['/empresa/admin/' + this.job.id]);
+              this.router.navigate(['/empresa/avisos/' + this.job.id]);
               this.toastr.success('Se modificó el Aviso con exito!')
             },
             err => {

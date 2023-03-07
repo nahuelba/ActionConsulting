@@ -1,11 +1,12 @@
 import { Injectable,  } from '@angular/core';
 import { Query, AngularFirestore } from '@angular/fire/firestore';
-import { of } from 'rxjs';
+import { combineLatest, Observable, of } from 'rxjs';
 import { concatMap, first, map, take } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service'
 import categorias from 'src/assets/Opciones/trabajos/categorias.json'
 import { Postulacion } from '../interfaces/postulacion.interface';
 import { FiltrosService } from './filtros.service';
+import { MiPerfilService } from './mi-perfil.service';
 
 
 @Injectable({
@@ -17,7 +18,12 @@ export class BusquedaUsuariosService {
   segundoFiltro :boolean = false;
 
 
-  constructor(private afs:AngularFirestore, private AuthService:AuthService, private filtros:FiltrosService) { }
+  constructor(
+    private afs:AngularFirestore, 
+    private AuthService:AuthService, 
+    private filtros:FiltrosService,
+    private MiPerfilService: MiPerfilService
+    ) { }
 
   buscarUsuarios(puesto:string, params:any){
     
@@ -254,7 +260,26 @@ export class BusquedaUsuariosService {
 
 
   
+  getAllUsersNotVerified(){
     
+    return this.afs.collection('users', ref => ref.where('tipo','==', 'personal').where('verificado', '==', false)).valueChanges({idField:'idUser'})
+    .pipe(
+      concatMap(data => {
+        
+        const observables: Observable<any>[] = [];
+        data.forEach((user, index) => {
+          observables.push(  this.MiPerfilService.leerDatosContacto(user.idUser).pipe(
+            map(userData => {
+              return { ...data[index], ...userData[0]}
+            }))
+          )});
+          
+        return combineLatest(observables);
+      })
+    )
+    
+    
+  }
     
 
   

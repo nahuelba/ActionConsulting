@@ -65,6 +65,7 @@ export class AuthService {
     return this.afs.collection('users').doc(id).valueChanges({ idField: 'id' }).pipe(take(1))
     
   }
+
   getUserAfsSinId(){
     return this.getUserLogged().pipe(
       concatMap((user:any)=>{ 
@@ -82,8 +83,8 @@ export class AuthService {
     return this.afs.collection('users', ref => ref.where('tipo','==', 'empresa')).valueChanges({idField: 'id'})
   }
 
-  getAllUsersPersonal(){
-    return this.afs.collection('users', ref => ref.where('tipo','==', 'personal').limit(25)).valueChanges({idField: 'id'})
+  getAllUsersPersonalVerificados(){
+    return this.afs.collection('users', ref => ref.where('tipo','==', 'personal').where('verificado', '==', true).limit(25)).valueChanges({idField: 'id'})
   }
 
   updateCV(id:string, cv:any){
@@ -142,7 +143,8 @@ export class AuthService {
                         email: res.user?.email,
                         avisos: estandar?.avisos,
                         curriculums: estandar?.curriculums,
-                        foto: res.user?.photoURL
+                        foto: res.user?.photoURL,
+                        verificado:false
                       }
                       if(tipo.replace('/', '') == "empresa"){
                         userNuevo['categoria'] = "Estándar"

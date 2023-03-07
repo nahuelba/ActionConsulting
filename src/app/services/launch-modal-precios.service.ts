@@ -14,4 +14,9 @@ export class LaunchModalPreciosService {
     const modalRef = this.modalService.open(ModalPreciosComponent, { size: 'xl', centered: true, scrollable:true } )
     this.toastr.error('No te quedan mas avisos para publicar. Mejora tu cuenta para poder publicar más.')
   }
+
+  toastRegistro(){
+    this.toastr.success('Te registraste exitosamente, completa tus datos para .')
+
+  }
 }

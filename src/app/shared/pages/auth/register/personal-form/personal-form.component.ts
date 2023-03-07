@@ -4,6 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-bootstrap-spinner';
 import { AuthService } from 'src/app/services/auth.service';
+import { LaunchModalPreciosService } from 'src/app/services/launch-modal-precios.service';
 import { MiPerfilService } from 'src/app/services/mi-perfil.service';
 
 
@@ -34,7 +35,8 @@ export class PersonalFormComponent implements OnInit {
     private router: Router, 
     private spinner:NgxSpinnerService,
     private titleService: Title,
-    private MiPerfilService:MiPerfilService
+    private MiPerfilService:MiPerfilService,
+    private LaunchModalPreciosService: LaunchModalPreciosService
     ) {}
 
   ngOnInit(): void {
@@ -89,7 +91,8 @@ export class PersonalFormComponent implements OnInit {
               tipo: this.registerForm.value.tipo, 
               // nombre:nombre, 
               // email:email,
-              admin: false
+              admin: false,
+              verificado:false
             }
 
           this.authService.saveUser(userNuevo, res.user.uid)
@@ -97,14 +100,21 @@ export class PersonalFormComponent implements OnInit {
             
             this.MiPerfilService.agregarDatosContacto(res.user.uid || "", {
               email:email,
-              nombre:nombre
+              nombre:nombre,
+              
             }).then(data => 
               this.spinner.hide()
               )
           })
           
           this.authService.verifyEmail(res.user)
-          this.router.navigate([ this.tipo + '/auth/register/verificar-email']);
+          if( this.tipo === '/empresa'){
+            this.router.navigate([ this.tipo + '/auth/register/verificar-email']);
+          }else{
+            this.LaunchModalPreciosService.toastRegistro()
+            this.router.navigate([ this.tipo + '/mi-perfil/datos-personales']);
+
+          }
         });
       }
     } else {

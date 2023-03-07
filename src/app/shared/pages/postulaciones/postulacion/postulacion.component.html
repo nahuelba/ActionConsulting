@@ -61,19 +61,22 @@
       </div>
     </div>
 
-
     <span *ngIf="cvs.cvPostulado">
-      <a [href]="cvs.cvPostulado" class="h5 my-3">{{cvs.cvPostulado.includes('mp4') ? "Video" : ""}} Curriculum Postulado</a>
+      <a [href]="cvs.cvPostulado" class="h5 my-3"
+        >{{ cvs.cvPostulado.includes("mp4") ? "Video" : "" }} Curriculum
+        Postulado</a
+      >
     </span>
 
     <span *ngIf="cvs.cvs.length > 0">
-      <h5 class="my-3" *ngIf="cvs.cvPostulado.length>0">Otros Curriculums</h5>
-      <h5 class="my-3" *ngIf="cvs.cvPostulado.length==0">Curriculums</h5>
+      <h5 class="my-3" *ngIf="cvs.cvPostulado.length > 0">Otros Curriculums</h5>
+      <h5 class="my-3" *ngIf="cvs.cvPostulado.length == 0">Curriculums</h5>
       <div *ngFor="let cv of cvs.cvs; let i = index">
-        <a [href]="cv" target="_blank">{{ cv.includes('mp4') ? "Video" : "" }} CV {{ i + 1 }}</a>
+        <a [href]="cv" target="_blank"
+          >{{ cv.includes("mp4") ? "Video" : "" }} CV {{ i + 1 }}</a
+        >
       </div>
     </span>
-
 
     <div class="dropdown-divider"></div>
   </span>
@@ -105,7 +108,7 @@
       </div>
 
       <div class="form-group" *ngIf="formPerfil.value.rubro">
-        <label >Rubro</label>
+        <label>Rubro</label>
         <input
           type="text"
           placeholder="Rubro"
